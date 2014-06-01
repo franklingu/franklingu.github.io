@@ -2,4 +2,8 @@ pygments: true
 safe: true
 timezone: Asia/Singapore
 encoding: utf-8
+lsi: false
+
+# Special for Windows UTF-8 setting
+markdown: redcarpet
 
