@@ -37,10 +37,13 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li {% if isHome %} class="active" {% endif %}>
-                        <a class='nav home' data-link="home page" href="#">Home</a>
+                        <a class='nav home' data-link="home page" href="/index.html">Home</a>
                     </li>
                     <li {% if isProjects %} class="active" {% endif %}>
-                        <a class='nav proejcts' data-link="projects" href="#">Projects</a>
+                        <a class='nav proejcts' data-link="projects" href="/projects.html">Projects</a>
+                    </li>
+                    <li {% if isPosts %} class="active" {% endif %}>
+                        <a class='nav proejcts' data-link="projects" href="/posts/">Posts</a>
                     </li>
                 </ul>       
             </div>
