@@ -17,3 +17,17 @@
     color: #999999;
 }
 
+.article {
+    margin: 50px 20px 0 20px;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 760px;
+}
+
+body {
+    background: #F6F6F6;
+    background: -webkit-linear-gradient(#F6F6F6, #FAFAFA);
+    background: -o-linear-gradient(#F6F6F6, #FAFAFA);
+    background: -moz-linear-gradient(#F6F6F6, #FAFAFA);
+    background: linear-gradient(#F6F6F6, #FAFAFA);
+}
