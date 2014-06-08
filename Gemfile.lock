@@ -94,5 +94,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  RedCloth
   github-pages
   wdm (~> 0.1.0)
