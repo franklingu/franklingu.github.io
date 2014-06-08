@@ -1,6 +1,5 @@
 source 'http://rubygems.org'
 gem 'github-pages'
-gem 'RedCloth'
 
 # for listen gem usage on Windows
 require 'rbconfig'
