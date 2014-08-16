@@ -14,16 +14,9 @@ body.main-content {
     border-radius: 0 0 10px 10px;
 }
 
-.container-narrow {
-    width: 70%;
-}
-
-.fa {
-    color: #999;
-}
-
-.fa:hover {
-    color: #fff;
+.narrow-1 {
+    width: 90%;
+    margin: 0 auto;
 }
 
 .align-center {
@@ -53,7 +46,24 @@ body.main-content {
     color: #fff;
 }
 
+.delay-5 {
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    -ms-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+
 #personal-img {
     margin-left: 40px;
     width: 160px;
+}
+
+#main-navbar {
+    margin-bottom: 0px;
+}
+
+#content {
+    margin-left: 0px;
+    margin-right: 0px;
+    color: #fff;
 }
