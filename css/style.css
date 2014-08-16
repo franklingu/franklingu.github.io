@@ -1,11 +1,17 @@
-body {
-    color: #fff;
-    text-shadow: 0 1px 3px rgba(0,0,0,.5);
-    background: #333;
-}
-
 ul {
     list-style-type: none;
+}
+
+body.main-content {
+    background: #4d4d4d;
+}
+
+.headline {
+    padding: 25px 40px 25px 40px;
+    background: #333;
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
 }
 
 .container-narrow {
@@ -28,10 +34,6 @@ ul {
     color: #999999;
 }
 
-.main-content {
-    margin-top: 60px;
-}
-
 .article {
     margin: 0 20px 0 20px;
     padding: 20px;
@@ -41,11 +43,17 @@ ul {
 
 .footer {
     bottom: 0;
-    margin-bottom: 0;
+    margin: 30px 0 0 0;
+    padding: 10px 0 10px 0;
     border-width: 1px 0 0;
-    position: fixed;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-    background-color: #222;
+    background: #333;
+}
+
+.text-white {
+    color: #fff;
+}
+
+#personal-img {
+    margin-left: 40px;
+    width: 160px;
 }
