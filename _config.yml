@@ -1,0 +1,25 @@
+# Special for Windows UTF-8 setting
+markdown: redcarpet
+markdown_ext:  markdown
+
+source:      .
+destination: ./_site
+plugins:     ./_plugins
+layouts:     ./_layouts
+include:     ['.htaccess']
+exclude:     ['Gemfile', 'Gemfile.lock', 'README.md']
+keep_files:  ['.git']
+gems:        []
+timezone:    Asain/Singapore
+encoding:    utf-8
+
+future:      true
+limit_posts: 100
+highlighter: pygments
+
+relative_permalinks: true
+
+permalink:     date
+paginate_path: 'page:num'
+pygments:      true
+paginate:      10

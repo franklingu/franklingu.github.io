@@ -1,0 +1,6 @@
+# ignore the auto generated _site folder
+_site/
+
+# ignore lock file
+*.lock
+
