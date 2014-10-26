@@ -3,7 +3,7 @@ layout: base
 title: about-google-grow-beyond
 ---
 <div class="article">    
-    <p>Today is Tuesday, 06/08/2013 and I just finished Google Grow Beyond Program.</p>
+    <p>Today I just finished Google Grow Beyond Program.</p>
 
     <p>(This is the first time for me to in fact to write something on a blog but I want to give it a try since I really want to preserve this kind of experience. I was keeping myself a diary for 6 years but not any more since I came Singapore for University. My first year’s life is a little bit off track because I was like gaming and watching a lot of movies. So this summer vocation I really took some time to think about what I am going to do in the near future and some other serious problems concerning with my life. And that is why I joined this program–to enhance myself as an individual as well as a potential programmer. )</p>
 

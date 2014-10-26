@@ -4,8 +4,13 @@ title: Posts
 ---
 <ul>
     {% for post in site.posts %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a>
-            <p>{{ post.excerpt }}</p>
+        <li class="post-summary">
+            <div class="post-short">
+                <div class="col-sm-4"></div>
+                <a href="{{ post.url }}" class="post-title col-sm-4">{{ post.title }}</a>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-12">{{ post.excerpt }}</div>
+            </div>
         </li>
     {% endfor %}
 </ul>
