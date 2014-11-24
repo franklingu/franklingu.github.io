@@ -9,7 +9,7 @@
     <meta name="author" content="franklingu">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" type="text/css"/>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="/css/animate.min.css">
+    <!--<link rel="stylesheet" type="text/css" href="/css/animate.min.css">-->
     <link rel="stylesheet" href="/css/style.css" type="text/css"/>
 
     <title>{% if page.title %}{{ page.title }} | {% endif %}franklingu's blog</title>
@@ -24,9 +24,9 @@
     <![endif]--> 
 </head>
 
-<body class="main-content">
-    <nav class="navbar navbar-inverse animated bounceInDown" role="navigation" id="main-navbar">
-        <div class="container-fluid">
+<body>
+    <nav class="navbar animated bounceInDown" role="navigation">
+        <div class="container container-narrow">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -34,7 +34,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Junchao</a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
@@ -46,28 +45,13 @@
         </div>
     </nav>
 
-    <div class="row" id="content">
-        <div class="col-sm-12">
-            <div class="headline row narrow-1">
-                <div class="col-sm-3">
-                    <img src="/img/personal-img.jpg" class="animated fadeIn delay-5 img-circle" id="personal-img">
-                </div>
-                <div class="col-sm-9">
-                    <h1 class="animated bounceIn delay-5 text-white bold">Junchao(Franklin)'s Blog</h1>
-                    <div class="col-sm-offset-3 col-sm-6">
-                        <p class="animated bounceIn delay-5 text-white bold">--a bit of thought, programming and life</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="row">
         {% if content %}
             {{content}}
         {% endif %}
     </div>
-    <div class="footer animated bounceIn">
-            <div class="align-center font-inverse">
-                @Copy <a href="mainto:franklingjunchao@gmail.com">franklingu</a> 2014 | All rights reserved
-            </div>
-        </div>
+    <footer class="footer align-center">
+        @Copy <a href="mainto:franklingjunchao@gmail.com">franklingu</a> 2014 | All rights reserved
+    </footer>
 </body>
 </html>
