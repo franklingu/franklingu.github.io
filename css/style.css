@@ -13,7 +13,7 @@ ul {
 .navbar {
     background-color: #EEEEEE;
     border-radius: 0 0 5px 5px;
-    min-height: 40px;
+    min-height: 60px;
 }
 
 .nav>li>a {
@@ -30,11 +30,6 @@ ul {
 
 .nav>li.active>a {
     color: #47d17c;
-}
-
-.navbar-nav>li>a {
-    padding-top: 10px;
-    padding-bottom: 10px; 
 }
 
 .banner {
@@ -58,6 +53,10 @@ ul {
 .banner .banner-title {
     display: inline-block;
     margin-left: 100px;
+}
+
+.intro-part {
+    padding: 50px 0 50px 50px;
 }
 
 .text-white {
@@ -93,6 +92,10 @@ ul {
 .align-center {
     text-align: center;
     margin: 5px auto;
+}
+
+.blog {
+    padding: 20px 0 50px 50px;
 }
 
 .post-summary {
