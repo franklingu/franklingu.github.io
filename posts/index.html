@@ -1,16 +1,13 @@
 ---
-layout: base
+layout: blogbase
 title: Posts
 ---
-<ul>
+<ul class="post-summary">
     {% for post in site.posts %}
-        <li class="post-summary">
-            <div class="post-short">
-                <div class="col-sm-4"></div>
-                <a href="{{ post.url }}" class="post-title col-sm-4">{{ post.title }}</a>
-                <div class="col-sm-4"></div>
-                <div class="col-sm-12">{{ post.excerpt }}</div>
-            </div>
+        <li>
+            <a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
+            <p class="text-muted small post-date">{{ post.date | date_to_long_string  }}</p>
+            <hr>
         </li>
     {% endfor %}
 </ul>
