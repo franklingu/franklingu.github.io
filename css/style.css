@@ -1,3 +1,7 @@
+body {
+    background-color: #f9f9f9;
+}
+
 .container-narrow {
     width: 80%;
 }
@@ -16,6 +20,14 @@
     color: #47d17c;
 }
 
+.nav>li>a:active {
+    color: #47d17c;
+}
+
+.nav>li.active>a {
+    color: #47d17c;
+}
+
 .navbar-nav>li>a {
     padding-top: 10px;
     padding-bottom: 10px; 
@@ -24,7 +36,7 @@
 .banner {
     background-image: url("/img/banner-gray.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: center 20%;
     margin-top: -20px;
     padding-top: 30px;
     padding-bottom: 20px;
@@ -52,22 +64,31 @@
     text-align: right;
 }
 
-.delay-5 {
+.animate-delay {
     -webkit-animation-delay: 0.5s;
     -moz-animation-delay: 0.5s;
     -ms-animation-delay: 0.5s;
     animation-delay: 0.5s;
 }
 
+.animate-slow {
+    -webkit-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    -ms-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+}
+
 .footer {
+    width: 100%;
     position: absolute;
     bottom: 0;
-    height: 15px;
-    padding: 7px 0 10px 0;
+    margin-top: 50px;
+    height: 50px;
     background-color: #EEEEEE;
+    padding: 10px 0;
 }
 
 .align-center {
     text-align: center;
-    margin-left: 40%;
+    margin: 5px auto;
 }
