@@ -2,7 +2,7 @@ body {
     background-color: #f9f9f9;
 }
 
-ul {
+ul.post-summary {
     list-style: none;
 }
 
@@ -33,7 +33,7 @@ ul {
 }
 
 .banner {
-    background-image: url("/img/banner-gray.jpg");
+    background-image: url("/img/path-gray.jpg");
     background-size: cover;
     background-position: center 20%;
     margin-top: -20px;

@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    RedCloth (4.2.9)
     RedCloth (4.2.9-x86-mingw32)
     activesupport (4.1.1)
       i18n (~> 0.6, >= 0.6.9)
@@ -15,6 +16,7 @@ GEM
     commander (4.1.6)
       highline (~> 1.6.11)
     fast-stemmer (1.0.2)
+    ffi (1.9.3)
     ffi (1.9.3-x86-mingw32)
     gemoji (1.5.0)
     github-pages (19)
@@ -66,6 +68,8 @@ GEM
     maruku (0.7.0)
     mini_portile (0.6.0)
     minitest (5.3.4)
+    nokogiri (1.6.2.1)
+      mini_portile (= 0.6.0)
     nokogiri (1.6.2.1-x86-mingw32)
       mini_portile (= 0.6.0)
     parslet (1.5.0)
@@ -94,6 +98,5 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  RedCloth
   github-pages
   wdm (~> 0.1.0)

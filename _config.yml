@@ -1,5 +1,6 @@
 # Special for Windows UTF-8 setting
 markdown: redcarpet
+extensions: [fenced_code_blocks]
 markdown_ext:  markdown
 
 source:      .
