@@ -2,6 +2,10 @@ body {
     background-color: #f9f9f9;
 }
 
+pre {
+    background-color: #49483e;
+}
+
 ul.post-summary {
     list-style: none;
 }
@@ -95,7 +99,7 @@ ul.post-summary {
 }
 
 .blog {
-    padding: 20px 0 50px 50px;
+    padding: 20px 0 50px 30px;
 }
 
 .post-summary {

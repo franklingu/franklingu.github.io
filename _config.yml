@@ -1,6 +1,5 @@
 # Special for Windows UTF-8 setting
 markdown: redcarpet
-extensions: [fenced_code_blocks]
 markdown_ext:  markdown
 
 source:      .
@@ -15,8 +14,8 @@ timezone:    Asain/Singapore
 encoding:    utf-8
 
 future:      true
-limit_posts: 100
-highlighter: pygments
+lsi:         false
+highlighter: rouge
 
 relative_permalinks: true
 
@@ -24,3 +23,6 @@ permalink:     date
 paginate_path: 'page:num'
 pygments:      true
 paginate:      10
+
+redcarpet:
+  extensions: [fenced_code_blocks]
