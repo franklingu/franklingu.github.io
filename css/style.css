@@ -46,10 +46,6 @@ ul.post-summary {
 }
 
 .banner .personal-img {
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    filter: grayscale(100%);
     margin: 0 50px 0 150px;
     vertical-align: top;
 }
@@ -64,7 +60,7 @@ ul.post-summary {
 }
 
 .text-white {
-    color: #fff;
+    color: #ffffff;
 }
 
 .right-align {
