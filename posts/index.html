@@ -2,9 +2,14 @@
 layout: blogbase
 title: Posts
 ---
+<div class="input-group">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+    <input type="text" id="search-title" class="form-control" placeholder="Search...">
+</div>
+<hr>
 <ul class="post-summary">
     {% for post in site.posts %}
-        <li>
+        <li class="post-short-info">
             <a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
             <p class="text-muted small post-date">{{ post.date | date_to_long_string  }}</p>
             <hr>
