@@ -1,6 +1,8 @@
 ---
 layout: blogbase
 title: About Year 1 Sem 1
+category: NUS
+tag: NUS, modules, academic
 ---
 This is written at the beginning of the second semester as I am looking back at what I have gone through in the whole year.
 

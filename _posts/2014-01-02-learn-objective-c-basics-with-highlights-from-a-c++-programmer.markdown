@@ -1,6 +1,8 @@
 ---
 layout: blogbase
 title: Learn objective C basics with highlights from a C++ programmer
+category: programming
+tag: obj-C
 ---
 Honestly I am not an experienced C++ programmer. And my knowledge  of C is also limited. But knowing C++ and C is just some form of help and distraction at same when I am starting learning objective C. Although personally I believe the only reason why objective C is popular is only that Apple is pushing it and I do not think this will last for long, I have to pick it up since I have to take CS3217 this coming semester.
 

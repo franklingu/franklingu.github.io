@@ -1,6 +1,8 @@
 ---
 layout: blogbase
 title: Understanding of protocol in objective C and interface in Java
+category: programming
+tag: obj-C, Java
 ---
 ~~~obj-c
 @interface XYZPerson : NSObject{

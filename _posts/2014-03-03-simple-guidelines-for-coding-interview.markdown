@@ -1,6 +1,8 @@
 ---
 layout: blogbase
 title: Simple guidelines for coding interview
+category: development
+tag: interview, tip
 ---
 First of all, basics of programming that you must be familiar with:
 

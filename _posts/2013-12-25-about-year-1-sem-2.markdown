@@ -1,6 +1,8 @@
 ---
 layout: blogbase
 title: About Year 1 Sem 2
+category: NUS
+tag: NUS, academic
 ---
 Well, clearly this article took me three months to complete–and I still do not really want to finish this if the new exam result release just arrived. So now I am writing about sem2 at the end of sem3(LOL). Does that mean that I am so busy in the last semester that I do not even have time for just an article? I would sem2 is just too bad that I do not even want to face it even after a whole semester.
 

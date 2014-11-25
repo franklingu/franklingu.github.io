@@ -8,7 +8,7 @@ code .o { color: #f92672 } /* Operator */
 code .p { color: #f8f8f2 } /* Punctuation */
 code .cm { color: #75715e } /* Comment.Multiline */
 code .cp { color: #75715e } /* Comment.Preproc */
-code.obj-c .cp { color: #FF2025 } /*Special for obj-c*/
+code.language-obj-c .cp { color: #FF2025 } /*Special for obj-c*/
 code .c1 { color: #75715e } /* Comment.Single */
 code .cs { color: #75715e } /* Comment.Special */
 code .ge { font-style: italic } /* Generic.Emph */

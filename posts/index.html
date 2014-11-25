@@ -1,6 +1,7 @@
 ---
 layout: blogbase
 title: Posts
+category: none
 ---
 <div class="input-group">
     <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
@@ -11,7 +12,11 @@ title: Posts
     {% for post in site.posts %}
         <li class="post-short-info">
             <a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
-            <p class="text-muted small post-date">{{ post.date | date_to_long_string  }}</p>
+            <div class="">
+                <p class="text-muted small post-date">{{ post.date | date_to_long_string  }}</p>
+                <p class="small post-tag">{{ post.tag }}</p>
+            </div>
+            
             <hr>
         </li>
     {% endfor %}

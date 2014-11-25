@@ -1,6 +1,8 @@
 ---
 layout: blogbase
 title: Career talk summary
+category: development
+tag: career, talk
 ---
 This is a summarization of a career talk conducted by Teo from Symantech about preparing for coding/programming interviews.
 

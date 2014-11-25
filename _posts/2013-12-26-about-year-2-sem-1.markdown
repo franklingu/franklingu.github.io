@@ -1,6 +1,8 @@
 ---
 layout: blogbase
 title: About Year 2 Sem 1
+category: NUS
+tag: NUS, academic
 ---
 After a not very good year 1 in NUS, I decided to have a change. And the start of the this semester was already different–I decided to take 7 modules. If the Orbital Programme–CP3108 in the summer also counts, 8 in total and those include intensive modules like CS2103 and EG2301. But I wanted to give it a shoot.
 

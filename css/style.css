@@ -1,5 +1,10 @@
 body {
     background-color: #f9f9f9;
+    font-size: 16px;
+}
+
+p {
+    font-size: 16px;
 }
 
 pre {
@@ -63,6 +68,10 @@ ul.post-summary {
     color: #ffffff;
 }
 
+.small {
+    font-size: 70%;
+}
+
 .right-align {
     text-align: right;
 }
@@ -114,4 +123,20 @@ ul.post-summary {
 .post-date {
     margin-left: 40px;
     margin-top: 10px;
+    display: inline-block;
+}
+
+.post-tag {
+    margin-left: 100px;
+    margin-top: 10px;
+    display: inline-block;
+    color: #555;
+}
+
+.post-category {
+    display: inline-block;
+    float: right;
+    color: #aaa;
+    font-size: 85%;
+    font-style: italic;
 }

@@ -1,6 +1,8 @@
 ---
 layout: blogbase
 title: About Google Grow Beyond
+category: development
+tag: university, program
 ---
 Today I just finished Google Grow Beyond Program.
 
@@ -8,7 +10,7 @@ Today I just finished Google Grow Beyond Program.
 
 So the first day I had in Google Singapore was a Saturday–We are having some training as well as some practice in self-awareness, “personal color”(in this case, I am an orange who is generally pursuing speed and results.) and “6 thinking hats”. Basically we have some games and some discussions. It was a time of fun and I just thought it was too short.
 
-(I am not supposed to say more about it since Google in fact want us to keep this a secret so more students who are joining will also find it fun. I hope my post is not ruining your fun in this program if you are going to join this.)
+(I am not supposed to say more about it since the manager in fact wants us to keep this a secret so more students who are joining will also find it fun. I hope my post is not ruining your fun in this program if you are going to join this.)
 
 So then today we have one more workshop on technical guide for a programmer and skills about presentations. Basically there are training and actual presentations. Although I would say English is still a barrier to me if it comes to presentation, generally I am really happy about how my presentation went. There are also other surprises about Python as well as how to get a job in high-tech company like Google, FB, Tweeter or Amazon. And then we had a nice dinner to celebrate.
 
