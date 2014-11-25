@@ -3,6 +3,9 @@ layout: base
 ---
 <div class="col-sm-12">
     <div class="container container-narrow blog animated fadeIn animate-delay animate-slow">
+        {% if page.title %}
+            <h2>{{page.title}}</h2><hr>
+        {% endif %}
         {% if content %}
             {{content}}
         {% endif %}
