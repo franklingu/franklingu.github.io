@@ -17,28 +17,31 @@ ul.post-summary {
 
 .container-narrow {
     width: 80%;
+    height: 100%;
 }
 
 .navbar {
     background-color: #EEEEEE;
     border-radius: 0 0 5px 5px;
-    min-height: 60px;
+    min-height: 50px;
 }
 
 .nav>li>a {
     color: #999;
+    font-weight: 600;
 }
 
 .nav>li>a:hover {
-    color: #47d17c;
+    color: #77DD9D;
+
 }
 
 .nav>li>a:active {
-    color: #47d17c;
+    color: #25C74E;
 }
 
 .nav>li.active>a {
-    color: #47d17c;
+    color: #25C74E;
 }
 
 .banner {
