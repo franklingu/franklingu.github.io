@@ -2,7 +2,7 @@
 _site/
 
 # ignore bower packages
-bower_components/
+_bower_components/
 
 # ignore lock file
 *.lock
