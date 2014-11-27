@@ -1,6 +1,9 @@
 # ignore the auto generated _site folder
 _site/
 
+# ignore bower packages
+bower_components/
+
 # ignore lock file
 *.lock
 

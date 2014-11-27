@@ -6,8 +6,7 @@ source:      .
 destination: ./_site
 plugins:     ./_plugins
 layouts:     ./_layouts
-include:     ['.htaccess']
-exclude:     ['Gemfile', 'Gemfile.lock', 'README.md']
+exclude:     ['Gemfile', 'Gemfile.lock', 'README.md', 'bower_components']
 keep_files:  ['.git']
 gems:        []
 timezone:    Asain/Singapore

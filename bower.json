@@ -1,0 +1,22 @@
+{
+  "name": "franklingu.github.io",
+  "version": "0.0.1",
+  "homepage": "https://github.com/franklingu/franklingu.github.io",
+  "authors": [
+    "franklingu <franklingujunchao@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "animate.css": "~3.2.0",
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.3.1"
+  }
+}
