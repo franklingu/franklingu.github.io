@@ -4,7 +4,8 @@ title: The GAME that gives you 10 extra years of life
 category: life
 tag: life
 ---
-Before starting reading this post, maybe it is a good idea if you can watch this entire TED talk by yourself first [youtube](https://www.youtube.com/watch?v=lfBpsV1Hwqs&list=PLAC463A2B6B2CEC7F)
+Before starting reading this post, maybe it is a good idea if you can watch this entire TED talk by yourself first [Youtube](https://www.youtube.com/watch?v=lfBpsV1Hwqs&list=PLAC463A2B6B2CEC7F)
+
 
 I have always had this belief that playing game is just of waste of time, same as what most other people are thinking according to the speaker. But then the question is, if playing game is waste of time, what is not waste of time? Reading some books--what sort of book? Do a bit more coding--as I am about to become a programmer? Talk/play with my friends/families? Well, these things sound "meaningful" to me, but what is the meaning that I am seeking? What is supposed to be the ultimate purpose? I do not usually want to continue question  myself this way cause this philosophical question about meaning of life is so profound that I guess after so many years with so much hard work from brilliant minds, we are still not very sure about the definite answer to this question.
 
