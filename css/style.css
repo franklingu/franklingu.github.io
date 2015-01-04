@@ -15,6 +15,11 @@ ul.post-summary {
     list-style: none;
 }
 
+.post-content {
+    width: 95%;
+    padding-left: 3%; 
+}
+
 .container-narrow {
     width: 80%;
     height: 100%;
