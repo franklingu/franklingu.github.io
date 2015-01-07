@@ -1,7 +1,7 @@
 pre code { background-color: #49483e;  color: #f8f8f2; }
 code .c { color: #75715e } /* Comment */
 code .err { color: #960050; background-color: #1e0010 } /* Error */
-code .k { color: #66d9ef } /* Keyword */
+code .k { color: #f92672 } /* Keyword */
 code .l { color: #ae81ff } /* Literal */
 code .n { color: #f8f8f2 } /* Name */
 code .o { color: #f92672 } /* Operator */
