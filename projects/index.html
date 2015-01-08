@@ -4,7 +4,7 @@ title: Projects
 ---
 <div class="container">
   <ul class="timeline">
-    <li><div class="tl-date">Dec, 2014</div></li>
+    <li><div class="tl-date">Jan, 2015</div></li>
     <li class="tl-inverted">
       <div class="tl-circ"></div>
       <div class="tl-panel animated fadeIn animate-delay">
@@ -14,6 +14,8 @@ title: Projects
         </div>
         <div class="tl-body">
           <p>You are viewing it :P</p>
+          <p>This is just a blog in which I will write some articles about programming or maybe simply everyday life. This is built on jekyll/github-pages and jQuery, Bootstrap and Animate.css are used in this project. I learned about some css tricks online and applied here--not the best design but I am just improving its appearence and other features as time goes by. Also I learned and used some SEO techs here--so it is like a playground for me as a non-professional front-end engineer.</p>
+          <p>Currently this is just about broadcasting my ideas and thoughts; commenting feature may be included in the feature using some third party hosting cause jekyll/github-pages does not support that for now.</p>
         </div>
       </div>
     </li>
@@ -25,6 +27,10 @@ title: Projects
           <p><small class="text-muted"><i class="glyphicon glyphicon-hand-right"></i> Python, JavaScript, C</small></p>
         </div>
         <div class="tl-body">
+          <p>This is the CAPstone project of Computer Engineering students in NUS and therefore a lot of time and effort are burnt for it. The time and effort paid off with a good grade--A. It is a design project aiming at providing indoor navigation for blind people. The main computing unit is one Raspberry Pi and the controller is an Arduino Mega 2560. Various sensors are used in this project including ultrasonic sensors, infrared sensors and 10DOFs. Voice recognition is done with use of pocketsphnix from CMU.</p>
+          <p>The biggest challenge of this project is locating the user and the major way of locating is through counting steps. Other means like WiFi RSSI, QRcode are used once for calibration but results are not ideal due to various reasons. Eventually infrared sensors are used--a special color mark are placed at some pre-defined spots and when the infrared sensor detect the mark calibration will be done based on result of step-counting.
+          </p>
+          <p>In this project I am mainly in charge of the code on Raspberry Pi side and designed the file structure. WiFi RSSI, voice recognition, QRCode and infrared sensors are all explored by me. Besides coding, I also voulentarily take responsibilities for pushing the team forward--our team did not have to stay overnight before the deadline becasue of the smooth project progress.</p>
           <p>Visit the repo <a href="https://github.com/kai33/NaviCane">GitHub</a></p>
         </div>
       </div>
@@ -37,6 +43,7 @@ title: Projects
           <p><small class="text-muted"><i class="glyphicon glyphicon-hand-right"></i> Java, JavaScript</small></p>
         </div>
         <div class="tl-body">
+          <p>After Google Summer of Code, I continued contributing to the project during my spare time--mostly hot fixes. As I have spent quite some time with this project, I also helped a few other contributors with their questions, especially regarding to access control. And during this period I also learned more about time management as there is also a lot of schoolwork pushing me every day.</p>
           <p>Visit the repo <a href="https://github.com/TEAMMATES/repo">GitHub</a></p>
           <p>Visit the website <a href="http://teammatesv4.appspot.com/">Teammates</a></p>
         </div>
@@ -50,7 +57,8 @@ title: Projects
           <p><small class="text-muted"><i class="glyphicon glyphicon-hand-right"></i> VHDL</small></p>
         </div>
         <div class="tl-body">
-          <p>None</p>
+          <p>This is the major project from CG3207--Computer Architecture, during we learnt about how CPU works and we are required to implement a simple CPU which can execute MIPS instructions on a FPGA board with VHDL. Pipelining and basic exception handling are done for this project as extra feature--besides instruction fetching, decoding, ALU, memory access and register writing back as basic functionalities.</p>
+          <p>The repo is private for now.</p>
         </div>
       </div>
     </li>
@@ -62,6 +70,9 @@ title: Projects
           <p><small class="text-muted"><i class="glyphicon glyphicon-hand-right"></i> JavaScript, Python</small></p>
         </div>
         <div class="tl-body">
+          <p>This is a project done as the major assignment for CS3213 and we get an A as final grade. It is for kids to learn programming by simply playing with blocks, by dragging, dropping and executing. During this project, jQuery, jQuery UI, Bootstrap and math.js are used for front-end and the backend is based on webapp2@Google-AppEngine.</p>
+          <p>Since this is the assignment for a module about software design and patterns, a lot of focus is on making the system extensible and maintainable. Our team did not decide to use any front-end framework like Angular, Backbone or Ember but instead we choose to implement our own MVC based on all sort of events. UI blocks and command models are implicitly linked and execution of command is by manipulating DOM elements through a factory which can be extended easily for new commands.</p>
+          <p>Another challenge in this project is animation execution is asyncronous and therefore the invoking of next command should only be done after previous animation. We add "executeNext" method to all command handlers and therefore commands like "if-else" or "while" can easily control which is next for commands inside it.</p>
           <p>Visit the repo <a href="https://github.com/franklingu/Visual-IDE">GitHub</a></p>
           <p>Visit the app <a href="http://visual-ide.appspot.com/">Visual-IDE</a></p>
         </div>
@@ -72,10 +83,12 @@ title: Projects
       <div class="tl-circ"></div>
       <div class="tl-panel animated fadeIn animate-delay">
         <div class="tl-header">
-          <h3>Teammates@NUS(Google Summer of Code project)</h3>
+          <h3>Teammates@NUS--Google Summer of Code project</h3>
           <p><small class="text-muted"><i class="glyphicon glyphicon-hand-right"></i> Java, JavaScript</small></p>
         </div>
         <div class="tl-body">
+          <p>Teammates is a website used for peer-evaluation and it is led by Dr Damith in NUS. During the summer of 2014 I was contributing to Teammates as an accecpted project in Google Summer of Code. I was responsible for access control feature and deisgned and implemented this feature from ground up, adding more flexibility for users of the system. I have also worked with several others to improve website design and increase test coverage.</p>
+          <p>The biggest challenge of this project is not about getting things done but designing a more maintainable access control feature. And since this is the first time for me to design for "real-world" website, I do not have much experience to rely on but to read more on this aspect. Getting advice from mentor and co-workers is also very important and in the end I managed to hand in the paper with confidence two weeks ahead of the deadline.</p>
           <p>Visit the repo <a href="https://github.com/TEAMMATES/repo">GitHub</a></p>
           <p>Visit the website <a href="http://teammatesv4.appspot.com/">Teammates</a></p>
         </div>
@@ -90,7 +103,9 @@ title: Projects
           <p><small class="text-muted"><i class="glyphicon glyphicon-hand-right"></i> objective-C, iOS</small></p>
         </div>
         <div class="tl-body">
-          <p>None</p>
+          <p>This project is the team project for CS3217 and it is a crowd-sourcing app to gather and display real-time information about shuttle buses in NUS.</p>
+          <p>The main challenge in this project is to getting the visual effects in our mind written as objective C code. As it was my first time learning iOS programming and did not have much experience with visual effects, the UI/UX is most difficult part. Searching online, asking tutors for advice and experimenting out finally gave me some idea on this. Although I got an A for this module, the suggestions about the architecture of our software(getting groups of MVC inside MVC to further isolate concerns during the development) from Prof Sim inspired me a lot.</p>
+          <p>Repo is private.</p>
         </div>
       </div>
     </li>
@@ -103,6 +118,8 @@ title: Projects
           <p><small class="text-muted"><i class="glyphicon glyphicon-hand-right"></i> objectiev-C, iOS</small></p>
         </div>
         <div class="tl-body">
+          <p>The personal project for CS3217. It is a bubble shotting game making use of graph theory with self implemented physics engine powering the game.</p>
+          <p>During this project, speed and quality are both important: duration is only 5 weeks and I am fresh at iOS development and game design; tutors are one for two so my tutor literally read every line and providing inline and overall feedback. Keeping up to the high standards from prof and tutor is not easy but after going though I find myself have gone far on the way to becoming code gorilla.</p>
           <p>Visit the repo <a href="https://github.com/franklingu/Bubble-Blast-Saga">GitHub</a></p>
         </div>
       </div>
@@ -117,6 +134,7 @@ title: Projects
           <p><small class="text-muted"><i class="glyphicon glyphicon-hand-right"></i> C++, Qt</small></p>
         </div>
         <div class="tl-body">
+          <p>First software engineering project. Everything is new, from system design to team work, from GUI to presention of product. A first glimpse of software engineering.</p>
           <p>Visit the repo <a href="https://github.com/franklingu/Tasky">GitHub</a></p>
         </div>
       </div>
@@ -130,11 +148,12 @@ title: Projects
           <p><small class="text-muted"><i class="glyphicon glyphicon-hand-right"></i> Python</small></p>
         </div>
         <div class="tl-body">
+          <p>A web app built on Google AppEngine(Python) with first contact with Python, jQuery and collaboration tool--Git.</p>
           <p>Visit the repo <a href="https://github.com/franklingu/NUS-CCA-Finder">GitHub</a></p>
           <p>Visit the app <a href="http://nus-cca-finder.appspot.com/">NUS CCA Finder</a></p>
         </div>
       </div>
     </li>
-    <li><div class="tl-date">May, 2013</div></li>
+    <li><div class="tl-date">May, 2013<p class="small">And journey begins here</p></div></li>
   </ul>
 </div>

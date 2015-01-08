@@ -5,7 +5,7 @@ category: programming
 tag: JavaScript, functional
 ---
 
-(This blog post is about functional-javascript-workshop, a workshop provided in [nodeschool](http://nodeschool.org). You can just type <code>sudo npm install functional-javascript-workshop -g</code> to install it)
+This blog post is about functional-javascript-workshop, a workshop provided in [nodeschool](http://nodeschool.org). You can just type <code>sudo npm install functional-javascript-workshop -g</code> to install it
 
 JavaScript is small but not as easy as it seems. This has been said by many but until I get to functional javascript, I sort of understand the essence of this saying. But someone may argue that it is not JavaScript that is hard to get but the notion of functional programming is not something you can just pick up overnight through a few online courses only. I agree that functional programming is not easy, but the design of JavaScript's expressiveness is effective such that it supports prototypal inheritence and functional programming well, which shows its power. So by reading jQuery's docs and manipulating DOM structure or doing Ajax is not called "using JavaScript", at least not a full JavaScript programmer yet. Using prototype.js and writing functional code is the sign that you are getting somewhere as a JavaScript programmer.(I am not a good JavaScript programmer yet but I do not think anybody overlooking these two aspectes of JavaScript's use is able to master it)
 
@@ -29,7 +29,7 @@ A list of all the challenges:
 
 6. Basic: Reduce(So far the most "complicated" method: a callback and an optional initial value. The callback function takes in 4 arguments: prev, curr, index and arr(the array itself). But it is not complex. Just a while and you will get it--prev is the previously returned value or initial value/first item for the first call; curr is the current item; index is the index and arr is itself)
 
-7. Basic: Recursion(This is asking you to implement reduce using recursion. Anyone who knows imperative programming langueages like C will not have any trouble getting a pass. However, take a notice that the supplied solution is way much cooler, making use of IIFE--immediately invoked function expression [See Example 1]. "reduceOnce" itself calls itself with incremented idx, return value of callback until function execution reaches terminating condition)
+7. Basic: Recursion(This is asking you to implement reduce using recursion. Anyone who knows imperative programming langueages like C will not have any trouble getting a pass. However, take a notice that the supplied solution is way much cooler, making use of IIFE--immediately invoked function expression [See Example 1](#example-1). "reduceOnce" itself calls itself with incremented idx, return value of callback until function execution reaches terminating condition)
 
 8. Basic: Call(Practice of call and apply. More information of call and apply can be found on Mozilla website. One example of using call would be Array.prototype.slice on function arguments. Arguments it array like but it does not have slice method as it is not a real array. However, Array.prototype.slice.call(arguments,...) will be just like calling slice on arguments. Apply is like call except that it expects all parameters packed up in an array as one param)
 
@@ -55,7 +55,8 @@ A list of all the challenges:
 
 Well, those are all for functional-javascript-workshop. Of course by just going through a series of exercises does not make you a good JavaScript programmer. And functional programming is also more than a few lines of coding. There is one recommended book on functional programming in JavaScript(Functional JavaScript--O'Reilly), one book on JavaScript(JavaScript: the good parts: by Douglas Crockford) and one book about functional programming(The little Schemer--MIT)
 
-* Example 1:
+<hr>
+<a name="example-1" class="example-anchor">Example 1: </a> an example of IIFE in the exercises
 
 ~~~javascript
 function reduce(arr, fn, initial) {
