@@ -31,6 +31,10 @@ ul.post-summary {
     min-height: 50px;
 }
 
+a {
+    color: #563d7c;
+}
+
 .nav>li>a {
     color: #999;
     font-weight: 600;
@@ -38,7 +42,6 @@ ul.post-summary {
 
 .nav>li>a:hover {
     color: #77DD9D;
-
 }
 
 .nav>li>a:active {
@@ -69,7 +72,7 @@ ul.post-summary {
 }
 
 .intro-part {
-    padding: 50px 0 50px 50px;
+    padding: 50px 0 97px 50px;
 }
 
 .text-white {
@@ -78,6 +81,14 @@ ul.post-summary {
 
 .small {
     font-size: 70%;
+}
+
+.wide-line {
+    padding: 7px 0 7px 0;
+}
+
+.wd-line {
+    padding: 4px 0 4px 0;
 }
 
 .right-align {
@@ -109,6 +120,10 @@ ul.post-summary {
 .align-center {
     text-align: center;
     margin: 5px auto;
+}
+
+.no-padding {
+    padding: 0;
 }
 
 .blog {
