@@ -163,3 +163,7 @@ a {
     font-size: 85%;
     font-style: italic;
 }
+
+#main-page {
+    min-height: 100%;
+}
