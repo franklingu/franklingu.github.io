@@ -37,6 +37,9 @@ a {
 
 .nav>li>a {
     color: #999;
+}
+
+.navbar-nav>li>a {
     font-weight: 600;
 }
 
@@ -50,6 +53,16 @@ a {
 
 .nav>li.active>a {
     color: #25C74E;
+}
+
+.tab-panel {
+    margin-top: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.tab-pane {
+    padding: 40px 20px 40px 20px;
 }
 
 .banner {
@@ -165,5 +178,5 @@ a {
 }
 
 #main-page {
-    min-height: 100%;
+    min-height: 90vh;
 }
