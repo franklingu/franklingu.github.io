@@ -18,7 +18,7 @@ highlighter: pygments
 
 relative_permalinks: true
 
-permalink:     date
+permalink:     pretty
 paginate_path: 'page:num'
 pygments:      true
 paginate:      10

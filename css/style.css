@@ -25,6 +25,11 @@ ul.post-summary {
     height: 100%;
 }
 
+.container-narrower {
+    width: 75%;
+    height: 100%;
+}
+
 .navbar {
     background-color: #EEEEEE;
     border-radius: 0 0 5px 5px;
@@ -140,7 +145,7 @@ a {
 }
 
 .blog {
-    padding: 20px 0 50px 30px;
+    padding: 20px 50px 50px 0;
 }
 
 .post-summary {
