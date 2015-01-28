@@ -1,4 +1,4 @@
-pre code { background-color: #49483e;  color: #f8f8f2; }
+pre code { background-color: #49483e;  color: #f8f8f2; display: block; white-space: pre; overflow-x: auto; word-wrap: normal; }
 code .c { color: #75715e } /* Comment */
 code .err { color: #960050; background-color: #1e0010 } /* Error */
 code .k { color: #f92672 } /* Keyword */
@@ -32,7 +32,7 @@ code .ne { color: #a6e22e } /* Name.Exception */
 code .nf { color: #a6e22e } /* Name.Function */
 code .nl { color: #f8f8f2 } /* Name.Label */
 code .nn { color: #f8f8f2 } /* Name.Namespace */
-code .nx { color: #a6e22e } /* Name.Other */
+code .nx { color: #f8f8f2 } /* Name.Other */
 code .py { color: #f8f8f2 } /* Name.Property */
 code .nt { color: #f92672 } /* Name.Tag */
 code .nv { color: #f8f8f2 } /* Name.Variable */
@@ -63,3 +63,5 @@ code .gh { } /* Generic Heading & Diff Header */
 code .gu { color: #75715e; } /* Generic.Subheading & Diff Unified/Comment? */
 code .gd { color: #f92672; } /* Generic.Deleted & Diff Deleted */
 code .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
+
+code .lineno { color: #767867; border-right: 1px solid #767867; padding-right: 5px;}
