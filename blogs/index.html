@@ -1,6 +1,6 @@
 ---
 layout: bloglist
-title: Posts
+title: Blogs
 category: none
 ---
 <div class="input-group">
@@ -8,13 +8,13 @@ category: none
   <input type="text" id="search-title" class="form-control" placeholder="Search...">
 </div>
 <hr>
-<ul class="post-summary">
+<ul class="blog-summary">
   {% for post in site.posts %}
-    <li class="post-short-info">
-      <a href="{{ post.url }}" class="post-title">{{ post.title }}</a>
+    <li class="blog-short-info">
+      <a href="{{ post.url }}" class="blog-title">{{ post.title }}</a>
       <div class="">
-        <p class="text-muted small post-date">{{ post.date | date_to_long_string  }}</p>
-        <p class="small post-tag">{{ post.tag }}</p>
+        <p class="text-muted small blog-date">{{ post.date | date_to_long_string  }}</p>
+        <p class="small blog-tag">{{ post.tag }}</p>
       </div>
       <hr>
     </li>

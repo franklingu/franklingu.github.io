@@ -4,9 +4,10 @@ markdown_ext:  markdown
 
 source:      .
 destination: ./_site
+drafts:      ./drafts
 plugins:     ./_plugins
 layouts:     ./_layouts
-exclude:     ['Gemfile', 'Gemfile.lock', 'README.md', 'bower_components']
+exclude:     ['Gemfile', 'Gemfile.lock', 'README.md', '_bower_components']
 keep_files:  ['.git']
 gems:        []
 timezone:    Asain/Singapore
@@ -19,9 +20,9 @@ highlighter: pygments
 relative_permalinks: true
 
 permalink:     pretty
-paginate_path: 'page:num'
-pygments:      true
+paginate_path: 'posts/page:num'
 paginate:      10
+pygments:      true
 
 redcarpet:
   extensions: [fenced_code_blocks, autolink]
