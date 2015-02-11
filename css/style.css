@@ -11,6 +11,13 @@ pre {
     background-color: #49483e;
 }
 
+article.blog-body {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #A2A2A2;
+}
+
 ul.blog-summary {
     list-style: none;
 }
