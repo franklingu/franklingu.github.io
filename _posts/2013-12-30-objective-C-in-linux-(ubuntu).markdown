@@ -15,15 +15,15 @@ gcc: error trying to exec 'cc1obj': execvp: No such file or directory
 
 2.Install gnustep. (I am not really sure about this yet and I need some more digging around. But basically this will make the compiling easier and should also provide some of the library).
 
-~~~bash
+{% highlight bash %}
 sudo apt-get install gnustep
 sudo apt-get install gnustep-devel
-~~~
+{% endhighlight %}
 
 
 3.After you have done the above steps, copy the following code(in case you have no idea of what this is doing now, it is simply printing out ‘hello world!’)
 
-~~~obj-c
+{% highlight obj-c %}
 #import <Foundation/Foundation.h>
 
 int main (int argc, const char * argv[]) {
@@ -32,7 +32,7 @@ int main (int argc, const char * argv[]) {
     [pool drain];
     return 0;
 }
-~~~
+{% endhighlight %}
 
 now it is time to save this as ‘hello.m'(.m is the extension for objc source code).
 
@@ -56,4 +56,5 @@ if the above command does not work, most likely you have some linking problems. 
 ~~~bash
 gcc hello.m `gnustep-config --objc-flags` -lgnustep-base -o hello
 ~~~
+
 now it should be okay.
