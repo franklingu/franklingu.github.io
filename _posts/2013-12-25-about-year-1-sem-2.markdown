@@ -12,7 +12,7 @@ K. Enough of that–we have to move on as time goes by.
 
 MA1506:
 
-This is not a module I like. I certainly understand the importance of mathematics but the kind of mathematics taught in this module does not count in my belief. Anyway, it is my core module and there is just no way that I can escape from it. The lecture is good and the tutor is particularly good–patient and cute, only reason that I was still studying that module probably, LOL.
+This is not a module I like. I certainly understand the importance of mathematics but the kind of mathematics taught in this module does not count in my belief. Anyway, it is my core module and there is just no way that I can escape from it. The lecture is good and the tutor is particularly good -– patient and cute, only reason that I was still studying that module probably, LOL.
 
 Grade: A-
 
@@ -42,7 +42,7 @@ Press your calculator as well as possible.
 
 CG1413:
 
-Communication module and very important. Just that I do not think I benefit that much. But on the other hand, no tutor can just teach us those soft skills over night. In a sense, I am still taking this module as I am still not good at this aspect. No wonder I did not get good grade–another reason, English is also a problem, implicitly and explicitly.
+Communication module and very important. Just that I do not think I benefit that much. But on the other hand, no tutor can just teach us those soft skills over night. In a sense, I am still taking this module as I am still not good at this aspect. No wonder I did not get good grade -– another reason, English is also a problem, implicitly and explicitly.
 
 Grade: B
 
@@ -69,5 +69,6 @@ Grade: B
 I still do not get why the hell I got only B for this module!!!
 
  
+There goes my year 1 -– if I had another chance, I will try to learn more and learn better.
 
-There goes my year 1–if I had another chance, I will try to learn more and learn better.
+An unofficial guide to all freshmen in SoC @ NUS(a link I wished to have read much earlier) [Link to Google Doc](https://docs.google.com/document/d/1FbCWcnnajHWk594dKmN35b_we50WZf_-cwxqg-cYaRY/edit?pli=1)

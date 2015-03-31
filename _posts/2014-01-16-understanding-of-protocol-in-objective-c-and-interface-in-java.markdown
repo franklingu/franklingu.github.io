@@ -34,7 +34,7 @@ to use this, you have to
 @end
 ~~~
 
-So, to sum up, interface in java is equivalent to protocol in objective C while interface in objective C is just class public definition like what is in C++.
+So, to sum up, interface in Java is equivalent to protocol in objective C while interface in objective C is just class public definition like what is in C++.
 
 When I was first introduced to the idea of interface in Java, the differences between Abstract Class and interface -- especially when to use which seemed to be the hard part. Here are some notes since we are talking about interface:
 

@@ -6,7 +6,7 @@ tag: obj-C
 ---
 Honestly I am not an experienced C++ programmer. And my knowledge  of C is also limited. But knowing C++ and C is just some form of help and distraction at same when I am starting learning objective C. Although personally I believe the only reason why objective C is popular is only that Apple is pushing it and I do not think this will last for long, I have to pick it up since I have to take CS3217 this coming semester.
 
-First, at the first glimpse objective C is just like C++: both are a superset of C, although not exactly; following the C style sytax, although objective C in my opinion is more bizarre; both come with the power of efficiency and also at the price of the headache when dealing with memory management.
+First, at the first glimpse objective C is just like C++: both are a superset of C, although not exactly; following the C style syntax, although objective C in my opinion is more bizarre; both come with the power of efficiency and also at the price of the headache when dealing with memory management.
 
 Let us just jump to classes in objective C(I am really sick of those books starting with if-else and not effectively telling the users anything important about the language.)
 
@@ -50,9 +50,10 @@ so once we are done with the header file, it is time for us to move on to .m fil
 @end
 ~~~
 
-Understanding the use and the importance of message in objective C is very important. Although we do not call message “invoking method” but it seems they are effectively the same thing
-<code>
+Understanding the use and the importance of message in objective C is very important. Although we do not call message “invoking method” but it seems they are effectively the same thing.
+
+```
 Student *stu = [[Student alloc] init];
-</code>
+```
 
 so the above line allocate a Student object (on heap and if you do not know the difference between heap and stack, you can search online or just ignore this for now) and store the starting address of the object in stu (on stack) which is a pointer(pointer is powerful and dangerous. Java programmers never have to worry about it because the similar stuff is managed by the compiler.)

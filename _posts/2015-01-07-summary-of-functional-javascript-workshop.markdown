@@ -5,15 +5,22 @@ category: programming
 tag: JavaScript, functional
 ---
 
-This blog post is about functional-javascript-workshop, a workshop provided in [nodeschool](http://nodeschool.org). You can just type <code>sudo npm install functional-javascript-workshop -g</code> to install it
+This blog post is about functional-javascript-workshop, a workshop provided in [nodeschool](http://nodeschool.org). You can just type <code>sudo npm install functional-javascript-workshop -g</code> to install it.
 
-JavaScript is small but not as easy as it seems. This has been said by many but until I get to functional javascript, I sort of understand the essence of this saying. But someone may argue that it is not JavaScript that is hard to get but the notion of functional programming is not something you can just pick up overnight through a few online courses only. I agree that functional programming is not easy, but the design of JavaScript's expressiveness is effective such that it supports prototypal inheritence and functional programming well, which shows its power. So by reading jQuery's docs and manipulating DOM structure or doing Ajax is not called "using JavaScript", at least not a full JavaScript programmer yet. Using prototype.js and writing functional code is the sign that you are getting somewhere as a JavaScript programmer.(I am not a good JavaScript programmer yet but I do not think anybody overlooking these two aspectes of JavaScript's use is able to master it)
+Before I get started, first let me introduce some resources about nodeschool and functional JavaScript:
+
+1. The official website: [nodeschool](http://nodeschool.org)
+2. (Discussions about nodeschool](https://github.com/nodeschool/discussions)
+3. Some online repo for solutions [eg 1](https://github.com/brunops/nodeschool-solutions) , [eg 2](https://github.com/rodrigo-medeiros/node-school-lessons)
+4. My own thoughts on [GitHub](https://github.com/franklingu/nodeschool-solutions)
+
+JavaScript is small but not as easy as it seems. This has been said by many but until I get to functional javascript, I sort of understand the essence of this saying. But someone may argue that it is not JavaScript that is hard to get but the notion of functional programming is not something you can just pick up overnight through a few online courses only. I agree that functional programming is not easy, but the design of JavaScript's expressiveness is effective such that it supports prototypal inheritance and functional programming well, which shows its power. So by reading jQuery's docs and manipulating DOM structure or doing Ajax is not called "using JavaScript", at least not a full JavaScript programmer yet. Using prototype.js and writing functional code is the sign that you are getting somewhere as a JavaScript programmer.(I am not a good JavaScript programmer yet but I do not think anybody overlooking these two aspects of JavaScript's use is able to master it)
 
 The reason why JavaScript is capable of doing functional programming lies in the design that it views functions as "first-class objects"--that means functions are like other objects and therefore you see attributes like length, arguments, etc. and methods like bind, call and apply. The only special part about function when compared to normal objects is it is callable--meaning that you can append brackets and execute it. Languages like Python can just do the same because of the same reason, although subtle differences may exist.(Sadly I am not well versed enough to know yet)
 
-If you want to know more detailed explanation about this, you'd better Google it yourself but I personaly believe that the best way to learn programming is by programming itself and therefore I would introduce functional-javascript-workshop.
+If you want to know more detailed explanation about this, you'd better Google it yourself but I personally believe that the best way to learn programming is by programming itself and therefore I would introduce functional-javascript-workshop.
 
-After installing the module globally(node and npm of course are the pre-requisites and the -g flag is also vital when installing), you can just type <code>functional-javascript</code> to view the challenges and conqure them.
+After installing the module globally(node and npm of course are the pre-requisites and the -g flag is also vital when installing), you can just type <code>functional-javascript</code> to view the challenges and conquer them.
 
 A list of all the challenges:
 
@@ -23,7 +30,7 @@ A list of all the challenges:
 
 3. Basic: Map(Learn about Array.prototype.map. Map takes in a callback function as the parameter, and the callback should take an item as parameter and the return value will be the item in the newly created array. In this way the old array is one-to-one mapped to the new array. Although not used in this question, index is also supplied as the second argument to the callback function. You can also visit Mozilla for more info and the same applies for the following.)
 
-4. Basic: Filter(Learn aobut Array.prototype.filter. Filter is like map but instead of return the item in the newly created array, the callback function should return true for keeping the item in the returned array and false for otherwise. So the returned array is the a shorter one with some items filtered out from the original array. This exerice also combines the prev one by making the format of message weird so that you have to use map to preprocess items in given array first--of course, this is not required, all roads lead to Rome)
+4. Basic: Filter(Learn about Array.prototype.filter. Filter is like map but instead of return the item in the newly created array, the callback function should return true for keeping the item in the returned array and false for otherwise. So the returned array is the a shorter one with some items filtered out from the original array. This exercise also combines the previous one by making the format of message weird so that you have to use map to pre-process items in given array first--of course, this is not required, all roads lead to Rome)
 
 5. Basic: EverySome(Still about methods in Array: every and some. These two methods are like sisters: a callback function as parameter and the callback function will take the item as argument and return boolean value. However, for every, the return value is only true if all items are true according to the condition supplied in callback function but for some, as long as there is at least one item satisfying the condition, the return value will be true. The question is asking about "for all" and "there exists"--basic discrete math will do)
 
@@ -33,7 +40,7 @@ A list of all the challenges:
 
 8. Basic: Call(Practice of call and apply. More information of call and apply can be found on Mozilla website. One example of using call would be Array.prototype.slice on function arguments. Arguments it array like but it does not have slice method as it is not a real array. However, Array.prototype.slice.call(arguments,...) will be just like calling slice on arguments. Apply is like call except that it expects all parameters packed up in an array as one param)
 
-9. Partial application without bind(JavaScript is dynamic-typing language and its function can take any number of parameters. Therefore, we do not and in fact cannot talk about function overloading. However, partial application is one nice trick provided by JavaScript, which is very neat and useful. The idea is wrapping a function with an outer scope, therefore fixing some parameter/s with convenience. The returned function will have reference to outer scope and therefore outerscope will live until the returned function dies--so although its neatness, partial application may bring in memory leak because of circular reference)
+9. Partial application without bind(JavaScript is dynamic-typing language and its function can take any number of parameters. Therefore, we do not and in fact cannot talk about function overloading. However, partial application is one nice trick provided by JavaScript, which is very neat and useful. The idea is wrapping a function with an outer scope, therefore fixing some parameter/s with convenience. The returned function will have reference to outer scope and therefore outer-scope will live until the returned function dies--so although its neatness, partial application may bring in memory leak because of circular reference)
 
 10. Partial application with bind(Bind is binding a function on an object and return the bound function--the returned function will always be invoked on the object no matter in which context the bound function is called. More info about bind on Mozilla)
 
@@ -43,9 +50,9 @@ A list of all the challenges:
 
 13. Blocking event loops(Node is single threaded in some sense--if you keep the main thread busy, new events cannot be fired because main thread is not able to pay attention to other stuff at the same time. setTimeout with a small amount may give it a break)
 
-14. Trampoline(Recursion may cause a stack overflow if called many times. So the idea of trampoline is to modify the recusion function to return next step and return null if execution is done)
+14. Trampoline(Recursion may cause a stack overflow if called many times. So the idea of trampoline is to modify the recursion function to return next step and return null if execution is done)
 
-15. Async loops(Power of asyncronous callbacks)
+15. Async loops(Power of asynchronous callbacks)
 
 16. Recursion(Exercise of recursion)
 

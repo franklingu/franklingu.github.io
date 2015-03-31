@@ -44,9 +44,9 @@ Generally I think it rather boring if you know something about C.
 
 PC1432:
 
-Another module that I do not like because all in the final is just about applying formulas–you do not even have to think–and somehow I just got A- for this one–how can this be?
+Another module that I do not like because all in the final is just about applying formulas -– you do not even have to think -– and somehow I just got A- for this one -– how can this be?
 
-Well, this is an easy module–but certainly it is easy for everybody–so watch out to your results!!!
+Well, this is an easy module and I do believe in certain that it is easy for everybody -– so watch out to your results in final!!!
 
 Grade: A-
 
@@ -60,7 +60,7 @@ This is definitely my favorite among all the SS modules! It is fun and not const
 
 Grade: S(B-)
 
-If you are concerned about how many level 1 you are going to take–take this one!
+If you are concerned about how many level 1 you are going to take -– take this one!
 
  
 

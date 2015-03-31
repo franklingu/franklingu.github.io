@@ -6,19 +6,19 @@ tag: NUS, modules, academic
 ---
 Time has really flied--now it is me as a third year student now and the thoughest semester ever since I entered NUS is just behind me. Looking back at the semester, it does not feel like the battle field as I was experiencing at that time--I can still do better but I did not give my best effort to my team and myself.
 
-Anyway, yesterday is history and tomorrow is mystery, while today is a gift--that is why it is call "present". I just rewatched *Kungfu Panda* this vacation and took this line down with some new understanding. Besides watching movies, I have also read a few books, novel, phylosophy, about work, time management, finance related and so on. I am still not sure where is balance of work and life or how to a lead a more fulfilling life.
+Anyway, yesterday is history and tomorrow is mystery, while today is a gift--that is why it is call "present". I just rewatched *Kungfu Panda* this vacation and took this line down with some new understanding. Besides watching movies, I have also read a few books, novel, philosophy, about work, time management, finance related and so on. I am still not sure where is balance of work and life or how to a lead a more fulfilling life.
 
 Maybe the answer is not just about watching and reading but also about probably feeling and doing--which is what I need to continue to try my best to find out.
 
 OK. Enough for the unrelated stuff and back to the main topic. It has been a rather busy semester considering that the CAPstone module--CG3002 and 5 other modules are trying to crashing me at the same time--let alone the jobs as CS2103 tutor and CS1010 grader(by the way, a good way to force yourself to do some recapping on C or Java is to do the tutoring). What made the semester worse is the freaking (fill in either good or bad here, both fit really well) idea from the lecturers of CG3002 that this year we are going to do something way cooler. To be honest, it is cooler but the fact that 3 of them are experimenting with our patch did make our life harder.
 
-But I guess complainment does not make the problem any easier to solve but real work does. So you see COM1 is full of CEG student, with sleepy and red eyes. We used to stay up but we do not do that any more--we do not sleep at all and it is not a short hackathon after which you can just grab a great sleep but a rather long one. For me, the most hard part is that tuning the system is tedious and debugging hardware is even more unpleasant. I was lucky to have a great team working together so that we did have to burn any night to catch up with the deadlines but life is still hard.
+But I guess complaint does not make the problem any easier to solve but real work does. So you see COM1 is full of CEG student, with sleepy and red eyes. We used to stay up but we do not do that any more--we do not sleep at all and it is not a short hackathon after which you can just grab a great sleep but a rather long one. For me, the most hard part is that tuning the system is tedious and debugging hardware is even more unpleasant. I was lucky to have a great team working together so that we did have to burn any night to catch up with the deadlines but life is still hard.
 
 ### CG3002
 
 Moving from cashier to indoor navigation, I see the positive changes in this module--it is getting more useful(although the final product is still not usable in reality). I guess in the following few years the topic is going to remain this one and only slight modification may be made--but that is not my call of course, it lies in the hand of Rajesh, Colin and Uncle Soo.
 
-But no matter how the topic changes, there will one fact that will always shine--hardware is the most diffcult part. The hardware here is not refering to just getting those connections right as what is shown in pin tables. How well those connections work together, what the readings from sensors look like, how well those actuators work--all of these should be taken care of with highest priority. Of course, stressing the importance of hardware does not mean all of the team members need to go for hardware--always choose best ones.
+But no matter how the topic changes, there will one fact that will always shine--hardware is the most diffcult part. The hardware here is not referring to just getting those connections right as what is shown in pin tables. How well those connections work together, what the readings from sensors look like, how well those actuators work--all of these should be taken care of with highest priority. Of course, stressing the importance of hardware does not mean all of the team members need to go for hardware--always choose best ones.
 
 The design for this module is not entirely free but restrictions are not harsh. So hope you will have fun.
 
@@ -34,7 +34,7 @@ However, CA is not the most surprising part, final is. It seems to be just about
 
 ### CS3213
 
-Nothing much to talk about on this module. Some design patterns/principles are already covered somewhere else many times; some are not covered but used in practice, what we gotta do is just get familiar with the terminology; others are new, interesting or not interesting, easy or hard, simple or complicated. But one thing for sure, learning without practicing them in real life does not mean anythhing and any understanding without practices backing up is weak.
+Nothing much to talk about on this module. Some design patterns/principles are already covered somewhere else many times; some are not covered but used in practice, what we gotta do is just get familiar with the terminology; others are new, interesting or not interesting, easy or hard, simple or complicated. But one thing for sure, learning without practicing them in real life does not mean anything and any understanding without practices backing up is weak.
 
 *Grade: A*
 
@@ -46,7 +46,7 @@ Module checking, oh I am sorry, model checking is useful and interesting, if I a
 
 ### EE3204
 
-Well, networking may not be my piece. But honestly I just do not really absorb whatever is taught in lectures well. Only after I took those tests and then I go back and google--I kind of believe Google teaches better, or maybe it is because I was coding for some other modules while lectures :P
+Well, networking may not be my piece. But honestly I just do not really absorb whatever is taught in lectures well. Only after I took those tests and then I go back and Google--I kind of believe Google teaches better, or maybe it is because I was coding for some other modules while lectures :P
 
 *Grade: B+* A really bad-looking grade, I guess it is a punishment for me not taking it seriously.
 
