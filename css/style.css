@@ -5,6 +5,8 @@ body {
 
 p {
     font-size: 16px;
+    line-height: 200%;
+    padding-bottom: 15px;
 }
 
 pre {
