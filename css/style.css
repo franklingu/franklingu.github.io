@@ -153,10 +153,10 @@ a {
 }
 
 .animate-slow {
-    -webkit-animation-duration: 1.5s;
-    -moz-animation-duration: 1.5s;
-    -ms-animation-duration: 1.5s;
-    animation-duration: 1.5s;
+    -webkit-animation-duration: 1.8s;
+    -moz-animation-duration: 1.8s;
+    -ms-animation-duration: 1.8s;
+    animation-duration: 1.8s;
 }
 
 .footer {
