@@ -5,6 +5,8 @@ category: development
 tag: life, reflection, development
 ---
 
+What is Yelp? Well, to me is just TripAdviser just with better APIs, although the official introduction goes like this:
+
 <blockquote>
   <h2>
     Yelp is the best way to find great local businesses

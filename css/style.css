@@ -226,6 +226,11 @@ a {
     font-style: italic;
 }
 
+.blog-content > p:first-child::first-letter { 
+    font-size: 200%;
+    color: #8A2BE2;
+}
+
 #main-page {
     min-height: 90vh;
 }
