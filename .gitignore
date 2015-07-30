@@ -1,3 +1,6 @@
+# ignore mac junks
+.DS_Store
+
 # ignore the auto generated _site folder
 _site/
 
