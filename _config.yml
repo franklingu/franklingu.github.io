@@ -9,7 +9,7 @@ plugins:     ./_plugins
 layouts:     ./_layouts
 exclude:     ['Gemfile', 'Gemfile.lock', 'README.md', '_bower_components']
 keep_files:  ['.git']
-gems:        []
+gems:        ['jekyll-sitemap']
 timezone:    Asain/Singapore
 encoding:    utf-8
 
