@@ -2,7 +2,7 @@
 layout: blogbase
 title: Yelp API(v2) with node.js support--handling of authentication
 category: development
-tag: life, reflection, development
+tag: programming, development, Yelp, node, oauth,
 ---
 
 What is Yelp? Well, to me is just TripAdviser just with better APIs, although the official introduction goes like this:
@@ -29,14 +29,14 @@ var n = require('nonce')();
 var request = require('request');  
 var qs = require('querystring');  
 var _ = require('lodash');
- 
+
 var base_url = 'http://api.yelp.com/v2/';
- 
+
 var yelpConsumerKey = '<YOUR CONSUMER KEY>';
 var yelpConsumerSecret = '<YOUR CONSUMER SECRET>';
 var yelpToken = '<YOUR TOKEN>';
 var yelpTokenSecret = '<YOUR TOKEN SECRET>';
- 
+
 /* Function for yelp search call
  * ------------------------
  * params: object with params to search
@@ -45,10 +45,10 @@ var yelpTokenSecret = '<YOUR TOKEN SECRET>';
 module.exports.search = function (params, callback) {
   var httpMethod = 'GET';
   var url = base_url + 'search';
- 
+
   makeRequestToYelp(httpMethod, url, params, callback);
 };
- 
+
 /* Function for yelp business call
  * ------------------------
  * businessId: yelp businessId
@@ -58,10 +58,10 @@ module.exports.search = function (params, callback) {
 module.exports.getBusiness = function (businessId, params, callback) {
   var httpMethod = 'GET';
   var url = base_url + 'business/' + businessId;
- 
+
   makeRequestToYelp(httpMethod, url, params, callback);
 };
- 
+
 function makeRequestToYelp(method, apiUrl, params, callback) {
   var required_params = {
     oauth_consumer_key : yelpConsumerKey,
@@ -75,14 +75,14 @@ function makeRequestToYelp(method, apiUrl, params, callback) {
   var consumerSecret = yelpConsumerSecret;
   var tokenSecret = yelpTokenSecret;
   var signature = oauthSignature.generate(method, apiUrl, parameters, consumerSecret, tokenSecret, { encodeSignature: false});
- 
+
   /* We add the signature to the list of paramters */
   parameters.oauth_signature = signature;
- 
+
   /* Then we turn the paramters object, to a query string */
   var paramURL = qs.stringify(parameters);
   var apiURL = apiUrl + '?' + paramURL;
- 
+
   /* Then we use request to send make the API Request */
   request(apiURL, function(error, response, body){
     return callback(error, response, body);
