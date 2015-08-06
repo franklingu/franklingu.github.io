@@ -2,15 +2,16 @@
 layout: base
 ---
 <div class="col-sm-12">
-  <div class="container container-narrow blog animated fadeIn animate-delay animate-slow">
+  <div class="container container-narrow blog animated fadeIn">
     {% if page.title %}
       <h2>{{page.title}}</h2>
       <p class="blog-category">Category: {{page.category}}</p>
       <hr>
     {% endif %}
     {% if content %}
-      <div class="blog-list">{{content}}</div>
+      <div class="blog-list">
+        {{content}}
+      </div>
     {% endif %}
   </div>
 </div>
-<script type="text/javascript" src="/js/jekyll-search.js"></script>

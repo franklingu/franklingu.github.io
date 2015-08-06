@@ -84,24 +84,6 @@ a {
     padding: 40px 20px 40px 20px;
 }
 
-.experience-box {
-    list-style: none;
-    background-color: #F9FFFF;
-    padding: 10px;
-    margin-top: 30px;
-    border: 1px solid #74C7CD;
-    border-radius: 7px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-}
-
-.experience-box-left {
-    margin-right: 25%;
-}
-
-.experience-box-right {
-    margin-left: 25%;
-}
-
 .banner {
     background-image: url("/img/path-gray.jpg");
     background-size: cover;
@@ -226,7 +208,7 @@ a {
     font-style: italic;
 }
 
-.blog-content > p:first-child::first-letter { 
+.blog-content > p:first-child::first-letter {
     font-size: 200%;
     color: #8A2BE2;
 }

@@ -3,13 +3,31 @@ layout: bloglist
 title: Blogs
 category: none
 ---
-<div class="input-group">
+<div class="row">
+  <script>
+  (function() {
+    var cx = '010744794716697923842:ad88uecyep4';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+  </script>
+  <gcse:search></gcse:search>
+</div>
+<!-- <div class="input-group">
   <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
   <input type="text" id="search-input" class="form-control" placeholder="Search...">
 </div>
+<ul id="results-container">
+
+</ul> -->
 <hr>
-<ul class="blog-summary" id="results-container">
-  <!-- {% for post in site.posts %}
+<ul class="blog-summary">
+  {% for post in site.posts %}
     <li class="blog-short-info">
       <a href="{{ post.url }}" class="blog-title">{{ post.title }}</a>
       <div class="">
@@ -18,13 +36,5 @@ category: none
       </div>
       <hr>
     </li>
-  {% endfor %} -->
-  <li class="blog-short-info">
-      <a href="{url}" class="blog-title">{title}</a>
-      <div class="">
-        <p class="text-muted small blog-date">{date}</p>
-        <p class="small blog-tag">{tags}</p>
-      </div>
-      <hr>
-    </li>
+  {% endfor %}
 </ul>
