@@ -1,8 +1,9 @@
 ---
-layout: blogbase
+layout: blog_base
 title: Some reflection on learning--continuous self learning
 category: development
 tag: life, reflection, development
+meta_desc: How to learn to learn
 ---
 
 As a university student, learning is something that I should never lack of--otherwise my college life is just not achieving its desired purpose. However, sadly, today after going through a lecture in HR2002, I started to question how deep and meaningful my past learning in NUS, in early was.

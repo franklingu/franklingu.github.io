@@ -1,8 +1,9 @@
 ---
-layout: blogbase
+layout: blog_base
 title: A simple tutorial on express.js and mongoose(Part 1)
 category: programming
 tag: JavaScript, Node.js, express.js, mongoose
+meta_desc: A simple tutorial on express.js and mongoose
 ---
 
 Node is relatively new compared to Python(Django) and Ruby(Rails) but it getting a lot of popularity because of its simplicity and performance plus. Although there is some increasing concern with the stability of Node and maintainability of Node projects[...](link to be filled in), Node community is indeed thriving and improving Node very fast. Because of Node's simplicity and recent popularity, I decide to give it a try in a Hackathon.
@@ -60,7 +61,7 @@ var app = express();  // create an app instance
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');  
-// as explaned in the official comment, here we are setting view engine as jade 
+// as explaned in the official comment, here we are setting view engine as jade
 // and if you know what you are doing, you can install like ejs and set ejs as view engine
 
 // uncomment after placing your favicon in /public
@@ -70,13 +71,13 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));  // setting up all middlewares and 
+app.use(express.static(path.join(__dirname, 'public')));  // setting up all middlewares and
 
 app.use('/', routes);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
-//   --whatever path is not defined in routes and users will be catched here to file up Error 404 
+//   --whatever path is not defined in routes and users will be catched here to file up Error 404
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;

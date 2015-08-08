@@ -1,8 +1,9 @@
 ---
-layout: blogbase
+layout: blog_base
 title: objective C in linux(Ubuntu)
 category: programming
 tag: obj-C
+meta_desc: Basic setup for compiling obj-C in linux
 ---
 After enrolling in CS3217, the first thing that I need to worry about about is in fact the programming language. In fact, after the experience with C, C++ and Java, there should not be any programming language that is particularly hard except for those functional ones which I have absolutely no knowledge of. But this time I am worried because I do not have a Mac and running OS-X in VM is definitely not a good idea for a computer as it makes the computer lag a lot. So I want to find out more on things that can enable objective-C programming in linux.
 

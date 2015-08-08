@@ -1,12 +1,13 @@
 ---
-layout: blogbase
+layout: blog_base
 title: About Year 2 Sem 1
 category: NUS
 tag: NUS, academic
+meta_desc: Summary of academic life of year 2, sem 1 in NUS
 ---
 After a not very good year 1 in NUS, I decided to have a change. And the start of the this semester was already different–I decided to take 7 modules. If the Orbital Programme–CP3108 in the summer also counts, 8 in total and those include intensive modules like CS2103 and EG2301. But I wanted to give it a shoot.
 
- 
+
 
 So here come the 8 modules:
 
@@ -18,7 +19,7 @@ Grade: A-(I was hoping A, though)
 
 No additional comment.
 
- 
+
 
 CS2010:
 
@@ -28,7 +29,7 @@ Grade: A+
 
 Take this in sem 1!
 
- 
+
 
 CS2102:
 
@@ -38,7 +39,7 @@ Grade: A+
 
 Do not take it unless you want to take SQL as serious part of your programming life.
 
- 
+
 
 CS2103:
 
@@ -48,7 +49,7 @@ Grade: A+
 
 Feeling great because in this module I think my team functioned well. Way to become a good team player for me.
 
- 
+
 
 EE2020:
 
@@ -58,7 +59,7 @@ Grade: A-
 
 Do assignments better.
 
- 
+
 
 EE2021:
 
@@ -68,7 +69,7 @@ Grade: A-
 
 Work with formulas better.
 
- 
+
 
 EG2301:
 
@@ -78,12 +79,12 @@ Grade: A-(this is really good in my opinion)
 
 Drop out of DCP now.
 
- 
+
 
 CP3108:
 
 Fun module, must take!
 
- 
+
 
 OK. Next semester I am going to take CS3217 and I am prepared somehow because I have taken 7 modules this sem.

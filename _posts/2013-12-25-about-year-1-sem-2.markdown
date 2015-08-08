@@ -1,14 +1,15 @@
 ---
-layout: blogbase
+layout: blog_base
 title: About Year 1 Sem 2
 category: NUS
 tag: NUS, academic
+meta_desc: Summary of academic life of year 1, sem 2 in NUS
 ---
 Well, clearly this article took me three months to complete–and I still do not really want to finish this if the new exam result release just arrived. So now I am writing about sem2 at the end of sem3(LOL). Does that mean that I am so busy in the last semester that I do not even have time for just an article? I would sem2 is just too bad that I do not even want to face it even after a whole semester.
 
 K. Enough of that–we have to move on as time goes by.
 
- 
+
 
 MA1506:
 
@@ -18,7 +19,7 @@ Grade: A-
 
 No comment on this but I am done with math for my university life.
 
- 
+
 
 CG1103:
 
@@ -28,7 +29,7 @@ Grade: A+
 
 This module does not exist any longer and thus no year one CEG students just enjoy those project experience.
 
- 
+
 
 CG1108:
 
@@ -38,7 +39,7 @@ Grade: A-
 
 Press your calculator as well as possible.
 
- 
+
 
 CG1413:
 
@@ -48,7 +49,7 @@ Grade: B
 
 Communication and team work!!!
 
- 
+
 
 ACC1102X:
 
@@ -58,7 +59,7 @@ Grade: A-
 
 Understanding accounting is really gonna be useful in my future life I believe but it cost 300+ G points.
 
- 
+
 
 BSP1105:
 
@@ -68,7 +69,7 @@ Grade: B
 
 I still do not get why the hell I got only B for this module!!!
 
- 
+
 There goes my year 1 -– if I had another chance, I will try to learn more and learn better.
 
 An unofficial guide to all freshmen in SoC @ NUS(a link I wished to have read much earlier) [Link to Google Doc](https://docs.google.com/document/d/1FbCWcnnajHWk594dKmN35b_we50WZf_-cwxqg-cYaRY/edit?pli=1)

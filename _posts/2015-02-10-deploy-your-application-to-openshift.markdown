@@ -1,8 +1,9 @@
 ---
-layout: blogbase
+layout: blog_base
 title: Deploy your Node.js application to OpenShift(RedHat)
 category: programming
 tag: Node.js, mongodb, deployment
+meta_desc: Guide for deployment of Node.js app to OpenShift
 ---
 Recently I am developing a Node.js app with my friends. Since we are just developing this as a side project now, we do not have a plan yet to purchase a server or pay for a cloud one yet. So we are searching for any free hosting services for Node.js. Turns out many servers do support hosting of Node.js with no charge for small apps but adding mongoDB as database will incur charges(e.g. Heroku--although this one does not cost you anything, some people like me are just not comfortable with providing credit card information), or others may require a credit card. Anyway we found a totally free one--OpenShift and pushed the source code to remote server, and boom nothing worked.
 

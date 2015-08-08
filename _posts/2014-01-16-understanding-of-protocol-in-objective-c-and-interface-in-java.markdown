@@ -1,8 +1,9 @@
 ---
-layout: blogbase
+layout: blog_base
 title: Understanding of protocol in objective C and interface in Java
 category: programming
 tag: obj-C, Java
+meta_desc: Protocol in obj-C vs interface in Java
 ---
 ~~~obj-c
 @interface XYZPerson : NSObject{

@@ -1,8 +1,9 @@
 ---
-layout: blogbase
+layout: blog_base
 title: PostGIS, working with spacial data in Postgres easily
 category: development
 tag: programming, postgres, psql, postgis
+meta_desc: PostGIS installation guide on linux
 ---
 
 Personally I love Postgres and I think many other people share this passion. It is reliable and reasonably fast and it recently gets

@@ -1,8 +1,9 @@
 ---
-layout: blogbase
+layout: blog_base
 title: Summary of functional-javascript-workshop
 category: programming
 tag: JavaScript, functional
+meta_desc: More elegant JavaScript--functional-javascript-workshop summary
 ---
 
 This blog post is about functional-javascript-workshop, a workshop provided in [nodeschool](http://nodeschool.org). You can just type <code>sudo npm install functional-javascript-workshop -g</code> to install it.

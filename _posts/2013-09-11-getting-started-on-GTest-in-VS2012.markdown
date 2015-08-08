@@ -1,8 +1,9 @@
 ---
-layout: blogbase
+layout: blog_base
 title: Getting started on Google Test in VS2012
 category: programming
-tag: C++, GTest
+tag: C++, GTest, VC++
+meta_desc: Guidelines for setting up Google Test for VC++
 ---
 First of all, it is not hard at all the run  google test on Visual Studio 2012. For VS2008, it is even simpler. What you need to do is just one of  the two solutions in msvc. But do make sure the project settings: dll for the one with the name gtest-md.sln and static library for gtest.sln.
 

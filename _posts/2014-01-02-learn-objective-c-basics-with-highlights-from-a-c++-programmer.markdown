@@ -1,8 +1,9 @@
 ---
-layout: blogbase
+layout: blog_base
 title: Learn objective C basics with highlights from a C++ programmer
 category: programming
 tag: obj-C
+meta_desc: Thoughts about comparison of obj-C and C++
 ---
 Honestly I am not an experienced C++ programmer. And my knowledge  of C is also limited. But knowing C++ and C is just some form of help and distraction at same when I am starting learning objective C. Although personally I believe the only reason why objective C is popular is only that Apple is pushing it and I do not think this will last for long, I have to pick it up since I have to take CS3217 this coming semester.
 
@@ -14,7 +15,7 @@ Inside obj.h file(this should be strange to Java users as in Java everything is 
 
 ~~~obj-c
 //notice that here this interface does not mean the common-sense interface
-//which are practically abstract classes to be implemented but just 
+//which are practically abstract classes to be implemented but just
 //class declaration
 @interface FooObject : NSObject {
 //attribute declaration
@@ -24,7 +25,7 @@ Inside obj.h file(this should be strange to Java users as in Java everything is 
 //+ for class method
 //e.g. one common one:
 //+alloc;
-//which is quite like new in C++(you can also say it like in Java, but 
+//which is quite like new in C++(you can also say it like in Java, but
 //the thing is Java is taking the reference by default but in obj-C and C++
 //it is like pointer)
 //- for instance method

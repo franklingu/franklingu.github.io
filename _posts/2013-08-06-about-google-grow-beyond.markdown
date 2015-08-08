@@ -1,8 +1,9 @@
 ---
-layout: blogbase
+layout: blog_base
 title: About Google Grow Beyond
 category: development
 tag: university, program
+meta_desc: Summary and thoughts after participating in Google Grow Beyond Program
 ---
 Today I just finished Google Grow Beyond Program.
 

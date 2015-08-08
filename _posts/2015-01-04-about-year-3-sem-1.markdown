@@ -1,8 +1,9 @@
 ---
-layout: blogbase
+layout: blog_base
 title: About Year 3 Sem 1
 category: NUS
 tag: NUS, modules, academic
+meta_desc: Summary of academic life of year 3, sem 1 in NUS
 ---
 Time has really flied--now it is me as a third year student now and the thoughest semester ever since I entered NUS is just behind me. Looking back at the semester, it does not feel like the battle field as I was experiencing at that time--I can still do better but I did not give my best effort to my team and myself.
 
@@ -57,5 +58,3 @@ An easy module and a freaking easy module after taking ST2334. But I got only B+
 *Grade: S(B+)*
 
 OK. I guess this is enough for the summary of last of semester and the third to the last semester is waiting for me right in front of today--tomorrow CORS bidding 1A.
-
-P.S.: Next sem, 1. learn how to swim 2. find a part-time(in a start-up most likely) 3. read more about finance 4. sleep early and get up early 5. work out at least 3 times a week

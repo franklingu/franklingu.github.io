@@ -1,8 +1,9 @@
 ---
-layout: blogbase
+layout: blog_base
 title: The GAME that gives you 10 extra years of life
 category: life
 tag: life
+meta_desc: Game that gives you 10 extra years of life--a TED talk
 ---
 Before starting reading this post, maybe it is a good idea if you can watch this entire TED talk by yourself first [YouTube Link](https://www.youtube.com/watch?v=lfBpsV1Hwqs&list=PLAC463A2B6B2CEC7F)
 

@@ -1,8 +1,9 @@
 ---
-layout: blogbase
+layout: blog_base
 title: A simple tutorial on express.js and mongoose(Part 2)
 category: programming
 tag: JavaScript, Node.js, express.js, mongoose
+meta_desc: A simple tutorial on express.js and mongoose
 ---
 
 Okay. [Last tutorial ](/programming/2015/01/27/a-simple-tutorial-on-express-js-and-mongoose/) in this series actually was about express.js. Express is a good framework in Node environment to get started with web programming but when compared to MVC frameworks in Python(Django), Ruby(Rails), Scala(Play), it is smaller and does not aim to come with everything pre-packaged. In fact, since express@4.x, the developers are rewriting the framework to be more independent of all middlewares. Some essential packages(body-parser, cookie-parser, jade, morgan, serve-favicon and etc.) are still around but most are stripped out the default installation. Most applications do require a backend database to support for usability and that is why we are looking at MongoDB now.
@@ -14,13 +15,13 @@ var mongoose = require('mongoose');
 // by default, there is an admin account with no password protection and
 // if you happened to have created account and password for mongoDB, remember
 // to provide authentication information here too
-mongoose.connect('mongodb://localhost:27017/', function (err) { 
+mongoose.connect('mongodb://localhost:27017/', function (err) {
 // 27017 is the default port for mongodb and if you change your db port, change here also
     if (err) { // error handler for db connection
         return console.log('Cannot connect to database', err);
     }
     // of course your can have a better db connection error handler
-    return console.log('Database connected.'); 
+    return console.log('Database connected.');
 });
 var db = mongoose.connection;  // this is basically the connection object returned from mongoose
 {% endhighlight %}

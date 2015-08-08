@@ -1,8 +1,9 @@
 ---
-layout: blogbase
+layout: blog_base
 title: openCV on Rasbperry Pi
 category: programming
 tag: rpi, opencv
+meta_desc: Running opencv on RPi
 ---
 First update the archive:
 

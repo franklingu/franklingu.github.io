@@ -1,8 +1,9 @@
 ---
-layout: blogbase
-title: Yelp API(v2) with node.js support--handling of authentication
+layout: blog_base
+title: Yelp API(v2) with Mode.js support--handling of authentication
 category: development
-tag: programming, development, Yelp, node, oauth,
+tag: programming, development, Yelp, node, oauth
+meta_desc: Yelp API v2 with Node
 ---
 
 What is Yelp? Well, to me is just TripAdviser just with better APIs, although the official introduction goes like this:

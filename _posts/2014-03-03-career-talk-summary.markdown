@@ -1,8 +1,9 @@
 ---
-layout: blogbase
-title: Career talk summary
+layout: blog_base
+title: Career talk summary(Teo from Symantech)
 category: development
 tag: career, talk
+meta_desc: summary of a career talk by Teo from Symantech
 ---
 This is a summarization of a career talk conducted by Teo from Symantech about preparing for coding/programming interviews.
 
@@ -12,7 +13,7 @@ This is a summarization of a career talk conducted by Teo from Symantech about p
 
 2. prepare –-do the homework and study the position/company
 
- 
+
 
 Some points to note during the interview:
 
@@ -24,7 +25,7 @@ Some points to note during the interview:
 
 4. (when you are asked for this kind of question as well as show them)tell the interview you are excited for the job and why is that
 
- 
+
 
 After you get the job/interview(applicable to fresh graduates and interns):
 
@@ -40,7 +41,7 @@ After you get the job/interview(applicable to fresh graduates and interns):
 
 6. show discipline, INITIATIVE, responsibility, commitment
 
- 
+
 
 Some other things:
 

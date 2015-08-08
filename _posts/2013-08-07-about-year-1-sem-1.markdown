@@ -1,8 +1,9 @@
 ---
-layout: blogbase
+layout: blog_base
 title: About Year 1 Sem 1
 category: NUS
 tag: NUS, modules, academic
+meta_desc: Summary of academic life of year 1, sem 1 in NUS
 ---
 This is written at the beginning of the second semester as I am looking back at what I have gone through in the whole year.
 
@@ -18,7 +19,7 @@ Grade: A+
 
 Generally I think this module is useful but can be improved with more knowledge about how to derive those formulas.
 
- 
+
 
 CS1231:
 
@@ -30,7 +31,7 @@ Grade: A-
 
 Generally it is very useful after year 1 which requires some efforts for year 1 students.
 
- 
+
 
 CG1101:
 
@@ -40,7 +41,7 @@ Grade: A
 
 Generally I think it rather boring if you know something about C.
 
- 
+
 
 PC1432:
 
@@ -52,7 +53,7 @@ Grade: A-
 
 Well, I will skip this one.
 
- 
+
 
 SSA1203:
 
@@ -62,12 +63,12 @@ Grade: S(B-)
 
 If you are concerned about how many level 1 you are going to take -– take this one!
 
- 
+
 
 Hall-life and stuff:
 
 Nothing particular. Just did not do much stuff meaningful except for a mini-movie.
 
- 
+
 
 Generally, sem 1 is okay if you talk about relaxing myself.
