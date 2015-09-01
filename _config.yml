@@ -1,3 +1,8 @@
+name: Junchao's blog
+description: Personal blog of Junchao. For sharing experience in programming and life with others.
+url: http://franklingu.github.io/
+author: Junchao
+
 # Special for Windows UTF-8 setting
 markdown: redcarpet
 markdown_ext:  markdown
@@ -9,7 +14,7 @@ plugins:     ./_plugins
 layouts:     ./_layouts
 exclude:     ['Gemfile', 'Gemfile.lock', 'README.md', '_bower_components']
 keep_files:  ['.git']
-gems:        ['jekyll-sitemap']
+gems:        ['jekyll-sitemap', 'jekyll-feed']
 timezone:    Asain/Singapore
 encoding:    utf-8
 
