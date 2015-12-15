@@ -39,4 +39,6 @@ In 2015, I am becoming a fourth-year student in National University of Singapore
   Well, I am not even clear why on earth I started reading this book since I do not really have faith in the traditional Chinese medicine. Yet I finished this and got some tips about (yang sheng) or longevity. Well, no more comments will be made about this book and I recommend whoever believes in Chinese medicine to read it and follow.
   Recommendation: Some tips from Chinese medicine about longevity.
 
-* ****<br>
+* **(gun chuang dan xin li xue)**<br>
+  This is a book about having sex--not about what positions and stuff but on general guidelines of sex life. Many misconceptions about sex could be cleared by reading this book and it could be really useful for getting more understanding of sex and two-gender relationship.
+  Recommendation: You can read it if you want to know more knowledge about sex.
