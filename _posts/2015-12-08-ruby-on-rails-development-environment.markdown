@@ -1,7 +1,7 @@
 ---
 layout: blog_base
 title: Ruby on Rails Development Environment Setup
-category: life
+category: programming
 tag: programming, RoR, development
 meta_desc: A guide of development environment setup for Ruby on Rails developers, including rbenv, RubyMine, Sublime, Atom, Zsh
 ---
@@ -12,7 +12,7 @@ Now comes the actual content of the this post: a guide for Ruby on Rails develop
 
 * **rbenv as Ruby version manager**<br>
   There are many discussions online about rbenv versus rvm and I do not want to start one here as I did not use rvm from the very start. I do recommend rbenv because it is very convenient to use rbenv, especially with plugins like rbenv-gem-rehash, rbenv-vars, ruby-build.
-  Setup instruction: [Link to rbenv](github.com)
+  Setup instruction: [rbenv repo](https://github.com/rbenv/rbenv)
 
 * **RubyMine as Ruby on Rails IDE**<br>
   Ever since I started using Idea Intellij, I have been falling in love with products from Jetbrains. Even the Android studio is based on Intellij and I have observed many developers switching from Eclipse to Intellij now. Maybe we are not saying Eclipse is bad, probably just not good enough when compared to Intellij with its assistance in Java development. For Python there is PyCharm and RubyMine for Ruby on Rails development(There are also IDEs for Node development and PHP, C#, which I have not used).

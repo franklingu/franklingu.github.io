@@ -1,0 +1,48 @@
+---
+layout: blog_base
+title: Reading list of 2015
+category: life
+tag: programming, reading, life, others
+meta_desc: My personal reading list of 2015, including books on programming, fiction, general science, religion and so on.
+---
+
+In 2015, I am becoming a fourth-year student in National University of Singapore. Along with graduation comes near the job hunting, during which I have learned some valuable lessons in *stepping into the society*(走向社会 as in Chinese, which basically means that after 16 years of simple school life, one finally gets the opportunity to meet more kinds of people and experience all sorts of complexities emotionally and intellectually). Throughout the year, I have been trying to read more books to enrich my knowledge and understanding. Besides books, I also want to talk about movies as I have watched some good or just-so-so movies as entertainment.
+
+### Reading list
+
+* **The mythical man-month**<br>
+  Pretty old book but some ideas still hold true even in today's context. Emphasis on communication and ideas on development tools are among the good points I see in this book. I guess most people who have heard of it know this is just a very classic book on project management yet few bother to read it because either it is just too old or we are too busy. However, I would claim that classic hardly dies away and the core philosophy in the book just lasts until now and days to come.<br>
+  Recommendation: A great book. A must-read for programmers despite of its age.
+
+* **The well-grounded rubyist**<br>
+  This is a rather technical book and it is an introductory book on the Ruby programming language. Many concepts in Ruby are covered and explained in details. The book is well organized as well for understanding. Unlike most introductory books, it does not focus too much on tiny details of syntax but instead it is good at explaining why things are designed in this way and introducing some good practices.<br>
+  Recommendation: A good book and people who are starting Ruby programming really should read it.
+
+* **The passionate programmer**<br>
+  This is not a book about how to be good at some fields of programming but it is focused on how to be a good or even great programmer in a generic way. Surely it is very important that we should learn about some technology and master it so that we can make a living and even a fame. We should first consider which technology to dive into, and what happens if this technology is not "hot" anymore. Other than software development skills, should we learn about and take into consideration the business cycle--after all, it is business(application of programming) that gives us money instead of 10,000 lines of code you wrote. Not saying that code is completely useless with business but we should really think for business and even think of our career as business. Maybe as software developers ourselves, we may not agree with the author on all ideas and time may prove some are not appropriate anymore. We could still get some inspirations from this book and become a passionate and good programmer.
+  Recommendation: A good book on how to be a passionate programmer.
+
+* **God and the new physics (上帝与新物理学)**<br>
+  Well, as a fan of science I have curiosity about many philosophical questions like is there really a god, is there really soul, what is spirit? I am not religious but I studied bible for some time. So things I learn from physics and bible sort of contradict and therefore I want to find what is truth of the big bang, singularity and life. Without taking post-graduate courses in physics or philosophy, I am guided by a famous physicist (Paul Davies) through the discussions of many profound questions. The author is not trying to present or persuade any "right answer" to readers. Instead, he is merely talking about what we know as of now, what we used to believe, what we are suspecting now. So I did not know whether there is a god or not by reading this book but I know more evidence and thought deeper about this question. A worth mentioning method brought up in the book is (huan yuan lun)--instead of taking the subject apart and see how those little parts fit together, we should take a holistic approach in analyzing. This is especially true when it comes to mind and "spirit" as single cell does not have any sign of thinking, yet a human being is capable of thinking and reasoning. In my opinion the collective intelligence works in a similar way--one single honey bee may not have any sign of intelligence yet all as a whole is able to make smart decisions without central control in any sense.
+
+* **Physics of the impossible (不可思议的物理)**<br>
+  This is another book about physics and it is by a famous physicist Michio Kaku. The key idea of this book is to discuss whether what seem to be impossible for now could be true in the future as physics advances and how those are going to happen if impossible become possible. Many ideas are fancinating and intriguing and the discussions are full of overviews of latest progress in physics and related researches. Maybe the author, however knowledgeable he is, is not right about many predictions, yet we will be able to learn by reading and our imagination could fly in the vase universe with the author as well.
+  Recommendation: a great book about physics and future--nothing is impossible?
+
+* **(你的孤独虽败犹荣)**<br>
+  It is not easy to enjoy solitude but it is becoming more and more like a normal state in our lives nowadays. Even we are not alone, loneliness could be felt when we do not feel understood or loved. We can get used to this and explore inside when we are just with ourselves. It is about retrospection, about growth.
+
+* **(30岁前的每一天)**<br>
+  This is by a famous Douban group leader--(水湄物语). It is basically about growth, personal development in our 20s. Well, the author in my opinion is a successful and happy *ordinary* Chinese woman--and that is the beauty of this book: it is just a story of a normal person, a "one of us". So far it is still so hard to define the meaning of life for me and I am therefore searching. A book like this is like talking to an older friend and learn about her happiness, her trouble and her life. Some tips seem to really make sense and after reading this I actually planned some changes that I have make to become a better some. 30 is a magical age in traditional Chinese culture but personal development and the journey of search of better self should continue as time passes.
+  Recommendation: A still good book. Worth a quick reading and know better about yourself by listening to other's story.
+
+* **(我曾在深夜痛哭 想和你聊聊人生)**<br>
+  Clearly I did not share a similar undergraduate life as the author--and the most important missing part in my university time must be love or a relationship. I studied fairly hard, read quite a bit(useful and non-useful stuff) and did a bit of other sutff and made a few friends. Except for girl friend, I did not find the luxury of hanging out with friends all day long and doing pointless things in a wasted youth. I am not old enough and wise enough to judge which is better and what should be ideal way of spending time in university. Or there should not be any definite answer to this question anyway since we do not have any solid proof. We experienced and grew old and grew up--and that is it. And if we learn something, that is just fantastic.
+
+* **(男人养生养肝肾)**<br>
+  Well, I am not even clear why on earth I started reading this book since I do not really have faith in the traditional Chinese medicine. Yet I finished this and got some tips about (yang sheng) or longevity. Well, no more comments will be made about this book and I recommend whoever believes in Chinese medicine to read it and follow.
+  Recommendation: Some tips from Chinese medicine about longevity.
+
+* **(滚床单心理学)**<br>
+  This is a book about having sex--not about what positions and stuff but on general guidelines of sex life. Many misconceptions about sex could be cleared by reading this book and it could be really useful for getting more understanding of sex and two-gender relationship.
+  Recommendation: You can read it if you want to know more knowledge about sex.
