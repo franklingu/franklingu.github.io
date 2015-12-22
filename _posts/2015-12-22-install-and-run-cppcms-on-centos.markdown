@@ -14,14 +14,14 @@ What is CppCMS? CppCMS is a Free High Performance Web Development Framework (not
 
 It is available under open source LGPLv3 license and alternative Commercial License for users who needs an alternative license for proprietary software development.
 
-As I have mentioned in [the post about C++ web development](http://franklingu.github.io/programming/2015/12/21/C++-CGI-setup-on-CentOS/), C++ is definitely not the first choice that is going to come to our minds when it comes to web development. However, if you do value efficiency much, C++ is definitely the great choice(but think again before you jump to the conclusion that you need great efficiency. All programs should be fast but optmizations can be done in many levels. Reason carefully and persuade yourself that Ruby on Rails or Django is not going to meet the requirements even though the development speed will be so much boosted).
+As I have mentioned in [the post about C++ web development](http://franklingu.github.io/programming/2015/12/21/C++-CGI-setup-on-CentOS/), C++ is definitely not the first choice that is going to come to our minds when it comes to web development. However, if you do value efficiency much, C++ is definitely the great choice(but think again before you jump to the conclusion that you need great efficiency. All programs should be fast but optimizations can be done in many levels. Reason carefully and persuade yourself that Ruby on Rails or Django is not going to meet the requirements even though the development speed will be so much boosted).
 
 Personally I am trying out CppCMS just for fun and after playing with it, I have decided that I will not use C++ for web development because of its un-friendliness with developers. But anyway, let's get started:
 
 First, all the dependencies:
 
 ```
-yum install cmake gcc-c++ gcc make zlib-devel pcre-devel libicu-devel libgcrypt-devel 
+yum install cmake gcc-c++ gcc make zlib-devel pcre-devel libicu-devel libgcrypt-devel
 ```
 
 Then let's download the source and build it:
@@ -32,7 +32,7 @@ tar -xjf cppcms-1.0.5.tar.bz2  # or the version you have chosen
 cd cppcms-1.0.5
 mkdir build
 cd build
-cmake .. # diffrent build options could be applied here, see http://cppcms.com/wikipp/en/page/cppcms_1x_build
+cmake .. # different build options could be applied here, see http://cppcms.com/wikipp/en/page/cppcms_1x_build
 make
 make test
 make install
