@@ -21,14 +21,6 @@ yum group list
 yum group install "Development Tools"
 ```
 
-Install and start Nginx:
-
-```
-yum install epel-release
-yum install nginx
-systemctl start nginx
-```
-
 You may want to just configure firewall and SELinux settings here for simplicity so that you will not just get "Permission denied" message without any clue why.
 
 ```
@@ -40,6 +32,44 @@ setenforce permissive  # set to grant permissions
 # if you want to disable SELinux completely, 'cat /etc/sysconfig/selinux' and edit the settings
 ```
 
+There are basically 2 choices for setting up web server to serve CGI scripts. Apache and httpd support execution of CGI scripts by default and you can just simply enable "+ExecCGI" option. Or you can try Nginx, which does not support CGI execution but supports FastCGI.
+
+1. Serving CGI scripts with httpd:<br>
+
+Now navigate to /var/www/cgi-bin/ folder and create start.cpp like this:
+
+```
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+    cout << "Content-type:text/html\r\n\r\n";  // this line is the magic--telling client that the response content type is html
+    cout << "<html>\n";
+    cout << "<head>\n";
+    cout << "<title>Hello World - First CGI Program</title>\n";
+    cout << "</head>\n";
+    cout << "<body>\n";
+    cout << "<h2>Hello World! This is my first CGI program</h2>\n";
+    cout << "</body>\n";
+    cout << "</html>\n";
+
+    return 0;
+}
+```
+
+Compile with command <code>g++ -o start.cgi start.cpp</code>. Then <code>curl localhost/cgi-bin/start.cgi</code> to see the response.
+
+2. Serving CGI scripts with Nginx:<br>
+Install and start Nginx:
+
+```
+yum install epel-release
+yum install nginx
+systemctl start nginx
+```
+
+(Seems this way is not working well. Using httpd will be simpler and definitely working)
 Then we will install fcgiwrap--a simple wrapper of FastCGI for CGI scripts.
 
 ```
@@ -113,34 +143,9 @@ server {
 
 Reload Nginx with <code>systemctl restart nginx</code>.
 
-Now navigate to /var/www/cgi-bin/ folder and create start.cpp like this:
-
-```
-#include <iostream>
-using namespace std;
- 
-int main ()
-{
-    cout << "Content-type:text/html\r\n\r\n";  // this line is the magic--telling client that the response content type is html
-    cout << "<html>\n";
-    cout << "<head>\n";
-    cout << "<title>Hello World - First CGI Program</title>\n";
-    cout << "</head>\n";
-    cout << "<body>\n";
-    cout << "<h2>Hello World! This is my first CGI program</h2>\n";
-    cout << "</body>\n";
-    cout << "</html>\n";
-   
-    return 0;
-}
-```
-
-Compile with command <code>g++ -o start.cgi start.cpp</code>. Then <code>curl localhost/cgi-bin/start.cgi</code> to see the response.
-
 References:
 * [CGI programming in C](http://forum.codecall.net/topic/72818-cgi-programming-in-c/)
 * [C++ web programming](http://www.tutorialspoint.com/cplusplus/cpp_web_programming.htm)
 * [Nginx on CentOS](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7)
 * [Serving CGI scripts on CentOS](https://www.howtoforge.com/serving-cgi-scripts-with-nginx-on-centos-6.0-p2)
 * [FCGI Wrap on Nginx](https://www.nginx.com/resources/wiki/start/topics/examples/fcgiwrap/)
-
