@@ -32,13 +32,34 @@ setenforce permissive  # set to grant permissions
 # if you want to disable SELinux completely, 'cat /etc/sysconfig/selinux' and edit the settings
 ```
 
-There are basically 2 choices for setting up web server to serve CGI scripts. Apache and httpd support execution of CGI scripts by default and you can just simply enable "+ExecCGI" option. Or you can try Nginx, which does not support CGI execution but supports FastCGI.
+There are basically 2 choices for setting up web server to serve CGI scripts. Apache and httpd support execution of CGI scripts by default and you can just simply enable "+ExecCGI" option. Or you can try Nginx, which does not support CGI execution but supports FastCGI. So in this tutorial we will be exploring the easier option and we will be install htttpd to server CGI scripts.
 
-1. Serving CGI scripts with httpd:<br>
-
-Now navigate to /var/www/cgi-bin/ folder and create start.cpp like this:
+Install httpd with the command:
 
 ```
+yum install httpd
+systemctl start httpd
+# Go to localhost now and you should see the default index page saying "Testing 1 2 3"
+```
+
+Navigate to httpd configuration folder and edit httpd.conf, and add the following lines
+
+```
+<Directory "/var/www/cgi-bin">
+   AllowOverride None
+   Options +ExecCGI
+   Order allow,deny
+   Allow from all
+</Directory>
+
+<Directory "/var/www/cgi-bin">
+Options All
+</Directory>
+```
+
+Restart httpd server with <code>systemctl reload httpd</code>. Now navigate to /var/www/cgi-bin/ folder and create start.cpp like this:
+
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -58,92 +79,12 @@ int main ()
 }
 ```
 
-Compile with command <code>g++ -o start.cgi start.cpp</code>. Then <code>curl localhost/cgi-bin/start.cgi</code> to see the response.
+Compile with command <code>g++ -o start.cgi start.cpp</code> and make it executable with <code>chmod +x start.cgi</code>. Then <code>curl localhost/cgi-bin/start.cgi</code> to see the response.
 
-2. Serving CGI scripts with Nginx:<br>
-Install and start Nginx:
-
-```
-yum install epel-release
-yum install nginx
-systemctl start nginx
-```
-
-(Seems this way is not working well. Using httpd will be simpler and definitely working)
-Then we will install fcgiwrap--a simple wrapper of FastCGI for CGI scripts.
-
-```
-yum install fcgi-devel
-cd /usr/local/src/
-git clone git://github.com/gnosek/fcgiwrap.git
-cd fcgiwrap
-autoreconf -i
-./configure
-make
-make install
-```
-
-Now let's create a script for running fcgiwrap at "/etc/init.d/fcgiwrap"
-
-```
-#!/usr/bin/perl
-
-use strict;
-use warnings FATAL => qw( all );
-
-use IO::Socket::UNIX;
-
-my $bin_path = '/usr/local/bin/fcgiwrap';
-my $socket_path = $ARGV[0] || '/tmp/cgi.sock';  # you can change the location by yourself
-my $num_children = $ARGV[1] || 1;
-
-close STDIN;
-
-unlink $socket_path;
-my $socket = IO::Socket::UNIX->new(
-    Local => $socket_path,
-    Listen => 100,
-);
-
-die "Cannot create socket at $socket_path: $!\n" unless $socket;
-
-for (1 .. $num_children) {
-    my $pid = fork;
-    die "Cannot fork: $!" unless defined $pid;
-    next if $pid;
-
-    exec $bin_path;
-    die "Failed to exec $bin_path: $!\n";
-}
-```
-
-And run <code>chmod +x /etc/init.d/fcgiwrap & /etc/init.d/fcgiwrap</code> to run the script. Now let's configure Nginx so that it will point to /tmp/cgi.sock(or your own defined location above) by "vim /etc/nginx/nginx.conf"
-
-```
-server {
-   # let us say root is at /var/www
-[...]
-   location /cgi-bin/*\.cgi {
-     # Disable gzip (it makes scripts feel slower since they have to complete
-     # before getting gzipped)
-     gzip off;
-     # Set the root to /usr/lib (inside this location this means that we are
-     # giving access to the files under /usr/lib/cgi-bin)
-     root  /var/www/www.example.com;
-     # Fastcgi socket
-     fastcgi_pass  unix:/tmp/cgi.sock;
-     # Fastcgi parameters, include the standard ones
-     include /etc/nginx/fastcgi_params;
-     # Adjust non standard parameters (SCRIPT_FILENAME)
-     fastcgi_param SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-   }
-[...]
-}
-```
-
-Reload Nginx with <code>systemctl restart nginx</code>.
+*Note: CGI scripts are any executable scripts. For example you can just create a Perl script or a Python script and print the html response you want to see*
 
 References:
+
 * [CGI programming in C](http://forum.codecall.net/topic/72818-cgi-programming-in-c/)
 * [C++ web programming](http://www.tutorialspoint.com/cplusplus/cpp_web_programming.htm)
 * [Nginx on CentOS](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7)

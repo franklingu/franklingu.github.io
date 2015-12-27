@@ -34,114 +34,117 @@ gcc -o verion version.c $(mysql_config --cflags --libs)
 
 Notice that if you use C++, the example works as well. In fact, you can just use MySQL C APIs in C++ without any trouble(some conversions may be needed).
 
-Let's move on to do some useful work in DB.
-
-```c
-#include <my_global.h>
-#include <mysql.h>
-
-int main(int argc, char **argv)
-{  
-  MYSQL *con = mysql_init(NULL);  // initialize a connection
-
-  if (con == NULL) 
-  {
-      fprintf(stderr, "%s\n", mysql_error(con));
-      exit(1);
-  }
-
-  if (mysql_real_connect(con, "localhost", "root", "root_pswd", 
-          NULL, 0, NULL, 0) == NULL)   // login with your credentials
-  {
-      fprintf(stderr, "%s\n", mysql_error(con));
-      mysql_close(con);
-      exit(1);
-  }  
-
-  if (mysql_query(con, "CREATE DATABASE testdb"))   // create a testdb
-  {
-      fprintf(stderr, "%s\n", mysql_error(con));
-      mysql_close(con);
-      exit(1);
-  }
-
-  mysql_close(con);
-  exit(0);
-}
-```
-
-The code above simple create a DB named "testdb". With this example, creating table, inserting values and updating record should be easy. A simple C++ client for updating and inserting:
+Let's move on to do some useful work in DB. The code below is the simple class for checking user with correct password, inserting new user and updating nickname. So the schema is very simple as well: just "username", "password" and "nickname".
 
 ```cpp
-// TABLE users:
-// username   int      autoincrement   primary_key
-// nickname   varchar
+// db_connection.h file
+#ifndef DB_CONNECTION_H
+#define DB_CONNECTION_H
 
 #include <my_global.h>
 #include <mysql.h>
-#include <iostream>
 #include <string>
+#include <string.h>
+#include <stdexcept>
 
 using namespace std;
 
-void finish_with_error(MYSQL *con)
+class db_connection
 {
-    cout << "Connection Error: " << mysql_error(con) << endl;
-    mysql_close(con);
-    exit(1);
+public:
+    db_connection();
+    ~db_connection();
+    int check_user_existence(const char * username, const char * pswd);
+    void insert_user(const char * password, const char * nickname);
+    void update_user_nickname(const char * username, const char * nickname);
+private:
+    MYSQL *connection;
+    MYSQL *connect_to_mysql();
+    void execute_query(const char *query);
+};
+
+#endif
+
+# db_connection.cpp file
+#include "db_connection.h"
+
+db_connection::db_connection()
+{
+    this->connection = mysql_init(NULL);
+    connect_to_mysql();
 }
 
-void execute_query(MYSQL *con, const char *query)
+db_connection::~db_connection()
 {
+    mysql_close(connection);
+}
+
+/// for executing a query but it does not return any result
+void db_connection::execute_query(const char *query)
+{
+    MYSQL *con = this->connection;
+    printf("Query: %s\n", query);
     if (mysql_query(con, query))
     {
-        finish_with_error(con);
+        string err(mysql_error(con));
+        throw std::runtime_error("Connection Error: " + err);
     }
 }
 
-MYSQL *connect_to_mysql()
+MYSQL *db_connection::connect_to_mysql()
 {
-    MYSQL *con = mysql_init(NULL);
+    MYSQL *con = this->connection;
     if (con == NULL)
     {
-        cout << mysql_error(con) << endl;
+        printf("DB error: %s\n", mysql_error(con));
         exit(1);
     }
-    if (mysql_real_connect(con, "localhost", "", "", NULL, 0, NULL, 0) == NULL)
+    if (mysql_real_connect(con, "localhost", "root", "", NULL, 0, NULL, 0) == NULL)
     {
-        finish_with_error(con);
+        string err(mysql_error(con));
+        throw std::runtime_error("Connection Error: " + err);
     }
-    execute_query(con, "use entry_db;");
+    execute_query("use entry_task;");
     return con;
 }
 
-void insert_user(string nickname)
+int db_connection::check_user_existence(const char * username, const char * password)
 {
-    MYSQL *con = connect_to_mysql();
-
-    string query = "insert into users(nickname) values('" + nickname + "');";
-    execute_query(con, query.c_str());
-
-    mysql_close(con);
+    string username_s(username, strlen(username));
+    string password_s(password, strlen(password));
+    string query = "select username from users where username = " + username_s +
+        " and password = '" + password_s + "';";
+    execute_query(query.c_str());
+    MYSQL_RES *result = mysql_store_result(connection);
+    if (result != NULL)
+    {
+        // for counting number of rows in the selection result
+        int num_rows = mysql_num_rows(result);
+        mysql_free_result(result);
+        return (num_rows == 0) ? -1 : atoi(username);
+    }
+    else
+    {
+        return -1;
+    }
 }
 
-void update_user(string username, string nickname)
+void db_connection::insert_user(const char * password, const char * nickname)
 {
-    MYSQL *con = connect_to_mysql();
-
-    string query = "update users set nickname = '" + nickname +
-        "' where username = " + username + ";";
-    execute_query(con, query.c_str());
-
-    mysql_close(con);
+    string nickname_s(nickname, strlen(nickname));
+    string password_s(password, strlen(password));
+    string query = "insert into users(password, nickname) values('" + password_s +
+        "', '" + nickname_s + "');";
+    execute_query(query.c_str());
 }
 
-int main(int argc, char **argv)
+void db_connection::update_user_nickname(const char * username, const char * nickname)
 {
-    insert_user("test insert");
-    update_user("1", "test update");
-
-    return 0;
+    string nickname_s(nickname, strlen(nickname));
+    string username_s(username, strlen(username));
+    string query = "update users set nickname = '" + nickname_s +
+        "' where username = " + username_s + ";";
+    execute_query(query.c_str());
 }
 ```
 
