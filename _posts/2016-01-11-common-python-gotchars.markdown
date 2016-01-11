@@ -1,0 +1,61 @@
+---
+layout: blog_base
+title: Common Python Gotchas
+category: programming
+tag: Python
+meta_desc: Common Python Gotchas: a list of commonly made mistakes by new Python programmers
+---
+
+Python is great because of many reason and probably the reason is different for each Python lover--for me it is the elegance of the language that makes me fall in love with this at my first encounter. Being easy to pick up and understand, it is also getting an increasing attention as the first programming language for students. There will be more and more Python lovers. But before we commit ourselves to some serious Python code, we should at least know about the common gotchas for easier life when playing with Python.
+
+1. **Multable Default Argument**<br>
+  If there is one mistake that is most likely to trick most of the new Python programmers, I guess it would be this one. So basically when should provide a default argument to a function, that argument is mutable and the change to the argument will affect next invocation. Consider the following code snippt:
+  
+  ```python
+  def append_to(element, to=[]):
+    to.append(element)
+    return to
+
+  my_list = append_to(12)
+  print(my_list)
+  # [12]
+  
+  my_other_list = append_to(42)
+  print(my_other_list)
+  # [12, 42]
+  ```
+  
+  So basically what happens here is that my_list and my_other_list as referring to the same "to" default parameter. So we first append(12) and then append(42)--of course we will have [12, 42] in the end of execution.
+  
+  Recommended:
+  
+  ```python
+  def append_to(element, to=None):
+    if to is None:
+      to = []
+    to.append(element)
+    return to
+  ```
+  
+  So why do we have this tricky thing in Python? Turns out that this "mutable default argument" is really useful when it comes to implementing cache-like functions--previous inputs will be remembered without using dirty global variables.
+  
+2. **Late binding closures**<br>
+  Lambda is a handy way of providing function as argument and therefore it is used a lot in Python. But there is one mistake that many new Python programmers do not get: late binding--closure only gets evaluated at the time of execution. See the example below:
+  
+  ```python
+  def create_multipliers():
+    return [lambda x : i * x for i in range(5)]
+  
+  for multiplier in create_multipliers():
+    print multiplier(2)
+  
+  # [8, 8, 8, 8, 8]
+  ```
+  
+  As explained before, the name "i" is an enclosing variable. So it is not evaluated until the lambda functions get executed. But cleaerly before the execution, the iteration has ended and "i" is 4 already. To avoid this, we can use argument for lambda like this:
+  
+  ```
+  def create_multipliers():
+    return [lambda x, i=i : i * x for i in range(5)]
+  ```
+  So now the "i" inside lambda body is an argument instead of an enclosing variable. Each iteration "i" will be passed in as an argument and the binding happens as just expected.
