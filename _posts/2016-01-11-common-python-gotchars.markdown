@@ -1,9 +1,9 @@
 ---
 layout: blog_base
-title: Common Python Gotchas--Part 1
+title: Common Python Gotchas(Part 1)
 category: programming
 tag: Python
-meta_desc: Common Python Gotchas: a list of commonly made mistakes by new Python programmers
+meta_desc: Common Python Gotchas--a list of commonly made mistakes by new Python programmers
 ---
 
 Python is great because of many reason and probably the reason is different for each Python lover--for me it is the elegance of the language that makes me fall in love with this at my first encounter. Being easy to pick up and understand, it is also getting an increasing attention as the first programming language for students. There will be more and more Python lovers. But before we commit ourselves to some serious Python code, we should at least know about the common gotchas for easier life when playing with Python.
