@@ -3,13 +3,12 @@ description: Personal blog of Junchao. For sharing experience in programming and
 url: http://franklingu.github.io/
 author: Junchao
 
-# Special for Windows UTF-8 setting
-markdown: redcarpet
+markdown: kramdown
 markdown_ext:  markdown
 
 source:      .
 destination: ./_site
-drafts:      ./drafts
+drafts:      ./_drafts
 plugins:     ./_plugins
 layouts:     ./_layouts
 exclude:     ['Gemfile', 'Gemfile.lock', 'README.md', '_bower_components']
@@ -20,9 +19,7 @@ encoding:    utf-8
 
 future:      true
 lsi:         false
-highlighter: pygments
-
-relative_permalinks: true
+highlighter: Rouge
 
 permalink:     pretty
 paginate_path: 'posts/page:num'
