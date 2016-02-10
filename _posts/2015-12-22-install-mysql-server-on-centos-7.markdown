@@ -10,24 +10,24 @@ Since CentOS 7, MySQL has been replaced with MariaDB as the default "official" d
 
 Add MySQL rpm:
 
-```
+{% highlight shell %}
 yum install http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
 yum update
-```
+{% endhighlight %}
 
 Install MySQL server:
 
-```
+{% highlight shell %}
 yum install mysql-community-server
-```
+{% endhighlight %}
 
 Start MySQL server and check its version:
 
-```
+{% highlight shell %}
 systemctl start mysqld
 systemctl status mysqld  # checking the runing status of mysql server
 mysqld --version  # return version information of mysql server
-```
+{% endhighlight %}
 
 References:
 

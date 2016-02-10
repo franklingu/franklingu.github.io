@@ -20,13 +20,13 @@ Personally I am trying out CppCMS just for fun and after playing with it, I have
 
 First, all the dependencies:
 
-```
+{% highlight shell %}
 yum install cmake gcc-c++ gcc make zlib-devel pcre-devel libicu-devel libgcrypt-devel
-```
+{% endhighlight %}
 
 Then let's download the source and build it:
 
-```
+{% highlight shell %}
 # download source from http://sourceforge.net/projects/cppcms/files/
 tar -xjf cppcms-1.0.5.tar.bz2  # or the version you have chosen
 cd cppcms-1.0.5
@@ -36,15 +36,15 @@ cmake .. # different build options could be applied here, see http://cppcms.com/
 make
 make test
 make install
-```
+{% endhighlight %}
 
 Now you have CppCMS installed already. There is just one more thing though: adding link to CppCMS library for g++ build. Check to see if libcppcms.so is indeed in the location: "/usr/local/lib"(the default installation folder for lib files on linux based OSs).
 
-```
+{% highlight shell %}
 cd /etc/ld.so.conf.d/
 echo "/usr/local/lib" >> cppcms.conf
 ldconfig  # reload
-```
+{% endhighlight %}
 
 Now you are good to create your [hello_world CppCMS application](http://cppcms.com/wikipp/en/page/cppcms_1x_tut_hello).
 

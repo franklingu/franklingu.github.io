@@ -18,12 +18,12 @@ And for me, it is just elegant and powerful, sort of like the basic construction
 
 And the basic syntax for lambda calculus is just like below:
 
-```
+{% highlight haskell %}
 t ::=                                       term
      x                                      variable
      λ x. t                                 abstraction
      t t                                    application
-```
+{% endhighlight %}
 
 So just these 3 rules, you can define and represent all sort of things in C, Java, Haskell or any high-level programming language, you name it.
 
@@ -64,18 +64,18 @@ So what can you do with it?
 
 For example, boolean representation/definition using lambda-calculus:
 
-```
+{% highlight haskell %}
 TRUE := λx.λy.x
 FALSE := λx.λy.y
 AND := λp.λq.p q p
 OR := λp.λq.p p q
 NOT := λp.λa.λb.p b a
 IFTHENELSE := λp.λa.λb.p a b
-```
+{% endhighlight %}
 
 And let us just do some simple proof:
 
-```
+{% highlight haskell %}
 # TRUE AND FALSE is FALSE
 (λp.λq.p q p)(λx.λy.x)(λx.λy.y)   # first term is AND, followed by TRUE and FALSE
 !<sub>λ</sub> (λx.λy.x)(λx.λy.y)(λx.λy.x)   # substitute p with TRUE and q with FALSE
@@ -86,7 +86,7 @@ And let us just do some simple proof:
 !<sub>λ</sub> (λx.λy.x)(λx.λy.x)(λx.λy.y)   # substitute p with TRUE and q with FALSE
 !<sub>λ</sub> (λx.λy.x)   # substitute x with TRUE and y with FALSE, you will get FALSE
 # well, of course FALSE OR TRUE is TRUE too, try that yourself. others to be verified by you too
-```
+{% endhighlight %}
 
 Well, definition of others are more abstract and it is harder to explain here. But a link to [Wiki](https://en.wikipedia.org/wiki/Lambda_calculus#cite_note-2) if you want to read more.
 

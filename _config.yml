@@ -9,22 +9,21 @@ markdown_ext:  markdown
 source:      .
 destination: ./_site
 drafts:      ./_drafts
-plugins:     ./_plugins
-layouts:     ./_layouts
+plugins_dir:     ./_plugins
+layouts_dir:     ./_layouts
 exclude:     ['Gemfile', 'Gemfile.lock', 'README.md', '_bower_components']
 keep_files:  ['.git']
-gems:        ['jekyll-sitemap', 'jekyll-feed']
+gems:        ['jekyll-sitemap', 'jekyll-feed', 'jekyll-paginate']
 timezone:    Asain/Singapore
 encoding:    utf-8
 
 future:      true
 lsi:         false
-highlighter: Rouge
+highlighter: rouge
 
 permalink:     pretty
 paginate_path: 'posts/page:num'
 paginate:      10
-pygments:      true
 
 redcarpet:
   extensions: [fenced_code_blocks, autolink]

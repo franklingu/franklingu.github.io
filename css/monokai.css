@@ -9,6 +9,8 @@ code .p { color: #f8f8f2 } /* Punctuation */
 code .cm { color: #75715e } /* Comment.Multiline */
 code .cp { color: #75715e } /* Comment.Preproc */
 code.language-obj-c .cp { color: #FF2025 } /*Special for obj-c*/
+code.language-c .cp { color: #FF2025 } /*Special for c*/
+code.language-cpp .cp { color: #FF2025 } /*Special for cpp*/
 code .c1 { color: #75715e } /* Comment.Single */
 code .cs { color: #75715e } /* Comment.Special */
 code .ge { font-style: italic } /* Generic.Emph */

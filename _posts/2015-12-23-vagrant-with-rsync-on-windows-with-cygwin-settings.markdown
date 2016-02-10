@@ -15,11 +15,11 @@ The possible cause of this is that only MinGW is installed on Windows but Cygwin
 
 But after the above steps, I run <code>vagrant up</code> and still see errors "....[path] is not a file or directory" but the path does indeed exist. So I searched online and found [the issue description on GitHub](https://github.com/mitchellh/vagrant/issues/3913), which is really helpful. Then I went ahead and changed the cygdrive prefix by following [the question on stackexchange](http://unix.stackexchange.com/questions/44677/how-do-i-get-rid-of-cygwins-cygdrive-prefix-in-all-paths).
 
-```
+{% highlight shell %}
 # go to /etc/fstab and add the following line
 none / cygdrive binary 0 0
 # relaunch cygwin now the path should be correct
-```
+{% endhighlight %}
 
 References
 

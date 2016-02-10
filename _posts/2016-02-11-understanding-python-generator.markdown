@@ -20,7 +20,7 @@ So first of all, we need to understand subroutine and coroutine:
 
 So according to definitions from Wikipedia above, you can see the most useful features of generators in Python already: iterators and infinite list. By calling <code>yield</code>, the function is voluntarily giving up control with context saved. After that you can execute the generator function from its start or from the part where control was handed to others(where <code>yield</code> is). Sounds confusing? Let us see some examples.
 
-```python
+{% highlight python %}
 import math
 def get_primes_subroutine(input_list):   # the subroutine version
     result_list = list()
@@ -41,7 +41,7 @@ def is_prime(number):
         if number % 2 == 0:
             return False
         for current in range(3, int(math.sqrt(number) + 1), 2):
-            if number % current == 0: 
+            if number % current == 0:
                 return False
         return True
     return False
@@ -51,20 +51,20 @@ for x in get_primes_subroutine([i for i in range(1, 100)]):
     print(x)
 for x in get_primes_coroutine([i for i in range(1, 100)]):
     print(x)
-```
+{% endhighlight %}
 
 So if you take a look at the code above, it seems that there is no difference in subroutine and coroutine. But wait a moment, let's append this block of code:
 
-```python
+{% highlight python %}
 print(get_primes_subroutine([i for i in range(1, 100)]))   # print the list
 print(get_primes_coroutine([i for i in range(1, 100)]))   # <generator object get_primes_coroutine at [some memory location]>
-```
+{% endhighlight %}
 
 So subroutine does not finish and return until the whole list is computed. Coroutine on the other hand, gives back control after one prime is found and next invocation starts from previously saved context. So effectively, the <code>yield</code> expression will convert a function to a generator function. So when you call the generator function, you get back generator. Only when you call next method on generator object, the execution starts and pauses at yield expression(We say "pause" here because we can still continue later).
 
 Well, that is the main use of generator in Python and the only use of generator in Python before PEP 342. But now we have another use case for <code>yield</code> now in Python. See this example:
 
-```python
+{% highlight python %}
 import random
 
 def get_data():
@@ -99,11 +99,11 @@ if __name__ == '__main__':
     for _ in range(10):
         print('Producing...')
         next(producer)
-```
+{% endhighlight %}
 
 So the example here demonstrates another use case of generator in Python: cooperative tasks. So as explained before, when we say <code>consumer = consume()</code> we get back a generator object. Now we send None to it, we basically mean execute the generator until it yields the control. So consumer is paused at <code>data = yield</code> and the control is back to main part. When we call next on producer, we basically mean that execute producer until next yield is encountered. But inside produce, it sends some data to consumer, which means that consumer will now take over control and consume those data. The control is back from consumer to producer when next yield in consumer is encountered. If you have a look and execute the following program, you can trace it more easily:
 
-```python
+{% highlight python %}
 import random
 
 def get_data():
@@ -144,7 +144,7 @@ if __name__ == '__main__':
         print('looping, step 5')
         next(producer)
         print('looping, step 9')  # after step 9 is step 5 again
-```
+{% endhighlight %}
 
 If you can understand this example, let's go back to the first use of generator--acting as an iterator. You will see that yield is still doing the same thing, only that this time only next is called on it and nobody sends anything to do cooperative multitasking with it anymore--so the control is always handed back to caller.
 

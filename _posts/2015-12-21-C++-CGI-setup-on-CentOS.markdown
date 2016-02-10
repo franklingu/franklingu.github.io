@@ -16,35 +16,35 @@ The tutorial is based on CentOS 7. If you do not have one, you can use VirtualBo
 
 First, let us just check and install essential developments tools:
 
-```
+{% highlight shell %}
 yum group list
 yum group install "Development Tools"
-```
+{% endhighlight %}
 
 You may want to just configure firewall and SELinux settings here for simplicity so that you will not just get "Permission denied" message without any clue why.
 
-```
+{% highlight shell %}
 firewall-cmd --permanent --zone=public --add-service=http  # allow http
 firewall-cmd --permanent --zone=public --add-service=https # allow https
 firewall-cmd --reload
 getenforce  # check enforce settings
 setenforce permissive  # set to grant permissions
 # if you want to disable SELinux completely, 'cat /etc/sysconfig/selinux' and edit the settings
-```
+{% endhighlight %}
 
 There are basically 2 choices for setting up web server to serve CGI scripts. Apache and httpd support execution of CGI scripts by default and you can just simply enable "+ExecCGI" option. Or you can try Nginx, which does not support CGI execution but supports FastCGI. So in this tutorial we will be exploring the easier option and we will be install htttpd to server CGI scripts.
 
 Install httpd with the command:
 
-```
+{% highlight shell %}
 yum install httpd
 systemctl start httpd
 # Go to localhost now and you should see the default index page saying "Testing 1 2 3"
-```
+{% endhighlight %}
 
 Navigate to httpd configuration folder and edit httpd.conf, and add the following lines
 
-```
+{% highlight shell %}
 <Directory "/var/www/cgi-bin">
    AllowOverride None
    Options +ExecCGI
@@ -55,17 +55,18 @@ Navigate to httpd configuration folder and edit httpd.conf, and add the followin
 <Directory "/var/www/cgi-bin">
 Options All
 </Directory>
-```
+{% endhighlight %}
 
 Restart httpd server with <code>systemctl reload httpd</code>. Now navigate to /var/www/cgi-bin/ folder and create start.cpp like this:
 
-```cpp
+{% highlight cpp %}
 #include <iostream>
 using namespace std;
 
 int main ()
 {
-    cout << "Content-type:text/html\r\n\r\n";  // this line is the magic--telling client that the response content type is html
+    // this line is the magic--telling client that the response content type is html
+    cout << "Content-type:text/html\r\n\r\n";
     cout << "<html>\n";
     cout << "<head>\n";
     cout << "<title>Hello World - First CGI Program</title>\n";
@@ -77,7 +78,7 @@ int main ()
 
     return 0;
 }
-```
+{% endhighlight %}
 
 Compile with command <code>g++ -o start.cgi start.cpp</code> and make it executable with <code>chmod +x start.cgi</code>. Then <code>curl localhost/cgi-bin/start.cgi</code> to see the response.
 

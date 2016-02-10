@@ -17,17 +17,17 @@ Honestly, there are a lot of posts online about using nginx with puma. But the p
 
 Well, by the time I am writing this post, if you use yum directly download and install nginx from CentOS is just fine. So there is completely no need for adding any thing to your source--simply:
 
-```
+{% highlight shell %}
 sudo yum update
 sudo yum install nginx
-```
+{% endhighlight %}
 
 Then after that you just need to start nginx service by typing:
 
-```
+{% highlight shell %}
 service nginx start
 service nginx status -l  # for checking status of the server
-```
+{% endhighlight %}
 
 So the default behavior of Nginx server is to listen on port 80 of your server. So try to access by typing your domain name or IP address in the browser address bar. And if your firewall settings are fine--allow tcp connections on port 80--you should be seeing a default Nginx page. (If you see connection refused for example, use "iptables" command to check[iptables guide](http://www.thegeekstuff.com/2010/07/list-and-flush-iptables-rules/)).
 
@@ -35,13 +35,13 @@ So now it is about serving your own puma server. Assume that your Rails app is r
 
 Just start the puma server by:
 
-```
+{% highlight shell %}
 RAILS_ENV=production puma &  # running in background
-```
+{% endhighlight %}
 
 Now let's configure nigix to serve your website instead of serving its default html. Here is an example:
 
-```
+{% highlight nginx %}
 upstream my_app {
   server 127.0.0.1:9292;  # or the port you configured in puma configuration file
 }
@@ -71,7 +71,7 @@ server {
     break;
   }
 }
-```
+{% endhighlight %}
 
 Just insert this block of code in /etc/nginx/nginx.conf. But make sure you delete the original definition of serving html from nginx folder.
 

@@ -28,7 +28,7 @@ First, let's have a look at the OCaml's type system--which is one of the reasons
 
 Now here comes language construct for OCaml(expression-oriented constructs)
 
-```
+{% highlight ocaml %}
 <exp> ::= if <exp> then <exp> else <exp>     # if expression
       | <id>                                 # uh, call it naming of variable for now
       | <exp>:<type>                         # type annotation
@@ -39,13 +39,13 @@ Now here comes language construct for OCaml(expression-oriented constructs)
       | match <exp> with (| <pat> -> <exp>)+ # pattern-matching expression
       | try <exp> with (| <pat> -> <exp>)+   # try expression
       | ...(more are omitted)
-```
+{% endhighlight %}
 
 (Sdaly this is not an exhaustive list. See [OCaml ref](http://caml.inria.fr/pub/docs/manual-ocaml/expr.html) for more info regarding this.)
 
 Since we are talking about OCaml as functional programming language, we will first see how to define a function
 
-```ocaml
+{% highlight ocaml %}
 let max (x, y) = if x<y then y else x;;
 (* max is of type 'a * 'a -> 'a = <fun>, which means it is a function that
 takes a pair of values and return one value. All of these three are of
@@ -60,11 +60,11 @@ You will see that many other languages like Scala and Apple's Swift are
 influenced by this. rec means this is a recursive function. Normal function
 can only be used after its definition, while rec function can be used inside
 its own body *)
-```
+{% endhighlight %}
 
 Another useful technique in OCaml is pattern matching thanks to its great type system. Here is an example:
 
-```ocaml
+{% highlight ocaml %}
 type 'aa btree = Leaf of 'aa | Node of 'aa * ('aa btree) * ('aa btree);;
 let rec height t =
     match t with
@@ -75,7 +75,7 @@ and left tree and right tree. in height, we are matching t with 2
 patterns: if it is just one leaf, return 1; if it is a node of left
 tree and right tree, compute max--the one we defined previously of
 height of left tree and right tree and add 1 to it. *)
-```
+{% endhighlight %}
 
 In some sense, pattern matching is really similar to try expression in OCaml in terms of syntax. So I guess basically you get how to write try expression in OCaml.
 
@@ -85,7 +85,7 @@ There are no loops in OCaml--every loop can be rewritten as recursion. Although 
 
 What is tail recursion? A function is tail recursive if the last operation in recursive branch is the recursive call. Let's see an example:
 
-```ocaml
+{% highlight ocaml %}
 let fact_non_tail n =
     if n==0 then 1 else n * fact_non_tail (n - 1);;
 (* this is a non tail recursive function because after coming
@@ -100,6 +100,6 @@ let fact_root_call n =
 (* the inner function fact_tail is a tail recursive function as
 recursion is the last thing to do in recursive branch. This can
 be effectively optimized as a steady stack space loop. *)
-```
+{% endhighlight %}
 
 Does that mean all in OCaml. Of course not. Here is just something to get you started--in fact, you can already handle pretty much with just these. Have fun functionaling :P

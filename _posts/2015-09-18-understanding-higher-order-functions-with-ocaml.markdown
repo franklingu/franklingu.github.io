@@ -13,22 +13,23 @@ First notion you need to know about is "currying":
 
 So there is a difference between the following 2 functions:
 
-```ocaml
+{% highlight ocaml %}
 let fc1 (a, b) = a;; (* fc1 : 'a * 'b -> 'a = <fun> *)
 let fc2 a b = a;; (* fc2 : 'a -> 'b -> 'a = <fun> *)
-```
+{% endhighlight %}
+
 So the first function takes in a pair of arguments and whenever you want to apply this function you'll have to provide 2 arguments to it. But the second function takes 1 argument and returns a function that takes in one argument. Confused? See example below:
 
-```ocaml
+{% highlight ocaml %}
 let fc_demo = fc2 2; (* fc_demo : '_a -> int = <fun> *)
-```
+{% endhighlight %}
 
 So fc_demo is the returned function of "fc2 2" and it will take 1 argument and return 2 regardless of the input argument. But this is not saying every time you want to use fc2 you have to apply 1 argument and then apply another one. You can just use it like this:
 
-```ocaml
+{% highlight ocaml %}
 fc1(1, 2);; (* 1 *)
 fc2 1 2;; (* 1 *)
-```
+{% endhighlight %}
 
 So you see that currying function could behave the same way as normal functions(or call them first order functions) and can also do more--for creating other functions. (Well, if you want to dig into the currying function, you will see that it is ((fc2 1) 2) with the return value from fc2 being applied to 2 immediately)
 
@@ -40,7 +41,7 @@ OK. that is basically all for the introduction and now we will go into the study
 
 For those who follows ES 6, you will know there are Array.map and Array.filter now in JS Array prototype. Now we will implement these functions with OCaml. (There are List.map, List.filter and similar functions in List module. We are reimplementing all these functions for study purpose but in practice use of standard library is encouraged)
 
-```ocaml
+{% highlight ocaml %}
 (* map is a useful function when you have a list of elements already and
    you want to apply some function to every element in the list and get
   back a list of returned values *)
@@ -62,9 +63,9 @@ let map (fn: 'a -> 'b) (xs:'a list): 'b list =
 let xs = [1; 2; 3; 4; 5];;
 map (string_of_int) xs;;  (* ["1"; "2"; "3"; "4"; "5"] *)
 map (fun x -> 2 * x) xs;;  (* [2; 4; 6; 8; 10] *)
-```
+{% endhighlight %}
 
-```ocaml
+{% highlight ocaml %}
 (* filter is useful when you have a list of elements and you want to find
   out all elements that fulfill a certain condition, like is_positive *)
 let filter (fn: 'a -> bool) (xs: 'a list): 'a list =
@@ -82,9 +83,9 @@ let filter (fn: 'a -> bool) (xs: 'a list): 'a list =
   one whole post so I will pass it here *)
 filter (fun a -> a > 2) [1; 2; 3; 4; 5];;  (* bigger than 2 *)
 filter (fun a -> (a mod 2 == 1)) [1; 2; 3; 4; 5];;  (* odd elements *)
-```
+{% endhighlight %}
 
-```ocaml
+{% highlight ocaml %}
 (* so filter can take out all disired element. but if I want something
   simple, like to see whether all elements in the list fulfill the
   requirement--that is when for_all comes in. some is somewhat similar to
@@ -104,13 +105,13 @@ let exists (fn: 'a -> bool) (xs: 'a list): bool =
     | y::ys ->
     if (fn y) then true else aux ys in
   aux xs;;
-```
+{% endhighlight %}
 
 
 ### Fold/Reduce
 So now let us now talk about one more complex and more powerful method: fold. In OCaml list there are fold_right and fold_left for different orientation. In JS, there is much similar method called reduce(it is not really the map-reduce's reduce but works a bit similar to that). The type for fold_left: "('a -> 'b -> 'a) -> 'a -> 'b list -> 'a = <fun>"--so it basically takes in a function, an initial value to build on, a list(the list to apply fold_left on) and return a value of the same type as the initial value. As for the function it takes in as the first parameter, it will take in value from the recursion and one list element, and return a value of the same type as first parameter--and this will be used for next recursion.
 
-```ocaml
+{% highlight ocaml %}
 (* below is one implementation of fold_left. as you can see from the function
   signature, it is very generic and can of a lot of things based on your input
   function. one really use case is to implement map/filter with fold *)
@@ -138,11 +139,11 @@ let filter2 (fn: 'a -> bool) (xs: 'a list): 'b list =
   however, in the case of fold_right, we have save the current context for
   folding to come back from right to left, therefore resulting in a non-tail-
   recursive function *)
-```
+{% endhighlight %}
 
 Of course higher order functions are not only restricted to lists only. You can use it from tree, graph or any data structure with elegant design. Here is just one example for tree:
 
-```ocaml
+{% highlight ocaml %}
 type 'a tree =
   | Leaf of 'a
   | Node of 'a * ('a tree) * ('a tree);;
@@ -159,6 +160,6 @@ let t1 = Node (3,Leaf 1, Leaf 2);;
 let t2 = Node (4,t1,Leaf 6);;
 map_tree (fun x -> x + 2) t1;;
 map_tree string_of_int t2;;
-```
+{% endhighlight %}
 
 There is just so much to explore about higher order functions for you to explore. Have fun coding ;P

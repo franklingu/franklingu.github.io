@@ -10,7 +10,7 @@ MySQL(other database management systems as well) have connectors in different la
 
 (Assume you have mysql-server, mysql-devel installed already on your computer). The following C example:
 
-```c
+{% highlight c %}
 // version.c
 #include <my_global.h>
 #include <mysql.h>
@@ -21,22 +21,22 @@ int main(int argc, char **argv)
 
   return 0;
 }
-```
+{% endhighlight %}
 
 Compile the program above with:
 
-```
+{% highlight shell %}
 gcc -o verion version.c $(mysql_config --cflags --libs)
 # mysql_config is a tool from mysql, providing useful information when compiling
 # mysql client code to connect to mysql server
 ./version  # you should see the version information printed
-```
+{% endhighlight %}
 
 Notice that if you use C++, the example works as well. In fact, you can just use MySQL C APIs in C++ without any trouble(some conversions may be needed).
 
 Let's move on to do some useful work in DB. The code below is the simple class for checking user with correct password, inserting new user and updating nickname. So the schema is very simple as well: just "username", "password" and "nickname".
 
-```cpp
+{% highlight cpp %}
 // db_connection.h file
 #ifndef DB_CONNECTION_H
 #define DB_CONNECTION_H
@@ -64,8 +64,10 @@ private:
 };
 
 #endif
+{% endhighlight %}
 
-# db_connection.cpp file
+{% highlight cpp %}
+// db_connection.cpp file
 #include "db_connection.h"
 
 db_connection::db_connection()
@@ -146,7 +148,7 @@ void db_connection::update_user_nickname(const char * username, const char * nic
         "' where username = " + username_s + ";";
     execute_query(query.c_str());
 }
-```
+{% endhighlight %}
 
 References:
 
