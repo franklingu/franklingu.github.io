@@ -10,7 +10,7 @@ Okay. [Last tutorial ](/programming/2015/01/27/a-simple-tutorial-on-express-js-a
 
 First we need to run mongoDB to accept connections by running the command ```mongod --dbpath [path to data folder]```. If you have followed last tutorial, you will kind of figure out that the data folder we are talking about here is the one named "data" that resides in our application folder. In this way, a web app contains everything, including source code and data within itself. Of course we still need programs like node and mongoDB to execute code and manage database but we will try our best to isolate the development of our application from outer programming environment. This topic itself is more that a tutorial and better practices are coming out day by day too. And if we go back to our topic: install mongoose with command ```npm install mongoose --save``` add the following lines to app.js for mongoose to work.
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 var mongoose = require('mongoose');
 // by default, there is an admin account with no password protection and
 // if you happened to have created account and password for mongoDB, remember
@@ -32,7 +32,7 @@ In fact, there is no notion of Schema in mongoDB [Why Schemaless ](http://blog.m
 
 Now, we can just go ahead and create a new js file with schema definition inside but it is not recommended and we may later create a bunch of schemas and therefore, we want to group them in a folder or something so that they are not scattered all around and easier to manage. Create a folder named "models" and a User.js file inside it, with content as follows:
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 var mongoose = require('mongoose');
 
 var userSchema = new mongoose.Schema({
@@ -51,7 +51,7 @@ module.exports = User;
 
 The code above creates a Schema, like an abstract definition of model, a model, the class used by mongoose for creating document in mongoDB. And a common functionality of User model is for authentication, which requires verification of password, and a validation method defined on User model would be nice--it goes like this:
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 // insert into line 8 of the code block above
 userSchema.methods.validatePassword = function (pswd) {
     return this.password === pswd;
@@ -60,7 +60,7 @@ userSchema.methods.validatePassword = function (pswd) {
 
 And now if we create a new user, we can just call user.validatePassword(pswd) to verify the provided password. So let us go and create+save+query a user.
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 var user1 = new User({ userName: 'test', email: 'test@example.com', password: 'password' });
 user1.save(function (err, savedUser) {
   if (err) {

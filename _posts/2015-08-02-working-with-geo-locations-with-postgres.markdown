@@ -28,7 +28,7 @@ until done :(.
 
 For example: [GEOS](http://trac.osgeo.org/geos/)
 
-```
+{% highlight shell %}
 wget http://download.osgeo.org/geos/geos-3.4.2.tar.bz2
 tar xjf geos-3.4.2.tar.bz2
 cd geos-3.4.2/
@@ -36,7 +36,7 @@ cd geos-3.4.2/
 make
 sudo make install
 cd ..
-```
+{% endhighlight %}
 
 Well, this library is still OK and does not take centuries to install. Proj.4 takes not too long too but when it comes to
 GDAL, maybe you should try making some coffee for yourself and after finishing one cup and then come back. (libxml2 and json-c can be installed via apt-get easily "sudo apt-get install libjson0 libjson0-dev" "sudo apt-get install libxml-dev")

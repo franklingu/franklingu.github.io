@@ -23,7 +23,7 @@ So I thought anyway, it should be a big deal--I can just add that "missing" para
 
 Well, this is not pleasant and just before I gave up trying, I found a blog post about this issue [How to use Yelp's API with Node](https://arian.io/how-to-use-yelps-api-with-node/). In side this post, the author is using oauth-signature, which is only for Oauth 1.0a(the one used by Yelp API v2) and appended all required parameters to url. I copied the code and it works. Then I went ahead and refactored a bit of it.
 
-```javascript
+{% highlight javascript %}
 /* require the modules needed */
 var oauthSignature = require('oauth-signature');  
 var n = require('nonce')();  
@@ -89,7 +89,7 @@ function makeRequestToYelp(method, apiUrl, params, callback) {
     return callback(error, response, body);
   });
 }
-```
+{% endhighlight %}
 
 (There is more about Oauth 1.0a if you want to explore of course, but basically the idea is to generate base string from URL and parameters + token secret and consumer secret for server to verify.)
 
