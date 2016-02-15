@@ -3,7 +3,7 @@ layout: blog_base
 title: Optimize your Python code
 category: programming
 tag: Python
-meta_desc: Optimize your Python code--use of generator, Ctypes, Pypy, Cython and C extensions
+meta_desc: Optimize your Python code, with use of generator, Ctypes, PyPy, Cython and C extensions
 ---
 
 Python is a great programming language that has elegence and expressiveness built-in from the very start--the only problem in some people's mind, however, is that CPython is just really slow. Although we did not choose Python because it is fast or something but we choose it despite the fact that it is pretty slow, there are quite some things for us to do to optimize our Python code. Just a simple reminder:
