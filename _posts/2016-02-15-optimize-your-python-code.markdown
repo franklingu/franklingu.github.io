@@ -20,16 +20,14 @@ import random
 
 
 def generate(num):
-	while num:
+	for _ in xrange(num):
 		yield random.randrange(10)
-		num -= 1
 
 
 def create_list(num):
 	numbers = []
-	while num:
+	for _ in xrange(num):
 		numbers.append(random.randrange(10))
-		num -= 1
 	return numbers
 
 
@@ -50,21 +48,19 @@ import random
 
 
 def generate(num):
-	while num:
+	for _ in xrange(num):
 		yield random.randrange(10)
-		num -= 1
 
 
 def create_list1(num):
 	numbers = []
-	while num:
+	for _ in xrange(num):
 		numbers.append(random.randrange(10))
-		num -= 1
 	return numbers
 
 
 def create_list2(num):
-	return [random.randrange(10) for _ in xrange(1, (num + 1))]
+	return [random.randrange(10) for _ in xrange(num)]
 
 
 if __name__ == '__main__':
@@ -136,7 +132,7 @@ from ctypes import cdll
 
 def generate_c(num):
 	libc = cdll.LoadLibrary('libc.so.6')
-	while num:
+	for _ in xrange(num):
 		yield libc.rand() % 10
 		num -= 1
 
@@ -149,9 +145,40 @@ if __name__ == '__main__':
 
 That is more than 50% timing improvement. But can we do better?
 
-Tip Number 3: use of Cython.
+Tip Number 3: use of Cython. Cython can translate Python code to C code and therefore can usually speed up code execution a lot.
 
-To be continued
+{% highlight python %}
+# cython_generator.pyx
+from ctypes import cdll
+
+
+def generate(num):
+	libc = cdll.LoadLibrary('libc.so.6')
+	for _ in xrange(num):
+		yield libc.rand() % 10
+
+
+# setup.py
+from distutils.core import setup
+from distutils.extension import Extension
+from Cython.Distutils import build_ext
+
+setup(cmdclass={'build_ext': build_ext}, ext_modules=[Extension('generator', ['cython_generator.pyx'])])
+
+
+# build generator with 'python setup.py build_ext --inplace'. Now you should see 'cython_generator.c' and 'generator.so' generated
+
+# benchmarking.py
+if __name__ == '__main__':
+	print(timeit.timeit(
+		'sum(generator.generate(999999))', setup='import generator',
+		number=1))  # >>> 0.178318977356
+
+{% endhighlight %}
+
+While, seems we are setting foot on a way that is diverging from Python but towords C. So let us come back to Python, introducing another Python implementation: PyPy. So Tip Number 4: PyPy.
+
+PyPy's magic lies in the JIT compiler--meaning that with analysis of real use of code, it can decide to compile some frequently used code blocks for execution speed-up. So technically it speeds up the program but it is still Python. For data modeling and analysis or web frameworks like Django, execution can be boosted because usually they are long-live. However, another major use of Python--scripting may not gain any benefits in switching to PyPy at all. And since there are still many tools that only work with CPython(PyPy 2.x should be catching up with CPython's version now(Feb 2016) but PyPy 3.x is still significantly lacking behind CPython)
 
 Notes and disclaimers:
 
