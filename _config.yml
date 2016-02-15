@@ -25,5 +25,4 @@ permalink:     pretty
 paginate_path: 'posts/page:num'
 paginate:      10
 
-redcarpet:
-  extensions: [fenced_code_blocks, autolink]
+exclude:       [vendor]
