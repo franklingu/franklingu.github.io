@@ -38,7 +38,7 @@ if __name__ == '__main__':
 	print(timeit.timeit(
 		'sum(create_list(999))', setup='from __main__ import create_list',
 		number=1000))   # >>> 0.652122974396
-{% endhilight %}
+{% endhighlight %}
 
 However, there is another side of the story: using list comprehension is generally considered a good practice(more Pythonic) and could result in better performance as well.
 
