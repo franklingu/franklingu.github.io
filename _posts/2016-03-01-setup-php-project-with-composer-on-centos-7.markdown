@@ -64,3 +64,23 @@ sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
 And you install MySQL with `sudo yum install mysql-server` should do.
 
 In the case of Flarum, there are some development tools such as npm, Gulp and composer needed for managing dependencies and run tasks. Since npm comes with Nodejs and now we need to care about composer and Gulp.
+
+Installing Gulp is very easy since we have npm already. Just run `npm install gulp-cli -g` to enable command line accesses for gulp globally(anywhere on computer in some way). Local gulp package you can run `npm install` in the directory with package.json defined well already. Compser is only a bit more troublesme since it is still beta--but it is very cool for PHP developers.
+
+~~~
+php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php
+php -r "if (hash('SHA384', file_get_contents('composer-setup.php')) === '41e71d86b40f28e771d4bb662b997f79625196afcca95a5abf44391188c695c6c1456e16154c75a211d238cc3bc5cb47') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+~~~
+
+The commond above will download composer.phar into your current directory and since mostly we want to use composer as a convenient command on CentOS, let's `sudo mv composer.phar \usr\local\bin\composer` and now you should be able be able enjoy composer as a command.
+
+Now, navigate to the destination folder and run `composer create-project flarum/flarum . --stability=beta` and the project is there. You can begin to configure your MySQL, Nginx and php-cli or fpm to run the project!
+
+References:
+
+1. [Installing PHP on CentOS](https://www.digitalocean.com/community/questions/how-to-install-php-5-6-on-centos-7-0-x64)
+2. [Node.js installation](https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora)
+3. [MySQL on CentOS 7](https://www.linode.com/docs/databases/mysql/how-to-install-mysql-on-centos-7)
+4. [GetComposer](https://getcomposer.org/download/)
