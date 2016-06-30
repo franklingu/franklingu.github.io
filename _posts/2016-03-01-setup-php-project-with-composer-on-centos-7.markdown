@@ -8,7 +8,7 @@ meta_desc: Set up php (5.5 or 5.6) project with composer on CentOS 7 using Flaru
 
 > PHP is the best language.  -- Annoymous
 
-To be honest, I am still not very sure when some programmer tells me that "PHP is the best language" whether he is serious or just making fun. But anyway since I learned about programming, I did not have a chance of working with PHP seriously and recently I got assigned to set up my company's forum using a very new Forum system developed on top of PHP -- [Flarum](http://flarum.org/)--therefore I had the chance of working with PHP.
+To be honest, I am still not very sure when some programmer tells me that "PHP is the best language" whether he is serious or just being sarcastic. But anyway since I learned about programming, I did not have a chance of working with PHP seriously and recently I got assigned to set up my company's forum using a very new Forum system developed on top of PHP -- [Flarum](http://flarum.org/)--therefore I had the chance of working with PHP.
 
 There are quite some incompatible changes in PHP 7 and we can also see the performance boost in the release of PHP 7 [comparison](https://www.besthostnews.com/php-5-6-vs-hhvm-3-7-vs-php-7-benchmarks/). But at the time of my writing, Flarum is only supported on PHP 5.6 and 5.7 so this post will talk about PHP 5.6 installation and setup only.
 
