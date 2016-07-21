@@ -1,6 +1,6 @@
 ---
 layout: blog_base
-title: Transform your Linux terminal visually appealing
+title: Make your Linux terminal visually appealing
 category: programming
 tag: Linux
 meta_desc: Transform your Linux terminal visual appealing with use of oh-my-zsh, htop, ranger, most and so on.
