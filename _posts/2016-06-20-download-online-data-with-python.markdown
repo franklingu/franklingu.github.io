@@ -6,4 +6,11 @@ tag: Python
 meta_desc: Download data with Python, via requests or selenium.
 ---
 
-TBC.
+1. requests
+
+2. wget
+
+3. mechanize
+
+4. selenium
+
