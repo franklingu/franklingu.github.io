@@ -68,7 +68,7 @@ title: Python level up series 1
       <li><code class="python" style="color: green;">2to3</code> will help a lot basically</li>
       <li>and check <a href="https://docs.python.org/3/whatsnew/3.0.html">Python doc</a> before migration</li>
       <li><a href="https://github.com/yyuu/pyenv">pyenv</a> for managing and switching Python versions</li>
-      <li>make sure your global version is still "system" to ensure libraries will still work</li>
+      <li>make sure your global version is still <span style="color: red;">"system"</span> to ensure libraries will still work</li>
       <li>combine with <a href="https://virtualenv.pypa.io/en/stable/">virtualenv</a> to make development env more isolated</li>
     </ul>
   </section>
@@ -191,10 +191,10 @@ def test_non_local():
         nonlocal outvar
         outvar = 5
 
-  outvar = 3
-  print(outvar)
-  inner()
-  print(outvar)
+    outvar = 3
+    print(outvar)
+    inner()
+    print(outvar)
 
 test_non_local()
           </code>
@@ -290,7 +290,7 @@ test_default_arg(0)
       <code class="python" data-noescape>
 <mark>from functools import wraps</mark>
 def profile_func(func):
-    <mark>@wraps(func)</mark>
+    <b><i>@wraps(func)</i></b>
     def profiled_func(*args, **kwargs):
         profile = cProfile.Profile()
         try:
