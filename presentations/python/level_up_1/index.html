@@ -3,7 +3,7 @@ layout: presentation_base
 title: Python level up series 1
 ---
 <section>
-  <img src="/img/python.png" style="max-width: 250px; border-radius: 10px;">
+  <img src="/img/python-logo.png" style="max-width: 250px; border-radius: 10px;">
   <h2>Python level up series 1</h2>
   <h4>--suggestions from personal experience and reading</h4>
   <p>
@@ -13,25 +13,27 @@ title: Python level up series 1
 
 <section>
   <h2>Python</h2>
-  <p>Beautiful is better than ugly.</p>
-  <p>Explicit is better than implicit.</p>
-  <p>Simple is better than complex.</p>
-  <p>Complex is better than complicated.</p>
-  <p>Flat is better than nested.</p>
-  <p>Sparse is better than dense.</p>
-  <p>Readability counts.</p>
-  <p>Special cases aren't special enough to break the rules.</p>
-  <p>Although practicality beats purity.</p>
-  <p>Errors should never pass silently.</p>
-  <p>Unless explicitly silenced.</p>
-  <p>In the face of ambiguity, refuse the temptation to guess.</p>
-  <p>There should be one-- and preferably only one --obvious way to do it.</p>
-  <p>Although that way may not be obvious at first unless you're Dutch.</p>
-  <p>Now is better than never.</p>
-  <p>Although never is often better than *right* now.</p>
-  <p>If the implementation is hard to explain, it's a bad idea.</p>
-  <p>If the implementation is easy to explain, it may be a good idea.</p>
-  <p>Namespaces are one honking great idea -- let's do more of those!</p>
+  <pre>
+    Beautiful is better than ugly.
+    Explicit is better than implicit.
+    Simple is better than complex.
+    Complex is better than complicated.
+    Flat is better than nested.
+    Sparse is better than dense.
+    Readability counts.
+    Special cases aren't special enough to break the rules.
+    Although practicality beats purity.
+    Errors should never pass silently.
+    Unless explicitly silenced.
+    In the face of ambiguity, refuse the temptation to guess.
+    There should be one-- and preferably only one --obvious way to do it.
+    Although that way may not be obvious at first unless you're Dutch.
+    Now is better than never.
+    Although never is often better than *right* now.
+    If the implementation is hard to explain, it's a bad idea.
+    If the implementation is easy to explain, it may be a good idea.
+    Namespaces are one honking great idea -- let's do more of those!
+  </pre>
 </section>
 
 <section>
@@ -39,60 +41,291 @@ title: Python level up series 1
   <ul>
     <li>Pythonic Thinking</li>
     <li>Functions</li>
-    <li>Classes and Inheritance</li>
   </ul>
-  <small>With reference to <a href="http://www.effectivepython.com/" style="color: red;">Effective Python</a> and <a href="https://book.douban.com/subject/25910544/">编写高质量代码：改善Python程序的91个建议</a></small>
+  <br><br>
+  <small style="font-size: 0.4em;">With reference to <a href="http://www.effectivepython.com/">Effective Python</a> and <a href="https://book.douban.com/subject/25910544/">编写高质量代码：改善Python程序的91个建议</a></small>
 </section>
 
 <section>
-  <h2>Know which version you are using</h2>
-  <p>2.7 on most of the machines. still some 2.6</p>
-  <p>some minor changes even within 2.7</p>
-  <p>&nbsp;&nbsp;&nbsp;--<code>pip install celery</code>(amqp==2.0.3) will not work on &lt;2.7.7</p>
-  <p class="segmented">and we are embracing <span style="color: red;">Python 3</span></p>
+  <section>
+    <h2>Pythonic Thinking</h2>
+  </section>
+  <section>
+    <h2>Know which version you are using</h2>
+    <ul>
+      <li>2.7 on most of the machines. still some 2.6</li>
+      <li>
+        some minor changes even within 2.7<br>
+        <pre>celery(amqp==2.0.3)</pre> will not work on &lt;2.7.7
+      </li>
+      <li class="fragment">and we are embracing <span style="color: red;">Python 3</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Know which version you are using</h2>
+    <ul>
+      <li><code class="python" style="color: green;">2to3</code> will help a lot basically</li>
+      <li>and check <a href="https://docs.python.org/3/whatsnew/3.0.html">Python doc</a> before migration</li>
+      <li><a href="https://github.com/yyuu/pyenv">pyenv</a> for managing and switching Python versions</li>
+      <li>make sure your global version is still "system" to ensure libraries will still work</li>
+      <li>combine with <a href="https://virtualenv.pypa.io/en/stable/">virtualenv</a> to make development env more isolated</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Follow PEP 8 style guide</h2>
+    <ul>
+      <li>For Vim <pre><code>Plugin 'klen/python-mode'</code></pre></li>
+      <li>For Sublime Text Editor <pre><code>Anaconda</code></pre></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Use list comprehension over map &amp; filer</h2>
+    <ul>
+      <li>Faster(True for 2.*)</li>
+      <li>
+        More Pythonic
+      </li>
+    </ul>
+    <pre style="overflow: auto;">
+      <code class="python">
+  >>> import timeit
+  >>> print(timeit.timeit('[i ** 2 for i in range(1000) if i % 2 == 0]', number=10000))
+  0.637861013412
+  >>> print(timeit.timeit('map(lambda x: x ** 2, filter(lambda x: x % 2 == 0, range(1000)))', number=10000))
+  1.21372795105
+  >>> print(timeit.timeit('[i ** 2 for i in xrange(1000) if i % 2 == 0]', number=10000))
+  0.5871758461
+  >>> print(timeit.timeit('map(lambda x: x ** 2, filter(lambda x: x % 2 == 0, xrange(1000)))', number=10000))
+  1.16653990746
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h2>Generator for large comprehensions</h2>
+    <ul>
+      <li>More memory friendly</p>
+      <li>
+        <code style="color: red;">yield</code> is more than generator though<br>
+        cover this in later section with concurrency &amp; performance
+      </li>
+      <li>
+        <code style="color: red;">[]</code> --&gt; <code style="color: red;">()</code>
+      </li>
+      <li class="fragment">
+        but you can only use it once
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Python 3: map &amp; filter</h2>
+    <pre style="overflow: auto;">
+      <code class="python">
+  import timeit
+
+  print(timeit.timeit('[i ** 2 for i in range(1000) if i % 2 == 0]', number=10000))
+  # 2.831494385987753
+  print(timeit.timeit('(i ** 2 for i in range(1000) if i % 2 == 0)', number=10000))
+  # 0.007943934993818402
+  print(timeit.timeit('map(lambda x: x ** 2, filter(lambda x: x % 2 == 0, range(1000)))', number=10000))
+  # 0.008463110993034206
+      </code>
+    </pre>
+    <blockquote>"map() and filter() return iterators"<br><small>-- What's new in Python 3.0</small></blockquote>
+  </section>
+
+  <section>
+    <h2>Careful use of <code style="color: red;">else</code></h2>
+    <ul>
+      <li>Really great with <code style="color: red;">try</code></li>
+      <li>May take time to understand when with <code style="color: red;">for</code> or <code style="color: red;">while</code></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Pay attention to <code style="color: red;">finally</code></h2>
+    <ul>
+      <li>Supposed to do cleanup work</li>
+      <li>Control clauses like <code style="color: red;">return</code> or <code style="color: red;">break</code> will silence any exceptions in the try-block</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Use zip for loop iterators together</h2>
+    <pre>
+      <code class="python">
+example = dict((k, v) for k, v in zip(ls1, ls2))
+      </code>
+    </pre>
+  </section>
 </section>
 
 <section>
-  <h2>Know which version you are using</h2>
-  <p><code>2to3</code> will help a lot basically</p>
-  <p>and check <a href="https://docs.python.org/3/whatsnew/3.0.html">Python doc</a> before migration</p>
-  <p><a href="https://github.com/yyuu/pyenv">pyenv</a> for managing and switching Python versions</p>
-  <p>make sure your global version is still "system" to ensure libraries to work</p>
-  <p>combine with virtualenv to make development env more isolated</p>
+  <section>
+    <h2>Functions</h2>
+  </section>
+
+  <section>
+    <h2>Prefer exceptions to returning None</h2>
+    <ul>
+      <li>Python is not C or Go</li>
+      <li>Clearer control flow</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Understanding closure</h2>
+    <ul>
+      <li>Understanding LEGB</li>
+      <li>Cannot assign without declaration</li>
+      <li>
+        <code style="color: red;">nonlocal</code> in Python 3
+        <pre>
+          <code class="python">
+def test_non_local():
+    def inner():
+        nonlocal outvar
+        outvar = 5
+
+  outvar = 3
+  print(outvar)
+  inner()
+  print(outvar)
+
+test_non_local()
+          </code>
+        </pre>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Understanding closure</h2>
+    <ul>
+      <li>
+        Viariables in closure only gets evaluated at execution
+        <pre>
+          <code class="python">
+print([func(2) for func in [lambda x: i * x for i in range(5)]])
+# [8, 8, 8, 8, 8]
+print([func(2) for func in [lambda x, i=i: i * x for i in range(5)]])
+# [0, 2, 4, 6, 8]
+print([func(2) for func in (lambda x: i * x for i in range(5))])
+# [0, 2, 4, 6, 8]
+          </code>
+        </pre>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Generator over returning list</h2>
+    <ul>
+      <li><code style="color: red;">yield</code> will transform a function to a generator</li>
+      <li>Efficiency</li>
+      <li>
+        Infinite series
+        <pre>
+          <code class="python">
+def fib_infinite():
+    a, b = 0, 1
+    while True:
+        a, b = a + b, a
+        yield a
+
+import itertools
+print(list(itertools.islice(fib_infinite(), 20)))
+          </code>
+        </pre>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Prefer kwargs for clarity and extensibility</h2>
+    <ul>
+      <li>User knows, reader knows</li>
+      <li>Optional arguments</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Use <code>None</code> for default argument</h2>
+    <ul>
+      <li>
+        Key is immutability
+        <pre>
+          <code>
+def test_default_arg(default=None):
+    default = [] if default is None else default
+    print(default)
+
+test_default_arg()
+test_default_arg('')
+test_default_arg(0)
+          </code>
+        </pre>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Decorator</h2>
+    <ul>
+      <li>One of the greatest features in Python</li>
+      <li>Memorization</li>
+      <li>Logging</li>
+      <li>Profiling</li>
+      <li>and etc.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Decorator</h2>
+    <pre>
+      <code class="python" data-noescape>
+<mark>from functools import wraps</mark>
+def profile_func(func):
+    <mark>@wraps(func)</mark>
+    def profiled_func(*args, **kwargs):
+        profile = cProfile.Profile()
+        try:
+            profile.enable()
+            result = func(*args, **kwargs)
+            profile.disable()
+        finally:
+            profile.print_stats()
+        return result
+
+    return profiled_func
+
+@profile_func
+def demo():
+    return 'Hello, world!'
+
+print(demo.__name__)
+      </code>
+    </pre>
+  </section>
 </section>
 
 <section>
-  <h2>Follow PEP 8 style guide</h2>
-  <p>For Vim, <code>Plugin 'klen/python-mode'</code> into your vimrc</p>
-  <p>For Sublime, "Anaconda"</p>
-</section>
-
-<section>
-  <h2>Use list comprehension over map &amp; filer</h2>
-  <p>Faster</p>
-  <p>More Pythonic</p>
-</section>
-
-<section>
-  <h2>Generator for large comprehensions</h2>
-  <p>More memory friendly</p>
-  <p><code>yield</code> is more than generator though: I will cover this in later section when I touch concurrency</p>
-</section>
-
-<section>
-  <h2>Careful use of <code>else</code></h2>
-  <p>Really great with <code>try</code></p>
-  <p>May take some time when with <code>for</code> or <code>while</code></p>
-</section>
-
-<section>
-  <h2>Pay attention to <code>finally</code></h2>
-  <p>Supposed to do cleanup work</p>
-  <p>control clause like <code>return</code> or <code>break</code> will silence any exceptions in the try-block</p>
-</section>
-
-<section>
-  <h2>Use zip for loop iterators together</h2>
+  <h2>What is next? (Proposals Only)</h2>
+  <ul>
+    <li>Class &amp; Inheritance</li>
+    <li>Metaclass</li>
+    <li>Concurrency &amp; Parallelism</li>
+    <li>Built-ins</li>
+    <li>IPython notebook</li>
+    <li>Python for data science</li>
+    <li>Django &amp; Flask</li>
+    <li>Tornado</li>
+    <li>A in-depth introduction to Python 3</li>
+  </ul>
 </section>
 
 <section>
