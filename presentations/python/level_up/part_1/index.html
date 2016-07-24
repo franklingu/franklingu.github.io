@@ -251,15 +251,32 @@ print(list(itertools.islice(fib_infinite(), 20)))
       <li>User knows, reader knows</li>
       <li>Optional arguments</li>
     </ul>
+    <pre>
+      <code>
+# version 1
+def get_user(user_id):
+    return User.find(id=user_id)
+# version 2
+def get_user(user_id, **kwargs):
+    encoding = kwargs.pop('encoding', None)
+    user = User.find(id=user_id)
+    encoder = get_encoder(encoding)
+    return encoder.encode(user)
+# we can even further improve it if encoder is used by
+#   many other functions as well
+      </code>
+    </pre>
   </section>
 
   <section>
     <h2>Use <code>None</code> for default argument</h2>
     <ul>
       <li>
-        Key is immutability
-        <pre>
-          <code>
+        Immutability is the KEY!
+      </li>
+    </ul>
+    <pre>
+      <code class="python">
 def test_default_arg(default=None):
     default = [] if default is None else default
     print(default)
@@ -267,10 +284,8 @@ def test_default_arg(default=None):
 test_default_arg()
 test_default_arg('')
 test_default_arg(0)
-          </code>
-        </pre>
-      </li>
-    </ul>
+      </code>
+    </pre>
   </section>
 
   <section>
@@ -311,6 +326,49 @@ print(demo.__name__)
       </code>
     </pre>
   </section>
+
+  <section>
+    <h2>Decorator</h2>
+    <pre>
+      <code class="python">
+# version 3 of get_user
+from functools import wraps
+def encode_result(func):
+    @wraps(func)
+    def inner(*args, **kwargs):
+        encoding = kwargs.pop('encoding', None)
+        result = func(*args, **kwargs)
+        return get_encoder(encoding).encode(result)
+    return inner
+
+@encode_result
+def get_user(user_id, **kwargs):
+    return User.find(id=user_id)
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h2>Decorator</h2>
+    <pre>
+      <code class="python">
+# version 3 of get_user
+from functools import wraps
+def encode_result(encoding=None):
+    def wrapper(func):
+        @wraps(func)
+        def inner(*args, **kwargs):
+            result = func(*args, **kwargs)
+            return get_encoder(encoding).encode(result)
+        return inner
+    return wrapper
+
+@encode_result(encoding='json')
+def get_user(user_id, **kwargs):
+    return User.find(id=user_id)
+      </code>
+    </pre>
+  </section>
 </section>
 
 <section>
@@ -324,7 +382,7 @@ print(demo.__name__)
     <li>Python for data science</li>
     <li>Django &amp; Flask</li>
     <li>Tornado</li>
-    <li>A in-depth introduction to Python 3</li>
+    <li>An in-depth introduction to Python 3</li>
   </ul>
 </section>
 
