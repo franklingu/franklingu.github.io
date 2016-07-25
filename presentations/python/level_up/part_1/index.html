@@ -139,6 +139,124 @@ title: Python level up series 1
   </section>
 
   <section>
+    <h2>Use True in infinite loop</h2>
+    <ul>
+      <li>More readable, it is not C || C++</li>
+      <li>although slower on &lt;3.0</li>
+    </ul>
+    <pre>
+      <code class="python">
+>>> import timeit
+>>> def test1():
+...     idx = 1
+...     while True:
+...        idx += 1
+...        if idx > 1000:
+...           break
+>>> def test2():
+...     idx = 1
+...     while 1:
+...        idx += 1
+...        if idx > 1000:
+...            break
+...
+>>> timeit.timeit(test1, number=1000000)
+60.8167519569397
+>>> timeit.timeit(test2, number=1000000)
+35.87116599082947
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h2>Use True in infinite loop</h2>
+    <ul>
+      <li>In Python 3, <code>True</code> is reserved as constants</li>
+      <li>Meaning you can do <code>True = 1</code> in 2.7</li>
+    </ul>
+    <pre>
+      <code class="python">
+# See that Python 3 is generally slower than 2
+import timeit
+def test1():
+  idx = 0
+  while 1:
+    idx += 1
+    if idx > 1000:
+      break
+def test2():
+  idx = 0
+  while True:
+    idx += 1
+    if idx > 1000:
+      break
+print(timeit.timeit(test1, number=1000000))
+# 55.750455176021205
+print(timeit.timeit(test2, number=1000000))
+# 56.51068397599738
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h2>Use unpacking for swapping variables</h2>
+    <ul>
+      <li>Save code &amp; more readable</li>
+      <li>Faster</li>
+    </ul>
+    <pre>
+      <code class="python">
+import timeit
+def test1():
+  x, y = 1, 2
+  for _ in range(1000):
+    temp = x
+    x = y
+    y = temp
+def test2():
+  x, y = 1, 2
+  for _ in range(1000):
+    y, x = x, y
+print(timeit.timeit(test1, number=4000000))
+# 147.59938350701123
+print(timeit.timeit(test2, number=4000000))
+# 133.6212830049917
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h2>Use unpacking for swapping variables</h2>
+    <pre>
+      <code data-noescape>
+## test1
+        >>   25 FOR_ITER                24 (to 52)
+             28 STORE_FAST               2 (_)
+
+  4          31 LOAD_FAST                0 (x)
+             34 STORE_FAST               3 (temp)
+
+  5          37 LOAD_FAST                1 (y)
+             40 STORE_FAST               0 (x)
+
+  6          43 LOAD_FAST                3 (temp)
+             46 STORE_FAST               1 (y)
+             49 JUMP_ABSOLUTE           25
+## test2
+        >>   25 FOR_ITER                19 (to 47)
+             28 STORE_FAST               2 (_)
+
+ 12          31 LOAD_FAST                0 (x)
+             34 LOAD_FAST                1 (y)
+             <mark>37 ROT_TWO</mark>
+             38 STORE_FAST               1 (y)
+             41 STORE_FAST               0 (x)
+             44 JUMP_ABSOLUTE           25
+      </code>
+    </pre>
+  </section>
+
+  <section>
     <h2>Careful use of <code style="color: red;">else</code></h2>
     <ul>
       <li>Really great with <code style="color: red;">try</code></li>
@@ -156,6 +274,11 @@ title: Python level up series 1
 
   <section>
     <h2>Use zip for loop iterators together</h2>
+    <ul>
+      <li>Iterate 2 iterable at the same time</li>
+      <li>Check <code>itertools.izip</code> &amp; <code>itertools.izip_longest</code></li>
+      <li>BTW, <code>itertools</code> is also a very powerful library</li>
+    </ul>
     <pre>
       <code class="python">
 example = dict((k, v) for k, v in zip(ls1, ls2))
@@ -184,8 +307,10 @@ example = dict((k, v) for k, v in zip(ls1, ls2))
       <li>Cannot assign without declaration</li>
       <li>
         <code style="color: red;">nonlocal</code> in Python 3
-        <pre>
-          <code class="python">
+      </li>
+    </ul>
+    <pre>
+      <code class="python">
 def test_non_local():
     def inner():
         nonlocal outvar
@@ -197,10 +322,8 @@ def test_non_local():
     print(outvar)
 
 test_non_local()
-          </code>
-        </pre>
-      </li>
-    </ul>
+      </code>
+    </pre>
   </section>
 
   <section>
@@ -208,18 +331,18 @@ test_non_local()
     <ul>
       <li>
         Viariables in closure only gets evaluated at execution
-        <pre>
-          <code class="python">
+      </li>
+    </ul>
+    <pre>
+      <code class="python">
 print([func(2) for func in [lambda x: i * x for i in range(5)]])
 # [8, 8, 8, 8, 8]
 print([func(2) for func in [lambda x, i=i: i * x for i in range(5)]])
 # [0, 2, 4, 6, 8]
 print([func(2) for func in (lambda x: i * x for i in range(5))])
 # [0, 2, 4, 6, 8]
-          </code>
-        </pre>
-      </li>
-    </ul>
+      </code>
+    </pre>
   </section>
 
   <section>
@@ -229,8 +352,10 @@ print([func(2) for func in (lambda x: i * x for i in range(5))])
       <li>Efficiency</li>
       <li>
         Infinite series
-        <pre>
-          <code class="python">
+      </li>
+    </ul>
+    <pre>
+      <code class="python">
 def fib_infinite():
     a, b = 0, 1
     while True:
@@ -239,10 +364,8 @@ def fib_infinite():
 
 import itertools
 print(list(itertools.islice(fib_infinite(), 20)))
-          </code>
-        </pre>
-      </li>
-    </ul>
+      </code>
+    </pre>
   </section>
 
   <section>
