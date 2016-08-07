@@ -19,3 +19,50 @@ So the key is to use shortcuts and reduce the movement of your hand and even fin
 In fact, from this point of view we can sort of see that Vim users will be faster than Sublime users, which is TRUE for most of the highly skilled users of two editors--as a Sublime supporter, I admit this. But Sublime is good at some tasks as well with its GUI features(like Line Swapping). And what is more important, Sublime is easy to get started and get mastery, and once you are a master the editing speed difference is not much anyway. Last reason, it is sort like a religious war: like those who are in favor of Vim always talk about how stupid Emacs is by saying that the shortcut requires pressing too many keys at the same time; yet Emacs uses would defend that clearly EmacsLisp is much more powerful than vimrc or any other editor's settings.
 
 OK. I guess it is enough for my own experience in becoming a power user of Sublime (I am still on this journey and help suggestions would be welcomed). Let us get to the real hard-core stuff to become good at Sublime.
+
+First some useful shortcuts:
+
+1. `Ctrl + p`: open any file. In fact you can also add '@' as prefix to go to symbol--which is just equivalent to `Ctrl + r` and you can also add ':' as prefix go to line--which just equivalent to `Ctrl + g`.
+2. `Ctrl + click`: multiple selection.
+3. `Ctrl + Shift + right click`: multiple vertical selection.
+4. `Shift + Alt + w`: wrap multiple selections into tags--really useful for frontend programmers; or you may want to try Emmet for even better user experience.
+5. `Ctrl + Shift + Up/Down`: move up or down the current editing line.
+6. `Ctrl + '`: expand selection to quotes(install Expand selection to quotes package).
+7. `Ctrl + l`: expand selection to line.
+8. `Ctrl + d`: expand selection to word.
+9. `Shift + Alt + Up/Down`: expand selection to the line above/below.
+10. `Ctrl + Shift + d`: duplicate the current line.
+
+Of course there are some handy shortcuts and you could define your own shortcuts as well. And notice that everything listed down here is for Ubuntu/Linux. So if you are using Mac or Windows, check Sublime help first :P.
+
+Some nice packages:
+
+1. `Emmet`: really useful for html and css, a must-have for frontend developers.
+2. `Anaconda`: a great package to make Sublime a powerful IDE for Python.
+3. `JSHint`: for JavaScript developers.
+4. `Color Highlighter`: highlighting css colors.
+5. `Origami`: easily manage multiple panes (also personally I am more used to Layout that comes with Sublime).
+6. `Git Gutter`: show `git diff` while editing.
+7. `Bracket Highlighter`: highlight matching brackets and tags more easily.
+
+Some other setup:
+
+1. Pick a darker theme, my favorite is 3024 (Night).
+2. `"highlight_line": true`: show current line more clearly.
+3. Have a wider caret:
+~~~
+"caret_extra_bottom": 2
+"caret_extra_top": 2
+"caret_extra_width": 4
+"caret_style": "solid"
+"wide_caret": true
+~~~
+4. `"highlight_modified_tabs": true`: highlight unsaved files.
+5. Higher lines for code reading:
+~~~
+"line_padding_bottom": 1,
+"line_padding_top": 1,
+~~~
+6. Differentiate files and folders: `"bold_folder_labels": true`.
+
+Hope you just get better with using Sublime if you are also a fan, or become good with any editor that you are in love with.
