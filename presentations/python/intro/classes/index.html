@@ -50,7 +50,6 @@ title: Python level up series 1
   <h2>Today's speech's outline</h2>
   <ul>
     <li>Overview of Programming Paradigms</li>
-    <li>Functions (If time permits)</li>
     <li>Classes &amp; Object Oriented</li>
     <li>More OOP</li>
     <li>Diagrams</li>
@@ -62,18 +61,136 @@ title: Python level up series 1
 <section>
   <section>
     <h2>Programming Paradigms</h2>
+    <ul>
+      <li class="fragment">Procedural</li>
+      <li class="fragment">Functional</li>
+      <li class="fragment">Object oriented</li>
+      <li>a complete list <a href="https://en.wikipedia.org/wiki/Programming_paradigm">Wikipedia</a></li>
+    </ul>
   </section>
-</section>
-
-<section>
   <section>
-    <h2>Functions</h2>
+    <h2>Examples</h2>
+    <ul>
+      <li class="fragment">C, Shell are Procedural</li>
+      <li class="fragment">Haskel, Lisp are Functional</li>
+      <li class="fragment">Java, SmallTalk are Object oriented</li>
+      <li class="fragment">Python, C++, OCamel, Swift, Scala are Multi-Paradigms</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Python -- Multi-Paradigms</h2>
+    <ul>
+      <li>For many data science and system administration work: procedural</li>
+      <li>For complicated data structure: class based object oriented</li>
+      <li>For some computation work and decorator: functional</li>
+      <li>Functional: great for tricks and hacks, not largely supported</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Python -- Multi-Paradigms</h2>
+    <ul>
+      <li>For most of time, can do fine with rich built-in data structures and procedural</li>
+      <li>Classes for complicated data and their behavior</li>
+      <li>Functional at times to quickly getting things done</li>
+    </ul>
   </section>
 </section>
 
 <section>
   <section>
     <h2>Classes</h2>
+    <ul>
+      <li>New Syntax</li>
+      <li>Classes &amp; objects</li>
+      <li>Methods <span style="color: red;">vs</span> functions</li>
+      <li>Instance methods <span style="color: red;">vs</span> class methods <span style="color: red;">vs</span> static methods</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Define a class</h2>
+    <pre>
+      <code class="python">
+"""Example for defining first class in Python
+"""
+
+class FirstClass:
+    """Our first class: just a simple demo
+
+    A class is a namespace by itself. When seeing the class keyword,
+    a class definition begins. And when the indentation ends, the class
+    definition ends and a class object is created.
+    So a new class is an object--similar to Ruby and you can create a
+    class from metaclass just like you are about to create an object
+    from a class. This sounds confusing? Just bear with me for a while.
+    """
+    pass
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>A bit too much--some explanation now</h2>
+    <ul>
+      <li>A namespace is just a box. Many names are in it.</li>
+      <li>Names in a namespace are not visible to outside of the box</li>
+      <li>A class is a namespace--therefore you cannot see names inside it</li>
+      <li>But of course you may refer to names inside it by referring to the box first</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Class as a Namespace</h2>
+    <pre>
+      <code class="python">
+"""Explaining class-as-a-namespace notion
+"""
+
+class ClassAsANamespace:
+    """Demo class-as-a-namespace
+    """
+    name1 = 'Hello, World!'
+    name2 = 1
+    name3 = [1, 2, 3]
+    name4 = {
+        'test': 'Hello, World!'
+    }
+
+# You cannot use the statement below, as name1 is inside
+#   ClassAsANamespace's namespace. Uncomment it and see it running
+# print(name1)
+
+print(ClassAsANamespace.name1)
+print(ClassAsANamespace.name2)
+print(ClassAsANamespace.name3)
+print(ClassAsANamespace.name4)
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>class &amp; object</h2>
+    <ul>
+      <li>A class is an object</li>
+      <li>An object can be created from a class</li>
+      <li>Object is instantiation of a class</li>
+      <li>What is class of an class?</li>
+      <li>metaclass--type</li>
+      <li>But you can let go of type and metaclass for the moment</li>
+      <li> -- advanced topics</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Wow, a lot of notions! Take a short rest</h2>
+    <ul>
+      <li>We know how to define a class now--that is it</li>
+      <li>We know class is a namespace</li>
+      <li>Well, leave other notions to later</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Let's create objects now!</h2>
+    <pre>
+      <code class="python">
+
+      </code>
+    </pre>
   </section>
 </section>
 
