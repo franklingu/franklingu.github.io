@@ -188,6 +188,70 @@ print(ClassAsANamespace.name4)
     <h2>Let's create objects now!</h2>
     <pre>
       <code class="python">
+"""Creation of objects, name it as create_objects.py
+"""
+class DemoClass:
+    """A demo class for object creation
+    """
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
+
+    def a_method(self):
+        return self.a
+
+    def another_method(self, b):
+        # notice that here self.b could be different from b. this is because of
+        # namespace--still remember what is namespace right?--a box full of
+        # names inside
+        print('Inside self, the b is ', self.b)
+        print('The parameter b is ', b)
+        return self.c + b
+
+
+a_obj = DemoClass(1, 2, 3)
+print('The type of a_obj is ', type(a_obj))
+print('The type of a_obj\'s method is ', type(a_obj.a_method))
+print('The return value of a_obj.a_method is ', a_obj.a_method())
+print('The return value of a_obj.another_method is ', a_obj.another_method(0))
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>More objects' creation</h2>
+    <pre>
+      <code class="python">
+"""More examples on objects creation, same folder as create_objects.py
+"""
+from create_objects import DemoClass
+
+obj1 = DemoClass(1, 2, 'Hello')
+print('obj1\'s b is ', obj1.b)
+print(
+   'Call obj1.another_method for first time: ',
+    obj1.another_method(' world!')
+)
+obj1.c = 'I just said "Hello'
+print(
+   'Call obj1.another_method after assignment: ',
+    obj1.another_method(' world!"')
+)
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Methods <span style="color: red;">vs</span> functions</h2>
+    <ul>
+      <li>method is for objects</li>
+      <li>obj.method(args) == function(current_obj, args)</li>
+      <li>So a method is just a function bound to an object</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Practical example of classes &amp; objects</h2>
+    <pre>
+      <code class="python">
 
       </code>
     </pre>
