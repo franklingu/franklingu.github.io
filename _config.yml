@@ -22,7 +22,7 @@ lsi:         false
 highlighter: rouge
 
 permalink:     pretty
-paginate_path: 'posts/page:num'
-paginate:      10
+paginate_path: '/blogs/page:num'
+paginate:      7
 
 exclude:       [vendor]
