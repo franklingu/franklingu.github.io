@@ -33,32 +33,45 @@ meta_desc: All of Junchao's posts. Search powered by Google
     </div>
   </div>
 {% endfor %}
-
 <!-- Pagination links -->
-<div class="pagination">
+<nav aria-label="Page navigation">
   {% if paginator.total_pages > 1 %}
-  <div class="pagination">
+  <ul class="pagination">
     {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+    <li>
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a>
+    </li>
     {% else %}
-      <span>&laquo; Prev</span>
+    <li class="disabled">
+      <span>&laquo;</span>
+    </li>
     {% endif %}
 
     {% for page in (1..paginator.total_pages) %}
       {% if page == paginator.page %}
-        <em>{{ page }}</em>
+      <li class="active">
+        <span class="text-bold">{{ page }}</span>
+      </li>
       {% elsif page == 1 %}
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+      <li>
+        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: '/page:num', '' }}">{{ page }}</a>
+      </li>
       {% else %}
+      <li>
         <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+      </li>
       {% endif %}
     {% endfor %}
 
     {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+      <li>
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a>
+      </li>
     {% else %}
-      <span>Next &raquo;</span>
+      <li class="disabled">
+        <span>&raquo;</span>
+      </li>
     {% endif %}
-  </div>
+  </ul>
   {% endif %}
-</div>
+</nav>

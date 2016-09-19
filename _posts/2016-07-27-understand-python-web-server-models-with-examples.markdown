@@ -6,6 +6,8 @@ tag: Python
 meta_desc: Understand Python web server models with examples--single linear process, multi-processing, multi-threading, epoll.
 ---
 
+In this post we will explore linear process, multi-processing and multi-threading and epoll as different models for Python web server.
+
 ~~~python
 import socket
 
