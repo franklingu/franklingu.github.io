@@ -6,6 +6,8 @@ tag: Python
 meta_desc: Download data with Python, via requests or selenium.
 ---
 
+Post in progress.
+
 1. requests
 
 2. wget

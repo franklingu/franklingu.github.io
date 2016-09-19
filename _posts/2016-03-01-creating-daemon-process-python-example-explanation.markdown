@@ -4,9 +4,11 @@ title: Creating daemon process Python example explanation
 category: programming
 tag: Python
 meta_desc: Explanation for the Python example for creating daemon process in Unix based systems
+excerpt_separator: <!--more-->
 ---
 
 A daemon is a long-running background process that answers requests for services. It is used quite often in programming in various cases. An ideal daemon process should satisfy following conditions(Taken from description about daemon processes in [PEP 3143](https://www.python.org/dev/peps/pep-3143/#correct-daemon-behaviour)):
+<!--more-->
 
 >
 * Close all open file descriptors.
