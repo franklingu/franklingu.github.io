@@ -19,23 +19,59 @@ meta_desc: All of Junchao's posts. Search powered by Google
   </script>
   <gcse:search></gcse:search>
 </div>
-<!-- <div class="input-group">
-  <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
-  <input type="text" id="search-input" class="form-control" placeholder="Search...">
-</div>
-<ul id="results-container">
-
-</ul> -->
 <hr>
-<ul class="blog-summary">
-  {% for post in site.posts %}
-    <li class="blog-short-info">
-      <a href="{{ post.url }}" class="blog-title">{{ post.title }}</a>
-      <div class="">
-        <p class="text-muted small blog-date">{{ post.date | date_to_string  }}</p>
-        <p class="small blog-tag">{{ post.tag }}</p>
-      </div>
-      <hr>
+<!-- This loops through the paginated posts -->
+{% for post in paginator.posts %}
+  <div class="post-summary">
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p class="author">
+      <span class="date">{{ post.date | date_to_string }}</span>&nbsp;&nbsp;&nbsp;
+      <span class="tags">{{ post.tags }}</span>
+    </p>
+    <div class="content">
+      {{ post.excerpt }}
+    </div>
+  </div>
+{% endfor %}
+<!-- Pagination links -->
+<nav aria-label="Page navigation">
+  {% if paginator.total_pages > 1 %}
+  <ul class="pagination">
+    {% if paginator.previous_page %}
+    <li>
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a>
     </li>
-  {% endfor %}
-</ul>
+    {% else %}
+    <li class="disabled">
+      <span>&laquo;</span>
+    </li>
+    {% endif %}
+
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+      <li class="active">
+        <span class="text-bold">{{ page }}</span>
+      </li>
+      {% elsif page == 1 %}
+      <li>
+        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: '/page:num', '' }}">{{ page }}</a>
+      </li>
+      {% else %}
+      <li>
+        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+      </li>
+      {% endif %}
+    {% endfor %}
+
+    {% if paginator.next_page %}
+      <li>
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a>
+      </li>
+    {% else %}
+      <li class="disabled">
+        <span>&raquo;</span>
+      </li>
+    {% endif %}
+  </ul>
+  {% endif %}
+</nav>

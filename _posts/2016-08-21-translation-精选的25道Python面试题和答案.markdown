@@ -5,8 +5,7 @@ category: programming
 tag: Python
 meta_desc: Top 25 Python interview questions, taken from medium and translated into Chinese.
 ---
-
-[Article Link](https://medium.com/@hidimba360/top-25-python-interview-questions-and-answer-9e8504753fdc#.sbv6lqpu7)
+Translation of an English article, the original link is [Article Link](https://medium.com/@hidimba360/top-25-python-interview-questions-and-answer-9e8504753fdc#.sbv6lqpu7)
 
 Python是一门高级的，解释性的，可交互的面向对象的脚本语言。它大量用英语中的重点词，而不是像其他语言一样用停顿符，而且相比更早出现的语言，它有更少的语法构成，因而Python实际上是易读的。
 
