@@ -10,7 +10,7 @@ p {
 }
 
 pre {
-    background-color: #49483e;
+    background-color: #292924;
 }
 
 article.blog-body {
@@ -18,7 +18,7 @@ article.blog-body {
     margin-top: 30px;
     padding: 50px;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px #A2A2A2;
+    box-shadow: 0px 0px 10px #a2a2a2;
 }
 
 .copy-left {
@@ -33,13 +33,18 @@ article.blog-body {
     -ms-filter: "FlipH";
 }
 
-ul.blog-summary {
-    list-style: none;
+div.post-summary {
+    width: 90%;
+    margin: 30px auto;
+    padding: 10px 20px 10px 20px;
+    background: #ebebeb;
+    border-radius: 10px;
 }
-
-.blog-content {
-    width: 80%;
-    margin: 0 auto;
+div.post-summary > .author > .date {
+    font-size: 0.7em;
+}
+div.post-summary > .author > .tags {
+    font-size: 0.7em;
 }
 
 .container-narrow {
