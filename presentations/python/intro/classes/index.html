@@ -56,7 +56,7 @@ meta_desc: Python basics -- introduction to object oriented programming and clas
     <li>Diagrams</li>
   </ul>
   <br><br>
-  <small style="font-size: 0.4em;">With reference to <a href="https://drive.google.com/file/d/0B-eHIhYpHrGDVDFOcjRxLU1mMDg/view">Standford Python Lecture Note</a>, <a href="https://learnpythonthehardway.org/">Learn Python the Hard Way</a>, <a href="http://greenteapress.com/thinkpython/html/index.html">Think Python</a></small>
+  <small style="font-size: 0.4em;">With reference to <a href="https://drive.google.com/file/d/0B-eHIhYpHrGDVDFOcjRxLU1mMDg/view">Standford Python Lecture Notes on Classes</a>, <a href="https://learnpythonthehardway.org/">Learn Python the Hard Way</a>, <a href="http://greenteapress.com/thinkpython/html/index.html">Think Python</a></small>
   <br>
   <small style="font-size: 0.4em;">All code snippets can be found <a href="https://github.com/franklingu/2016_coding_girls_python_classes">here</a></small>
 </section>
@@ -364,23 +364,21 @@ class Pet:
     an example.
     """
     healthy_weight_range = (1.5, 4.5)
+    favorite_foods = ['meat']
 
-    def __init__(self, name, age, weight, color, favorite_food, *args, **kwargs):
+    def __init__(self, name, age, weight, color):
         """Instantiation method for a pet.
-
-        magic args and kwargs are for later use.
         """
         self.name = name
         self.age = age
         self.weight = weight
         self.color = color
-        self.favorite_food = favorite_food
 
     def have_birthday(self):
         self.age += 1
 
     def eat_stuff(self, food):
-        if food == self.favorite_food:
+        if food in self.favorite_foods:
             self.weight += 2
         else:
             self.weight += 0.5
@@ -390,9 +388,13 @@ class Pet:
 
     def check_weight(self):
         if self.__is_weight_healthy():
-            pass  # nothing to do
+            return False
         else:
             self.send_weight_warning()
+            return True
+
+    def speak(self):
+        return '{} says love you'.format(self.name)
 
     def send_weight_warning(self):
         print('Oh, pleas e take note of my weight')
@@ -406,6 +408,23 @@ class Pet:
 
     def __repr__(self):
         return self.name
+
+
+if __name__ == '__main__':
+    print('Let\'s create some pets')
+    print('first have a dog')
+    dog1 = Pet('a little dog', 1, 1.5, 'Black and white')
+    for _ in range(5):
+        dog1.eat_stuff('meat')
+    while not dog1.check_weight():
+        dog1.exercise()
+    print(dog1.speak() + '\n')
+    print('then a cat')
+    cat1 = Pet('a lovely cat', 2, 1.0, 'Black and white')
+    cat1.have_birthday()
+    print('Now {} is turning into {} years old!'.format(repr(cat1), cat1.age))
+    print(cat1.speak())
+
       </code>
     </pre>
   </section>
@@ -464,20 +483,83 @@ print('Calling static method: ', MethodsDemoClass.static_method('static'))
   <section>
     <h2>Inheritance</h2>
     <ul>
-      <li>subclassing</li>
+      <li>Subclassing</li>
+      <li>If classA is a subclass of classBase, then any object of classA is a classBase as well</li>
+      <li>iPhone is subclass of SmartPhone--your phone is iPhone, and it is definitely a SmartPhone</li>
     </ul>
   </section>
   <section>
     <h2>Polymorphism</h2>
     <ul>
-      <li>override parent's behavior</li>
+      <li>Override parent's behavior</li>
+      <li>classA is a subclass of classBase, but for some special behavior it could be special</li>
+      <li>OLevelTest is a Test, SAT is also a Test. OLevelTest has its own rules and so does SAT</li>
     </ul>
   </section>
   <section>
     <h2>Multiple inheritance</h2>
     <ul>
       <li>Can have multiple parents</li>
+      <li>iPhone is a Phone, an iPod and an iTouch</li>
     </ul>
+  </section>
+  <section>
+    <h2>Example</h2>
+    <pre>
+      <code class="python">
+"""Demostration of different notions in advanced object oriented programming
+"""
+from practical_class_object import Pet
+
+
+class Dog(Pet):
+    favorite_foods = ['meat', 'bone']
+
+    def speak(self):
+        return 'woof-woof, {} says love you'.format(self.name)
+
+
+class Cat(Pet):
+    favorite_foods = ['meat', 'fish']
+
+    def speak(self):
+        return 'meow-meow, {} says love you'.format(self.name)
+
+
+class DangerousPet:
+    def speak(self):
+        return 'I am just dangerous'
+
+    def is_angry(self):
+        print('Warning!!! Be careful and try not to further piss it off')
+
+
+class Cheetah(DangerousPet, Pet):
+    healthy_weight_range = (25, 45)
+
+
+if __name__ == '__main__':
+    print('Let\'s create some pets')
+    print('first have a dog')
+    dog1 = Dog('a little dog', 1, 1.5, 'Black and white')
+    for _ in range(5):
+        dog1.eat_stuff('bone')
+    while not dog1.check_weight():
+        dog1.exercise()
+    print(dog1.speak() + '\n')
+    print('then a cat')
+    cat1 = Cat('a lovely cat', 2, 1.0, 'Black and white')
+    cat1.have_birthday()
+    for _ in range(5):
+        cat1.eat_stuff('bone')
+    print('Now {} is turning into {} years old!'.format(repr(cat1), cat1.age))
+    print(cat1.speak() + '\n')
+    print('and a cheetah')
+    the_cheetah = Cheetah('Handsome and dangerous cheetah', 5, 30, 'yellow and black')
+    print(the_cheetah.speak())
+    the_cheetah.is_angry()
+      </code>
+    </pre>
   </section>
 </section>
 
