@@ -100,4 +100,42 @@ Time taken for tests:   16.346 seconds
 Well, since we know that servers are blocking by nature--what if we can handle it as non-blocking IO and only acknowledge when there is an event. First we have `select` and then `poll` and later `epoll` for this purpose. Let's see how to code it.
 
 ~~~python
+import select
+import socket
+
+response = 'HTTP/1.1 200 OK\r\nConnection: Close\r\nContent-Length: 11\r\n\r\nHello world'
+
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.setblocking(False)
+server_addr = ('0.0.0.0', 9527)
+server.bind(server_addr)
+server.listen(1024)
+READ_ONLY = select.EPOLLIN | select.EPOLLPRI
+epoll = select.epoll()
+epoll.register(server, READ_ONLY)
+timeout = 60
+fd_to_socket = {server.fileno(): server}
+
+
+while True:
+    events = epoll.poll(timeout)
+    for fd, flag in events:
+        sock = fd_to_socket[fd]
+        if flag & READ_ONLY:
+            if sock is server:
+                conn, client_addr = sock.accept()
+                conn.setblocking(False)
+                fd_to_socket[conn.fileno()] = conn
+                epoll.register(conn, READ_ONLY)
+            else:
+                request = sock.recv(1024)
+                sock.send(response)
+                sock.close()
+                del fd_to_socket[fd]
+~~~
+
+epoll is bit faster but not much--this is because we are sending small requests only and the blocking is not very significant in this case. When we have more complete examples for response model, we will see epoll's real power. It is used in Tornado, Node.JS and Netty for handling of very high load.
+
+~~~
+Time taken for tests:   5.072 seconds
 ~~~
