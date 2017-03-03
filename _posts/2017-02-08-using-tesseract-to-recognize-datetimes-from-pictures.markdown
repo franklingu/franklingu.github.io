@@ -10,6 +10,10 @@ Tesseract is a software for recognizing texts on images, or it is for optical ch
 
 So there is one task, for which I got a lot of small images with datetime on each one. I need to recognize those datetimes. Those images are small but there is not much noise. After some Googling, I think I should try Tesseract, about which there are some examples and the documentation seems OK.
 
+And the image is like:
+
+![OCR Original](/img/blogs/ocr_origin.png)
+
 Installing it seems trivial on Ubuntu as I think I will just go for 3.x instead of the latest version. After installing, I tested with one of the image (`tesseract original_img.png out -psm 7`), I got this output:
 
 ~~~
@@ -22,7 +26,9 @@ This is not even close in any sense!!! It cannot be this bad. So I searched a bi
 img.resize((img.size[0] * 16, img.size[1] * 16), Image.ANTIALIAS)
 ~~~
 
-And I got:
+The resized image (with adjustment to size for display):
+
+<img src="/img/blogs/ocr_adjusted1.png" alt="OCR Adjusted 1" style="width: 100%; height: auto;"/>
 
 ~~~
 8:00am 1 11301201 6
@@ -33,6 +39,10 @@ So if we ignore those two extra spaces in between, we can see that it is accepta
 I can replace the yellow color to white, and increase contrast. Then it should be clearer to recoginize those characters I guess.
 
 I got a clearer image, but result is still the same.
+
+The further adjusted image (with adjustment to size for display):
+
+<img src="/img/blogs/ocr_adjusted2.png" alt="OCR Adjusted 2" style="width: 100%; height: auto;"/>
 
 Does Tesseract support a set of candidate characters to recognize? Since in my use case, I only need to recognize a few digits and characters.
 
