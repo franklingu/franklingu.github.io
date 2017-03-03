@@ -4,10 +4,10 @@ Personal blog of franklingu
 [![Build Status](https://travis-ci.org/franklingu/franklingu.github.io.svg?branch=master)](https://travis-ci.org/franklingu/franklingu.github.io)
 
 ### Introduction
-This is a personal blog for [franklingu](mailto:franklingujunchao@gmail.com) for keeping notes of thoughts on programming(Python, Ruby, iOS, Linux or anything that I came across or read about) or life in general. You can visit it [here](http://franklingu.github.io/).
+This is a personal blog for [franklingu](mailto:franklingujunchao@gmail.com) for keeping notes of thoughts on programming(Python, Ruby, iOS, Linux or anything that I came across or read about) or life in general. You can visit it [franklingu.github.io](http://franklingu.github.io/).
 
 ### About Me
-I am currently a developer in a hedge fund, mainly working with data and provide development support to researchers and quant developers. I am currently learning in depth about Python, Linux administration. I am also learning Scala and data analysis as well as personal interests.
+I am currently a developer in a hedge fund, mainly working with data and provide development support to researchers and quant developers. I am currently learning in depth about Python. I am also learning Scala and data analysis as personal interests.
 
 
 ### Related:
