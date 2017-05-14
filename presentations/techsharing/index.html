@@ -1,0 +1,174 @@
+---
+layout: presentation_base
+title: Summary of crawling news
+meta_desc: Downloading, parsing and more with news -- understand and make sense of it.
+---
+<section>
+  <img src="/img/python-logo.png" style="max-width: 250px; border-radius: 10px;">
+  <h2>Summary of crawling news</h2>
+  <h4>--downloading, parsing and more with news</h4>
+  <p>
+    <small>Created by <a href="http://franklingu.github.io">Junchao</a></small>
+  </p>
+</section>
+
+<section>
+  <h2>Today's speech's outline</h2>
+  <ul>
+    <li>Downloading news: requests, requests and more</li>
+    <li>Parsing news: lxml vs BeautifulSoup</li>
+    <li>All in one: newspaper</li>
+    <li>What is more</li>
+  </ul>
+</section>
+
+<section>
+  <section>
+    <h3>Downloading news: requests, requests and more requests</h3>
+    <ul>
+      <li>What about User-Agent</li>
+      <li>What about Forms</li>
+      <li>What about Cookies</li>
+      <li>What about JavaScript</li>
+      <li>What about Speed</li>
+      <li>What about IP blocking</li>
+    </ul>
+  </section>
+  <section>
+    <h3>About User-Agent</h3>
+    <ul>
+      <li>curl or requests use headers of the underlying library</li>
+      <li>we do not want to get noticed when crawling</li>
+      <li>so we will usually fake User-Agent by customizing headers</li>
+      <li><code>requests.get(url, headers={'User-Agent': 'Faked'})</code></li>
+    </ul>
+  </section>
+  <section>
+    <h3>About Forms</h3>
+    <ul>
+      <li>urlencoded or json or anything, it is just data</li>
+      <li>so the ultimate way is to view requests sent by browser</li>
+      <li>sometimes need a bit of reverse engineering: read and debug the JavaScript code</li>
+      <li class="fragment">Chrome Dev Tools is THE best friend, love it!</li>
+    </ul>
+  </section>
+  <section>
+    <h3>About Cookies</h3>
+    <ul>
+      <li>Used for login traditionally</li>
+      <li>with form submission: CSRF token</li>
+      <li>the old way is a dict or CookieJar</li>
+      <li>but seriously, with requests.Session, why you want to take the trouble by yourself?</li>
+    </ul>
+  </section>
+  <section>
+    <h3>About JavaScript</h3>
+    <ul>
+      <li>More and more websites using JavaScript</li>
+      <li>if simple AJAX request only, view raw request and reverse engineer</li>
+      <li>if some data manipulation, post-processing after downloading and parsing</li>
+      <li>if SPA, reverse engineering could be hard -- possible however</li>
+      <li>cont. can try selenium and pyvirtualdisplay</li>
+      <li>cont. but I do not personally suggest it: unreliable in many ways</li>
+    </ul>
+  </section>
+  <section>
+    <h3>About Speed: threading</h3>
+    <ul>
+      <li>Yes Python has GIL, so what?</li>
+      <li>Handles IO intensive tasks like downloading</li>
+      <li>Detail: CPython, when doing read/write (or socket recv and send), will give up GIL</li>
+      <li></li>
+    </ul>
+  </section>
+  <section>
+    <h3>About Speed: concurrent.futures (3k only)</h3>
+    <ul>
+      <li></li>
+    </ul>
+  </section>
+  <section>
+    <h3>About Speed: multiprocessing</h3>
+    <ul>
+      <li>Unix community: does not like threads and prefer processes --The Art of Unix Programming</li>
+      <li>In the case of Python, communication by pickling and unpickling: another layer of slowness</li>
+      <li>Used with threading: CPU intensive and IO intensive tasks could be solved</li>
+    </ul>
+  </section>
+  <section>
+    <h3>About Speed: gevent</h3>
+    <ul>
+      <li></li>
+    </ul>
+  </section>
+  <section>
+    <h3>About Speed: asyncio (3k only)</h3>
+    <ul>
+      <li></li>
+    </ul>
+  </section>
+  <section>
+    <h3>About IP blocking</h3>
+    <ul>
+      <li>Use cloud?</li>
+      <li>Tor?</li>
+    </ul>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h3>Parsing news: lxml vs BeautifulSoup</h3>
+    <ul>
+      <li>lxml</li>
+      <li>BeautifulSoup4</li>
+      <li>Differences and Comments</li>
+    </ul>
+  </section>
+  <section>
+    <h3>lxml: xml and html parsing</h3>
+    <ul>
+      <li></li>
+    </ul>
+  </section>
+  <section>
+    <h3>lxml: xpath and cssselect</h3>
+    <ul>
+      <li></li>
+    </ul>
+  </section>
+  <section>
+    <h3>lxml: pyquery</h3>
+    <ul>
+      <li></li>
+    </ul>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h3>All in one: newspaper</h3>
+    <ul>
+      <li>The predecessor: python-goose and the ancestor: goose</li>
+      <li>newspaper build</li>
+      <li>newspaper parse</li>
+      <li>newspaper nlp</li>
+    </ul>
+  </section>
+</section>
+
+<section>
+  <h2>What is next? (Proposals Only)</h2>
+  <ul>
+    <li>Concurrency &amp; Parallelism</li>
+    <li>IPython notebook</li>
+    <li>Python for data science</li>
+    <li>Django &amp; Flask</li>
+    <li>Tornado &amp; asyncio</li>
+    <li>An in-depth introduction to Python 3</li>
+  </ul>
+</section>
+
+<section>
+    <h2 style="font-family: 'Pacifico', cursive;">Thank you</h2>
+</section>
