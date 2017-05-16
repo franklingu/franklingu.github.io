@@ -82,12 +82,6 @@ meta_desc: Downloading, parsing and more with news -- understand and make sense 
     </ul>
   </section>
   <section>
-    <h3>About Speed: concurrent.futures (3k only)</h3>
-    <ul>
-      <li></li>
-    </ul>
-  </section>
-  <section>
     <h3>About Speed: multiprocessing</h3>
     <ul>
       <li>Unix community: does not like threads and prefer processes --The Art of Unix Programming</li>
@@ -96,22 +90,42 @@ meta_desc: Downloading, parsing and more with news -- understand and make sense 
     </ul>
   </section>
   <section>
+    <h3>About Speed: hybrid</h3>
+    <ul>
+      <li>multiprocessing for multiple CPUs</li>
+      <li>threading for IO work</li>
+    </ul>
+  </section>
+  <section>
+    <h3>About Speed: concurrent.futures (3k only)</h3>
+    <ul>
+      <li>Borrowed from Java</li>
+      <li>Wrapper for user-friendliness</li>
+      <li>Even more user-friendly than multiprocessing.Pool and threading</li>
+    </ul>
+  </section>
+  <section>
     <h3>About Speed: gevent</h3>
     <ul>
-      <li></li>
+      <li>coroutine-based methodology</li>
+      <li>it is just like going back to Windows 95 minus</li>
+      <li>involves monkey-patching, so potentially not safe</li>
+      <li>see it with requests in grequests</li>
     </ul>
   </section>
   <section>
     <h3>About Speed: asyncio (3k only)</h3>
     <ul>
-      <li></li>
+      <li>based on gevent and twisted</li>
+      <li>even more complicated</li>
+      <li>and potentially even faster and more scalable: <a href="https://github.com/channelcat/sanic">sanic</a></li>
     </ul>
   </section>
   <section>
     <h3>About IP blocking</h3>
     <ul>
-      <li>Use cloud?</li>
-      <li>Tor?</li>
+      <li>Use cloud: request for new servers after a while</li>
+      <li>Tor: restart a daemon client periodically</li>
     </ul>
   </section>
 </section>
@@ -128,19 +142,35 @@ meta_desc: Downloading, parsing and more with news -- understand and make sense 
   <section>
     <h3>lxml: xml and html parsing</h3>
     <ul>
-      <li></li>
+      <li>based on libxml2-dev libxslt-dev</li>
+      <li>Python is slow, but it is using C</li>
+      <li>known for being strict about html format</li>
+      <li>improved as libxml2 as improved</li>
+      <li>still not good at encoding though</li>
+      <li>use BeautifulSoup for encoding detection</li>
     </ul>
   </section>
   <section>
     <h3>lxml: xpath and cssselect</h3>
     <ul>
-      <li></li>
+      <li>xpath is powerful, but just a bit hard to understand compared to css query string</li>
+      <li>use cssselect: lxml is using this package internally</li>
     </ul>
   </section>
   <section>
     <h3>lxml: pyquery</h3>
     <ul>
-      <li></li>
+      <li>jquery is convenient to use, and somebody bring its query method to lxml</li>
+    </ul>
+  </section>
+  <section>
+    <h3>bs4: beautifulsoup4</h3>
+    <ul>
+      <li>first, bs4 and lxml can use each other</li>
+      <li>for pure html.parser in bs4, it uses regex, more tolerent to broken html</li>
+      <li>better as encoding detection</li>
+      <li>slower than lxml, but it is generally fine. but</li>
+      <li>one thing I really do not like: its select does not support all css features, not even nth-of-child</li>
     </ul>
   </section>
 </section>
@@ -150,25 +180,40 @@ meta_desc: Downloading, parsing and more with news -- understand and make sense 
     <h3>All in one: newspaper</h3>
     <ul>
       <li>The predecessor: python-goose and the ancestor: goose</li>
-      <li>newspaper build</li>
       <li>newspaper parse</li>
+      <li>newspaper build</li>
       <li>newspaper nlp</li>
     </ul>
   </section>
   <section>
     <h3>python-goose and goose</h3>
     <ul>
-      <li></li>
+      <li>goose: Scala-based article extractor, lack of development now</li>
+      <li>python-goose: Python clone of goose, lack of developement now</li>
     </ul>
   </section>
   <section>
-    <h3>newspaper build</h3>
+    <h3>newspaper</h3>
     <ul>
-      <li></li>
+      <li>borrowed a lot of code for python goose</li>
+      <li>build on top of requests and lxml</li>
+      <li>uses Pillow for image extraction</li>
+      <li>uses python-dateutil for datetime parsing</li>
+      <li>uses nltk and jieba for NLP</li>
+      <li>uses feedfinder2 and feedparser for link discovery</li>
     </ul>
   </section>
   <section>
     <h3>newspaper parse</h3>
+    <ul>
+      <li>title, authors, meta_language, publish_date, text, video, images ...</li>
+      <li>What we can learn from it: title, publish_date, text</li>
+      <li>What we may not need at all: video, images</li>
+      <li>What is too general: authors, but we may not need this</li>
+    </ul>
+  </section>
+  <section>
+    <h3>newspaper build</h3>
     <ul>
       <li></li>
     </ul>
