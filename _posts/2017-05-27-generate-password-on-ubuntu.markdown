@@ -1,6 +1,6 @@
 ---
 layout: blog_base
-title: use strong passwords with help of ubuntu
+title: use strong passwords with help of Ubuntu
 category: others
 tag: software
 meta_desc: generating strong passwords using apg and store them securely, on ubuntu
