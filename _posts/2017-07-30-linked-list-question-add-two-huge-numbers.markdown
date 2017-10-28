@@ -1,9 +1,9 @@
 ---
 layout: blog_base
-title: Linked list question -- add two huge numbers
+title: Linked List Question -- add two huge numbers
 category: programming
 tag: algorithm
-meta_desc: add two huge numbers represented by linked lists
+meta_desc: add two huge numbers represented by linked lists, the "addTwoHugeNumbers" question and analysis
 ---
 
 We can use linked list to represent huge integers, and therefore addition could be performed and for this we can have a question:
