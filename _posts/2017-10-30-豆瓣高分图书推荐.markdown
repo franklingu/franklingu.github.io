@@ -1,0 +1,49 @@
+---
+layout: blog_base
+title: 豆瓣高分图书推荐
+category: reading
+tag: reading
+meta_desc: 豆瓣高分图书推荐，交际沟通，个人管理，理财基础，文学
+---
+
+### 情商. 交际沟通
+1. [沟通的艺术](https://book.douban.com/subject/5321463/)     8.6分
+2. [心理学与生活](https://book.douban.com/subject/1032501/)   8.7分
+3. [学会提问](https://book.douban.com/subject/1504957/)     8.4分
+4. [社会心理学](https://book.douban.com/subject/1476651/)   9分
+5. [裸猿](https://book.douban.com/subject/1024928/)     8.6分
+6. [亲密关系](https://book.douban.com/subject/1437973/)    9分
+7. [非暴力沟通](https://book.douban.com/subject/3533221/)     8.5分
+8. [态度改变与社会影响](https://book.douban.com/subject/2328178/)    9分
+9. [思考，快与慢](https://book.douban.com/subject/10785583/)      8.2分
+10. [进化心理学](https://book.douban.com/subject/2143904/)     8.8分
+11. [社会性动物](https://book.douban.com/subject/2328458/)     9.1分
+
+### 个人管理
+1. [自控力](https://book.douban.com/subject/10786473/)      8.3分
+2. [高效能人士的七个习惯](https://book.douban.com/subject/5325618/)     8.5分
+3. [把时间当朋友](https://book.douban.com/subject/3609132/)     8.6分
+
+### 理财基础
+1. [富爸爸，穷爸爸](https://book.douban.com/subject/1033778/)    8.2分
+2. [穷查理宝典](https://book.douban.com/subject/5346110/)    9分
+3. [聪明的投资者](https://book.douban.com/subject/5243775/)    9分
+4. [小狗钱钱](https://book.douban.com/subject/1095634/)    8.7分
+
+### 文学
+1. [活着](https://book.douban.com/subject/1082154/)    9.1分
+2. [面纱](https://book.douban.com/subject/10560798/)    8.7分
+3. [美的历程](https://book.douban.com/subject/3410718/)    9.2分
+4. [美丽新世界](https://book.douban.com/subject/1321789/)    8.6分
+5. [棋王](https://book.douban.com/subject/1020961/)    8.7分
+6. [人生的枷锁](https://book.douban.com/subject/2035171/)    9分
+7. [世界的凛冬](https://book.douban.com/subject/26957760/)    9分
+8. [巨人的陨落](https://book.douban.com/subject/26698660/)    8.9分
+9. [月亮和六便士](https://book.douban.com/subject/1858513/)    9.0分
+10. [爱的艺术](https://book.douban.com/subject/3026879/)    8.8分
+11. [朗读者](https://book.douban.com/subject/3537590/)    8.3分
+12. [杀死一只知更鸟](https://book.douban.com/subject/6781808/)    9.2分
+13. [夹边沟记事](https://book.douban.com/subject/3239549/)    9.2分
+14. [平凡的世界](https://book.douban.com/subject/1200840/)    9.0分
+15. [1984](https://book.douban.com/subject/4820710/)    9.3分
+
