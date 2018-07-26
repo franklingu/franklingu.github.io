@@ -3,7 +3,7 @@ layout: blog_base
 title: Werid bug that you cannot even debug in Python
 category: programming
 tag: python
-meta_desc: Werid bug that you cannot even debug in Python--a bug causing max recursion error, and further causing pdb, ipdb and pudb could not be used anymore--digging into pdb and sys.settrace
+meta_desc: Weird bug that you cannot even debug in Python--a bug causing max recursion error, and further causing pdb, ipdb and pudb could not be used anymore--digging into pdb and sys.settrace
 ---
 
 Recently I took over an existing project. There is some newly added feature and I started to debug using ipdb. So everything went well--I input "\n" to see what happens when executed to next line. But then all of a sudden this command does not work anymore--seems the debugger just breaks and all of my subsequent breakpoints did not pause the program execution.
@@ -102,4 +102,8 @@ test done again
 
 So the normal behaviour of pdb should be: after I input "n", it should go to next line and wait for my further instruction. However, in this example, the program did not pause at next line but instead continued the execution until its end.
 
-As you can see from the output, there is RuntimeError saying max recursion depth exceeded. This happens because `__getattribute__` is used whenever some lookup happens, so `self.is_testing` will invoke its `__getattribute__`. And notice that the last line in max recursion error is in bdb--file in which there is a base class for pdb. And if we dig deeper, we find that it uses `sys.settrace` to debug--in fact that is what is `sys.settrace` for. And if any exception happens in tracefunc, [sys.settrace](https://docs.python.org/2/library/sys.html#sys.settrace) will stop working (Any exception that propagates out of the trace function disables it). Therefore pdb will not work anymore as `sys.settrace` stopped working and tracefunc will not be invoked anymore.
+As you can see from the output, there is RuntimeError saying max recursion depth exceeded. This happens because `__getattribute__` is used whenever some lookup happens, so `self.is_testing` will invoke its `__getattribute__`. And notice that the last line in max recursion error is in bdb--file in which there is a base class for pdb. And if we dig deeper, we find that it uses `sys.settrace` to debug--in fact that is what is `sys.settrace` for. And if any exception happens in tracefunc, [sys.settrace](https://docs.python.org/2/library/sys.html#sys.settrace) will stop working (Any exception that propagates out of the trace function disables it).
+
+So the RuntimeError happens inside sys.settrace and because of this error, sys.settrace stops working, and then pdb stops working because it is built on top of sys.settrace. And by saying pdb stops working, we basically mean that the debugging session just exited. The RuntimeError is printed and execution continues.
+
+So until I put a trace.print_exec() there, the debugging session just goes away and the whole program just works fine -- because that exception was caught by the clause and got ignored. And this brings up another lesson -- never catch "Exception" unless you are 100% sure what you are doing.
