@@ -10,3 +10,6 @@ _bower_components/
 # ignore lock file
 *.lock
 
+.bundle/
+vendor/
+

@@ -1,0 +1,557 @@
+---
+layout: presentation_base
+title: Intro to Java
+meta_desc: Introduction to beginners to get started with Java programming language. From zero to hero
+---
+<section>
+  <h2>Java Intro</h2>
+  <h4>--from Zero to Hero</h4>
+  <p>
+    <small>Created by <a href="http://franklingu.github.io">Junchao</a> for <a href="http://codinggirls.sg/">CodingGirls</a></small>
+  </p>
+</section>
+
+<section>
+  <h2>Java</h2>
+  <blockquote>
+    Java is a general-purpose computer-programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible.
+  </blockquote>
+  <small>--Wikipedia</small>
+</section>
+
+<section>
+  <h2>Java</h2>
+  <ul>
+    <li>The Most popular programming language</li>
+    <li>Object-oriented</li>
+    <li>Static typing</li>
+    <li>"Compile once, run anywhere."</li>
+    <li>It has pratically nothing to do with JavaScript</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Outline</h2>
+  <ul>
+    <li>Hello, World!</li>
+    <li>Variables, methods and program</li>
+    <li>Data Types</li>
+    <li>Control Flow</li>
+    <li>Object Oriented</li>
+  </ul>
+</section>
+
+<section>
+  <section>
+    <h2>Hello, World!</h2>
+  </section>
+  <section>
+    <h2>Code</h2>
+    <pre style="overflow: auto;">
+      <code class="java">
+// file: HelloWorldApp.java
+class HelloWorldApp {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h2>Compile and run</h2>
+    <ul>
+      <li>Compile: <pre>javac HelloWorldApp.java</pre></li>
+      <li>See output: <pre>ls</pre></li>
+      <li>Run: <pre>java HelloWorldApp</pre></li>
+      <li>See output: what is on screen?</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Explanation</h2>
+    <pre style="overflow: auto;">
+      <code class="java">
+// file: HelloWorldApp.java
+// The line above is comment
+/*
+You can also create a block of comment this way
+usually // for inline comments
+*/
+/* for block comments */
+// Now we are creating a class
+// the name of the class is HelloWorldApp, which matches the filename
+class HelloWorldApp {
+    // the entry point: main method
+    public static void main(String[] args) {
+        // print out the message to the command line
+        System.out.println("Hello, World!");
+    }
+}
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h2>More doubts</h2>
+    <ul>
+      <li>Class name and file name must match?</li>
+      <li class="fragment" style="color: yellow;">Yes for public classes</li>
+      <li>What is public? Then do we have private?</li>
+      <li class="fragment" style="color: yellow;">public means anyone can access. private and protected also exist</li>
+      <li>What does static means?</li>
+      <li class="fragment" style="color: yellow;">Means this method is bound to the class instead of the object</li>
+      <li>What does String[] means? what does System.out.println mean?</li>
+      <li class="fragment" style="color: yellow;">We will come to this</li>
+    </ul>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Variables, methods and program</h2>
+  </section>
+
+  <section>
+    <h2>Variables</h2>
+    <blockquote>
+      In computer programming, a variable or scalar is a storage location (identified by a memory address) paired with an associated symbolic name (an identifier), which contains some known or unknown quantity of information referred to as a value. 
+    </blockquote>
+    <ul>
+      <li>Variables in method definition are called parameters</li>
+      <li><pre>String[] args</pre> is the parameter.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>More on variables</h2>
+    <ul>
+      <li>A name: identifier</li>
+      <li>A value: the actual value</li>
+      <li>Combined to a variable</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Methods</h2>
+    <blockquote>
+      A method in object-oriented programming (OOP) is a procedure associated with a message and an object. An object is mostly made up of data and behavior, which form the interface that an object presents to the outside world. Data is represented as properties of the object and behavior as methods. For example, a Window object would have methods such as open and close, while its state (whether it is opened or closed) would be a property.
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>More on methods</h2>
+    <ul>
+      <li>defined on object/class</li>
+      <li>represent a bahavior of the object/class</li>
+      <li>another way of looking at it: function bound to object/class</li>
+      <li>another way of looking at it: message sent to object</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Program</h2>
+    <blockquote>
+      A computer program is a collection of instructions[1] that performs a specific task when executed by a computer. A computer requires programs to function.
+    </blockquote>
+  </section>
+
+  <section>
+    <h2>Notes</h2>
+    <ul>
+      <li>Do not get too caught up with definitions</li>
+      <li>"I do and I understand"</li>
+    </ul>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Data Types</h2>
+  </section>
+
+  <section>
+    <h2>Basic Data Types</h2>
+    <ul>
+      <li>boolean</li>
+      <li>byte</li>
+      <li>char</li>
+      <li>short</li>
+      <li>int</li>
+      <li>long</li>
+      <li>float</li>
+      <li>double</li>
+      <li>String</li>
+      <li>Array</li>
+      <li>More</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>boolean</h2>
+    <ul>
+      <li>True or False. Nothing less and nothing more</li>
+      <li>Size: 1 bit (usually)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Integral</h2>
+    <ul>
+      <li>byte, short, int, long</li>
+      <li>Size: 1, 2, 4, 8 bytes</li>
+      <li>Integer with different size and range</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Floating-point</h2>
+    <ul>
+      <li>float, double</li>
+      <li>Size: 4, 8 bytes</li>
+      <li>represent decimal up to some precesion</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>String</h2>
+    <ul>
+      <li>A sequence of chars</li>
+      <pre>
+        <code class="java">
+// StringDemo1.java
+public class StringDemo1 {
+   public static void main(String args[]) {
+      char[] helloArray = { 'h', 'e', 'l', 'l', 'o', '.' };
+      String helloString = new String(helloArray);  
+      System.out.println( helloString );
+   }
+}
+// StringDemo2.java
+public class StringDemo2 {
+   public static void main(String args[]) {
+      String string1 = "saw I was ";
+      System.out.println("Dot " + string1 + "Tod");
+   }
+}
+        </code>
+      </pre>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Array</h2>
+    <ul>
+      <li>A sequence of same-type values</li>
+      <pre>
+        <code class="java">
+// TestArray1.java
+public class TestArray1 {
+   public static void main(String[] args) {
+      double[] myList = {1.9, 2.9, 3.4, 3.5};
+
+      // Print all the array elements
+      for (int i = 0; i < myList.length; i++) {
+         System.out.println(myList[i] + " ");
+      }
+     
+      // Summing all elements
+      double total = 0;
+      for (int i = 0; i < myList.length; i++) {
+         total += myList[i];
+      }
+      System.out.println("Total is " + total);
+      
+      // Finding the largest element
+      double max = myList[0];
+      for (int i = 1; i < myList.length; i++) {
+         if (myList[i] > max) max = myList[i];
+      }
+      System.out.println("Max is " + max);  
+   }
+}
+        </code>
+      </pre>
+    </ul>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Control Flow</h2>
+    <ul>
+      <li>if-else</li>
+      <li>for</li>
+      <li>while</li>
+      <li>break and continue</li>
+      <li>exception and try-catch</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>if-else</h2>
+    <p>
+Programmer's wife told him: "buy 10 dumplings. If u see someboday selling watermelon, then buy one." And the programmer came home with one dumpling. The wife was angry: "Why only 1 dumpling". Programmer: "Because I saw watermelon-man..."
+    </p>
+    <p class="fragment">What is wrong?</p>
+  </section>
+
+  <section>
+    <h2>if-else</h2>
+    <pre>
+      <code class="java">
+int dumplingsToBuy = 10;
+if (seeWatermelonMan) {
+    dumplingsToBuy = 1;
+}
+buy(dumplingsToBuy);
+// end of story
+      </code>
+    </pre>
+    <pre>
+      <code class="java">
+int dumplingsToBuy = 10, watermelonsToBuy = 0;
+if (seeWatermelonMan) {
+    watermelonsToBuy = 1;
+}
+buy(dumplingsToBuy);
+buy(watermelonsToBuy);
+// what the wife meant
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h2>if-else</h2>
+    <pre>
+      <code class="java">
+if (condition) {
+    statementsToExecuteIfConditionIsTrue;
+} else {
+    statementsToExecuteIfConditionIsFalse;
+    if (condition2) {
+        statementsIfConditionFalseAndCondition2True;
+    }
+}
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h2>for</h2>
+    <pre>
+      <code class="java">
+for(declaration : expression) {
+   // Statements
+}
+for(init;end check;increment) {
+  // Statements
+}
+public class Test {
+   public static void main(String args[]) {
+      int [] numbers = {10, 20, 30, 40, 50};
+      for(int x : numbers ) {
+         System.out.print( x );
+         System.out.print(",");
+      }
+      System.out.print("\n");
+      for(int i = 0; i < numbers.length; i++) {
+         System.out.print(numbers[i]);
+         System.out.print(",");
+      }
+      System.out.print("\n");
+
+      String [] names = {"James", "Larry", "Tom", "Lacy"};
+      for( String name : names ) {
+         System.out.print( name );
+         System.out.print(",");
+      }
+   }
+}
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h2>while</h2>
+    <pre>
+      <code class="java">
+while (condition) {
+  // Statements
+}
+do {
+  // Statements
+} while (condition);
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h2>break and continue</h2>
+    <p>
+      break: Terminates the loop or switch statement and transfers execution to the statement immediately following the loop or switch.
+    </p>
+    <p>
+      continue: Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.
+    </p>
+  </section>
+
+  <section>
+    <h2>exception and try-catch</h2>
+    <pre>
+      <code class="java">
+try {
+   // Protected code
+} catch (ExceptionName e1) {
+   // Catch block
+}
+// File Name : ExcepTest.java
+import java.io.*;
+
+public class ExcepTest {
+
+   public static void main(String args[]) {
+      try {
+         int a[] = new int[2];
+         System.out.println("Access element three :" + a[3]);
+      } catch (ArrayIndexOutOfBoundsException e) {
+         System.out.println("Exception thrown  :" + e);
+      }
+      System.out.println("Out of the block");
+   }
+}
+      </code>
+    </pre>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Object Oriented</h2>
+    <ul>
+      <li>Ideas</li>
+      <li>Constructor</li>
+      <li>Methods</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Ideas</h2>
+    <p>Object − Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behavior such as wagging their tail, barking, eating. An object is an instance of a class.</p>
+    <p>Class − A class can be defined as a template/blueprint that describes the behavior/state that the object of its type supports.</p>
+  </section>
+
+  <section>
+    <h2>Ideas</h2>
+    <p>Methods − A method is basically a behavior. A class can contain many methods. It is in methods where the logics are written, data is manipulated and all the actions are executed.</p>
+    <p>Instance Variables − Each object has its unique set of instance variables. An object's state is created by the values assigned to these instance variables.</p>
+  </section>
+
+  <section>
+    <h2>Constructor and methods</h2>
+    <pre>
+      <code class="java">
+public class Puppy {
+   int puppyAge;
+
+   public Puppy(String name) {
+      // This constructor has one parameter, name.
+      System.out.println("Name chosen is :" + name );
+   }
+
+   public void setAge( int age ) {
+      puppyAge = age;
+   }
+
+   public int getAge( ) {
+      System.out.println("Puppy's age is :" + puppyAge );
+      return puppyAge;
+   }
+
+   public static void main(String []args) {
+      /* Object creation */
+      Puppy myPuppy = new Puppy( "tommy" );
+
+      /* Call class method to set puppy's age */
+      myPuppy.setAge( 2 );
+
+      /* Call another class method to get puppy's age */
+      myPuppy.getAge( );
+
+      /* You can access instance variable as follows as well */
+      System.out.println("Variable Value :" + myPuppy.puppyAge );
+   }
+}
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h2>Constructor and methods</h2>
+    <pre>
+      <code class="java">
+import java.io.*;
+public class Employee {
+
+   String name;
+   int age;
+   String designation;
+   double salary;
+
+   // This is the constructor of the class Employee
+   public Employee(String name) {
+      this.name = name;
+   }
+
+   // Assign the age of the Employee  to the variable age.
+   public void empAge(int empAge) {
+      age = empAge;
+   }
+
+   /* Assign the designation to the variable designation.*/
+   public void empDesignation(String empDesig) {
+      designation = empDesig;
+   }
+
+   /* Assign the salary to the variable salary.*/
+   public void empSalary(double empSalary) {
+      salary = empSalary;
+   }
+
+   /* Print the Employee details */
+   public void printEmployee() {
+      System.out.println("Name:"+ name );
+      System.out.println("Age:" + age );
+      System.out.println("Designation:" + designation );
+      System.out.println("Salary:" + salary);
+   }
+}
+      </code>
+    </pre>
+  </section>
+</section>
+
+<section>
+  <h2>Future learning</h2>
+  <ul>
+    <li>Web development: Spring</li>
+    <li>GUI development: JavaFX</li>
+    <li>Android development: Android Studio and Kotlin</li>
+    <li>Big Data development: Hadoop and Scala</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Take-aways</h2>
+  <ul>
+    <li>How to write and run a simple java program</li>
+    <li>What are different data types</li>
+    <li>How to control the flow of program</li>
+    <li>What are object, class and object-oriented?</li>
+  </ul>
+</section>
+
+<section>
+    <h2 style="font-family: 'Pacifico', cursive;">Thank you</h2>
+</section>
