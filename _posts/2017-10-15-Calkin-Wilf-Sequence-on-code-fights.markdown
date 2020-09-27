@@ -6,7 +6,7 @@ tag: programming
 meta_desc: Calkin Wilf Sequence problem on codefights for Python arcade and generator topic
 ---
 
-Codefights is a website for practicing and brushing up on programming skills. Recently I have been working on its Python arcade, trying to learn more Python langguage special features. Well, generally I think most questions are well-thought but are not problems for me -- I am confident about my knowledge of Python so far. However, I did get stuck on one question in the generator section.
+Codefights is a website for practicing and brushing up on programming skills. Recently I have been working on its Python arcade, trying to learn more Python language special features. Well, generally I think most questions are well-thought but are not problems for me -- I am confident about my knowledge of Python so far. However, I did get stuck on one question in the generator section.
 
 To be honest, I have not get the coroutine based generator thing inside out yet but this question: Calkin Wilf Sequence surely does not require that sort of knownledge but just generators -- and I got TLE -- time limit exceeded error. So I checked for a few parts to improve the effeciency but I still got TLE.
 

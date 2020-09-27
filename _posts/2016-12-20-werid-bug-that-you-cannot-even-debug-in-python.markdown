@@ -1,9 +1,9 @@
 ---
 layout: blog_base
-title: Werid bug that you cannot even debug in Python
+title: Weird bug that you cannot even debug in Python
 category: programming
 tag: python
-meta_desc: Werid bug that you cannot even debug in Python--a bug causing max recursion error, and further causing pdb, ipdb and pudb could not be used anymore--digging into pdb and sys.settrace
+meta_desc: Weird bug that you cannot even debug in Python--a bug causing max recursion error, and further causing pdb, ipdb and pudb could not be used anymore--digging into pdb and sys.settrace
 ---
 
 Recently I took over an existing project. There is some newly added feature and I started to debug using ipdb. So everything went well--I input "\n" to see what happens when executed to next line. But then all of a sudden this command does not work anymore--seems the debugger just breaks and all of my subsequent breakpoints did not pause the program execution.
